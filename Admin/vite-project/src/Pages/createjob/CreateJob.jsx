@@ -4,7 +4,7 @@
 // // import { useDispatch, useSelector } from "react-redux";
 // // import { createJob } from "./jobSlice";
 
-// // const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+// // const API_BASE_URL = import.meta.env.VITE_API_URL || "https://ai-knots-website-xw9f.onrender.com";
 // // const CATEGORY_URL = `${API_BASE_URL}/category/jobapply`;
 
 // // const CreateJob = () => {
@@ -139,7 +139,7 @@
 // import { useDispatch, useSelector } from "react-redux";
 // import { createJob } from "./jobSlice";   // apna slice
 
-// const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+// const API_BASE_URL = import.meta.env.VITE_API_URL || "https://ai-knots-website-xw9f.onrender.com";
 
 // const CreateJob = () => {
 //   const [form, setForm] = useState({
@@ -266,7 +266,8 @@ import { createJob } from "./jobSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "https://ai-knots-website-xw9f.onrender.com";
 
 const CreateJob = () => {
   const [form, setForm] = useState({

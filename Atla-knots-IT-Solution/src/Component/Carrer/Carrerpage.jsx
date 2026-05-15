@@ -42,7 +42,9 @@ function CareerPage() {
         setLoading(true);
         setError(null);
 
-        const res = await fetch("http://localhost:8000/jobapply");
+        const res = await fetch(
+          "https://ai-knots-website-xw9f.onrender.com/jobapply",
+        );
 
         if (!res.ok) throw new Error("Failed to load job openings");
 
@@ -137,7 +139,7 @@ function CareerPage() {
       formDataToSend.append("resume", resumeFile); // ← Must match multer.single('resume')
 
       const res = await fetch(
-        `http://localhost:8000/jobapplication/apply/${selectedJob._id}`,
+        `https://ai-knots-website-xw9f.onrender.com/jobapplication/apply/${selectedJob._id}`,
         {
           method: "POST",
           body: formDataToSend,
@@ -188,7 +190,7 @@ function CareerPage() {
   //     formDataToSend.append('phone', formData.phone);
   //     formDataToSend.append('resume', resumeFile);
 
-  //     const res = await fetch(`http://localhost:8000/jobapplication/apply/${selectedJob._id}`, {
+  //     const res = await fetch(`https://ai-knots-website-xw9f.onrender.com/jobapplication/apply/${selectedJob._id}`, {
   //       method: 'POST',
   //       body: formDataToSend,
   //     });

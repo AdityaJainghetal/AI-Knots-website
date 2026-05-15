@@ -58,19 +58,19 @@
 //           techCategoriesRes,
 //         ] = await Promise.all([
 //           axios
-//             .get("http://localhost:8000/api/users")
+//             .get("https://ai-knots-website-xw9f.onrender.com/api/users")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/query")
+//             .get("https://ai-knots-website-xw9f.onrender.com/query")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/contact")
+//             .get("https://ai-knots-website-xw9f.onrender.com/api/contact")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/technology/product")
+//             .get("https://ai-knots-website-xw9f.onrender.com/api/technology/product")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/technology/category")
+//             .get("https://ai-knots-website-xw9f.onrender.com/api/technology/category")
 //             .catch(() => ({ data: null })),
 //         ]);
 
@@ -559,7 +559,7 @@
 //       <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl shadow-lg p-6 text-white">
 //         <h2 className="text-xl font-bold mb-4">System Overview</h2>
 //         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          
+
 //           <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
 //             <p className="text-sm opacity-90">Total Queries</p>
 //             <p className="text-2xl font-bold mt-1">
@@ -593,7 +593,6 @@
 // };
 
 // export default Dashboard;
-
 
 import {
   AlertCircle,
@@ -651,12 +650,30 @@ const Dashboard = () => {
           techCategoriesRes,
           blogsRes,
         ] = await Promise.all([
-          axios.get("http://localhost:8000/api/users").catch(() => ({ data: null })),
-          axios.get("http://localhost:8000/query").catch(() => ({ data: null })),
-          axios.get("http://localhost:8000/api/contact").catch(() => ({ data: null })),
-          axios.get("http://localhost:8000/api/technology/product").catch(() => ({ data: null })),
-          axios.get("http://localhost:8000/api/technology/category").catch(() => ({ data: null })),
-          axios.get("http://localhost:8000/api/product/alladminproducts").catch(() => ({ data: null })), // Blog API
+          axios
+            .get("https://ai-knots-website-xw9f.onrender.com/api/users")
+            .catch(() => ({ data: null })),
+          axios
+            .get("https://ai-knots-website-xw9f.onrender.com/query")
+            .catch(() => ({ data: null })),
+          axios
+            .get("https://ai-knots-website-xw9f.onrender.com/api/contact")
+            .catch(() => ({ data: null })),
+          axios
+            .get(
+              "https://ai-knots-website-xw9f.onrender.com/api/technology/product",
+            )
+            .catch(() => ({ data: null })),
+          axios
+            .get(
+              "https://ai-knots-website-xw9f.onrender.com/api/technology/category",
+            )
+            .catch(() => ({ data: null })),
+          axios
+            .get(
+              "https://ai-knots-website-xw9f.onrender.com/api/product/alladminproducts",
+            )
+            .catch(() => ({ data: null })), // Blog API
         ]);
 
         const users = usersRes?.data?.data || [];
@@ -687,7 +704,10 @@ const Dashboard = () => {
         });
 
         const allDates = [
-          ...new Set([...Object.keys(queryByDate), ...Object.keys(contactByDate)]),
+          ...new Set([
+            ...Object.keys(queryByDate),
+            ...Object.keys(contactByDate),
+          ]),
         ];
 
         const chartDataProcessed = allDates.map((date) => ({
@@ -733,7 +753,7 @@ const Dashboard = () => {
         }));
 
         const combined = [...recentQueries, ...recentBlogs].sort(
-          (a, b) => new Date(b.time) - new Date(a.time)
+          (a, b) => new Date(b.time) - new Date(a.time),
         );
 
         setRecentActivity(combined);
@@ -793,7 +813,7 @@ const Dashboard = () => {
   const safePage = Math.min(Math.max(1, currentPage), totalPages);
   const displayedRecent = recentActivity.slice(
     (safePage - 1) * itemsPerPage,
-    safePage * itemsPerPage
+    safePage * itemsPerPage,
   );
 
   useEffect(() => {
@@ -805,8 +825,12 @@ const Dashboard = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-gray-600 mt-1">Welcome back! Here's what's happening today.</p>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+            Dashboard
+          </h1>
+          <p className="text-gray-600 mt-1">
+            Welcome back! Here's what's happening today.
+          </p>
         </div>
         <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition flex items-center gap-2 text-sm font-medium">
           <ArrowUpRight size={16} />
@@ -825,7 +849,10 @@ const Dashboard = () => {
             >
               <div className="flex items-center justify-between">
                 <div className={`p-3 rounded-lg ${stat.color} bg-opacity-10`}>
-                  <Icon className={stat.color.replace("bg-", "text-")} size={24} />
+                  <Icon
+                    className={stat.color.replace("bg-", "text-")}
+                    size={24}
+                  />
                 </div>
                 <span
                   className={`text-sm font-medium flex items-center gap-1 ${
@@ -833,7 +860,11 @@ const Dashboard = () => {
                   }`}
                 >
                   {stat.change}
-                  {stat.trend === "up" ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />}
+                  {stat.trend === "up" ? (
+                    <ArrowUpRight size={14} />
+                  ) : (
+                    <ArrowDownRight size={14} />
+                  )}
                 </span>
               </div>
               <div className="mt-5">
@@ -851,31 +882,63 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Line Chart */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-6">Queries & Contacts Timeline</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-6">
+            Queries & Contacts Timeline
+          </h2>
           {dashboardData.loading ? (
-            <div className="h-80 flex items-center justify-center text-gray-500">Loading chart...</div>
+            <div className="h-80 flex items-center justify-center text-gray-500">
+              Loading chart...
+            </div>
           ) : chartData.length > 0 ? (
             <ResponsiveContainer width="100%" height={320}>
               <LineChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="date" stroke="#6b7280" style={{ fontSize: "12px" }} />
+                <XAxis
+                  dataKey="date"
+                  stroke="#6b7280"
+                  style={{ fontSize: "12px" }}
+                />
                 <YAxis stroke="#6b7280" style={{ fontSize: "12px" }} />
-                <Tooltip contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
+                <Tooltip
+                  contentStyle={{
+                    backgroundColor: "#fff",
+                    border: "1px solid #e5e7eb",
+                    borderRadius: "8px",
+                  }}
+                />
                 <Legend />
-                <Line type="monotone" dataKey="Queries" stroke="#10b981" strokeWidth={3} dot={{ fill: "#10b981", r: 5 }} />
-                <Line type="monotone" dataKey="Contacts" stroke="#a855f7" strokeWidth={3} dot={{ fill: "#a855f7", r: 5 }} />
+                <Line
+                  type="monotone"
+                  dataKey="Queries"
+                  stroke="#10b981"
+                  strokeWidth={3}
+                  dot={{ fill: "#10b981", r: 5 }}
+                />
+                <Line
+                  type="monotone"
+                  dataKey="Contacts"
+                  stroke="#a855f7"
+                  strokeWidth={3}
+                  dot={{ fill: "#a855f7", r: 5 }}
+                />
               </LineChart>
             </ResponsiveContainer>
           ) : (
-            <div className="h-80 flex items-center justify-center text-gray-500">No data available</div>
+            <div className="h-80 flex items-center justify-center text-gray-500">
+              No data available
+            </div>
           )}
         </div>
 
         {/* Pie Chart */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-6">Queries vs Contacts Distribution</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-6">
+            Queries vs Contacts Distribution
+          </h2>
           {dashboardData.loading ? (
-            <div className="h-80 flex items-center justify-center text-gray-500">Loading chart...</div>
+            <div className="h-80 flex items-center justify-center text-gray-500">
+              Loading chart...
+            </div>
           ) : (
             <ResponsiveContainer width="100%" height={320}>
               <PieChart>
@@ -884,7 +947,9 @@ const Dashboard = () => {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
+                  label={({ name, percent }) =>
+                    `${name}: ${(percent * 100).toFixed(0)}%`
+                  }
                   outerRadius={100}
                   dataKey="value"
                 >
@@ -899,11 +964,15 @@ const Dashboard = () => {
           <div className="flex justify-center gap-6 mt-4">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-emerald-500 rounded"></div>
-              <span className="text-sm text-gray-700">Queries ({dashboardData.totalQueries})</span>
+              <span className="text-sm text-gray-700">
+                Queries ({dashboardData.totalQueries})
+              </span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-purple-500 rounded"></div>
-              <span className="text-sm text-gray-700">Contacts ({dashboardData.totalContacts})</span>
+              <span className="text-sm text-gray-700">
+                Contacts ({dashboardData.totalContacts})
+              </span>
             </div>
           </div>
         </div>
@@ -911,29 +980,47 @@ const Dashboard = () => {
 
       {/* Bar Chart */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-6">Queries & Contacts Comparison</h2>
+        <h2 className="text-lg font-semibold text-gray-900 mb-6">
+          Queries & Contacts Comparison
+        </h2>
         {dashboardData.loading ? (
-          <div className="h-80 flex items-center justify-center text-gray-500">Loading chart...</div>
+          <div className="h-80 flex items-center justify-center text-gray-500">
+            Loading chart...
+          </div>
         ) : chartData.length > 0 ? (
           <ResponsiveContainer width="100%" height={320}>
             <BarChart data={chartData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-              <XAxis dataKey="date" stroke="#6b7280" style={{ fontSize: "12px" }} />
+              <XAxis
+                dataKey="date"
+                stroke="#6b7280"
+                style={{ fontSize: "12px" }}
+              />
               <YAxis stroke="#6b7280" style={{ fontSize: "12px" }} />
-              <Tooltip contentStyle={{ backgroundColor: "#fff", border: "1px solid #e5e7eb", borderRadius: "8px" }} />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#fff",
+                  border: "1px solid #e5e7eb",
+                  borderRadius: "8px",
+                }}
+              />
               <Legend />
               <Bar dataKey="Queries" fill="#10b981" radius={[8, 8, 0, 0]} />
               <Bar dataKey="Contacts" fill="#a855f7" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         ) : (
-          <div className="h-80 flex items-center justify-center text-gray-500">No data available</div>
+          <div className="h-80 flex items-center justify-center text-gray-500">
+            No data available
+          </div>
         )}
       </div>
 
       {/* Recent Activity */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-6">Recent Activity</h2>
+        <h2 className="text-lg font-semibold text-gray-900 mb-6">
+          Recent Activity
+        </h2>
         <div className="space-y-4">
           {dashboardData.loading ? (
             <div className="text-center py-8 text-gray-500">Loading...</div>
@@ -950,11 +1037,21 @@ const Dashboard = () => {
                       <Icon size={16} className="text-blue-600" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium text-gray-900 text-sm">{item.user}</p>
-                      <p className="text-xs text-blue-600 font-medium">{item.action}</p>
-                      {item.email && <p className="text-[11px] text-gray-500 mt-0.5">📧 {item.email}</p>}
+                      <p className="font-medium text-gray-900 text-sm">
+                        {item.user}
+                      </p>
+                      <p className="text-xs text-blue-600 font-medium">
+                        {item.action}
+                      </p>
+                      {item.email && (
+                        <p className="text-[11px] text-gray-500 mt-0.5">
+                          📧 {item.email}
+                        </p>
+                      )}
                       {item.message && (
-                        <p className="text-[12px] text-gray-600 mt-1 line-clamp-2">{item.message}</p>
+                        <p className="text-[12px] text-gray-600 mt-1 line-clamp-2">
+                          {item.message}
+                        </p>
                       )}
                     </div>
                   </div>
@@ -971,7 +1068,9 @@ const Dashboard = () => {
               );
             })
           ) : (
-            <div className="text-center py-8 text-gray-500">No recent activity</div>
+            <div className="text-center py-8 text-gray-500">
+              No recent activity
+            </div>
           )}
         </div>
 
@@ -979,8 +1078,9 @@ const Dashboard = () => {
         {recentActivity.length > 0 && (
           <div className="mt-4 flex items-center justify-between gap-4">
             <div className="text-sm text-gray-600">
-              Showing {Math.min((safePage - 1) * itemsPerPage + 1, totalRecent)} -{" "}
-              {Math.min(safePage * itemsPerPage, totalRecent)} of {totalRecent}
+              Showing {Math.min((safePage - 1) * itemsPerPage + 1, totalRecent)}{" "}
+              - {Math.min(safePage * itemsPerPage, totalRecent)} of{" "}
+              {totalRecent}
             </div>
             <div className="flex items-center gap-2">
               <select
@@ -1003,7 +1103,9 @@ const Dashboard = () => {
                 {safePage} / {totalPages}
               </div>
               <button
-                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                onClick={() =>
+                  setCurrentPage((p) => Math.min(totalPages, p + 1))
+                }
                 disabled={safePage === totalPages}
                 className="px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 disabled:opacity-50 text-sm"
               >
@@ -1020,23 +1122,35 @@ const Dashboard = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
             <p className="text-sm opacity-90">Total Queries</p>
-            <p className="text-2xl font-bold mt-1">{dashboardData.loading ? "..." : dashboardData.totalQueries}</p>
+            <p className="text-2xl font-bold mt-1">
+              {dashboardData.loading ? "..." : dashboardData.totalQueries}
+            </p>
           </div>
           <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
             <p className="text-sm opacity-90">Contacts</p>
-            <p className="text-2xl font-bold mt-1">{dashboardData.loading ? "..." : dashboardData.totalContacts}</p>
+            <p className="text-2xl font-bold mt-1">
+              {dashboardData.loading ? "..." : dashboardData.totalContacts}
+            </p>
           </div>
           <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
             <p className="text-sm opacity-90">Tech Products</p>
-            <p className="text-2xl font-bold mt-1">{dashboardData.loading ? "..." : dashboardData.totalTechProducts}</p>
+            <p className="text-2xl font-bold mt-1">
+              {dashboardData.loading ? "..." : dashboardData.totalTechProducts}
+            </p>
           </div>
           <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
             <p className="text-sm opacity-90">Categories</p>
-            <p className="text-2xl font-bold mt-1">{dashboardData.loading ? "..." : dashboardData.totalTechCategories}</p>
+            <p className="text-2xl font-bold mt-1">
+              {dashboardData.loading
+                ? "..."
+                : dashboardData.totalTechCategories}
+            </p>
           </div>
           <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm">
             <p className="text-sm opacity-90">Total Blogs</p>
-            <p className="text-2xl font-bold mt-1">{dashboardData.loading ? "..." : dashboardData.totalBlogs}</p>
+            <p className="text-2xl font-bold mt-1">
+              {dashboardData.loading ? "..." : dashboardData.totalBlogs}
+            </p>
           </div>
         </div>
       </div>

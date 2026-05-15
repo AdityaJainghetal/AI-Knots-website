@@ -1,5 +1,3 @@
-
-
 // // // import { useEffect, useMemo, useState } from "react";
 // // // import {
 // // //   useReactTable,
@@ -48,7 +46,7 @@
 
 // // //       const [productsRes, categoriesRes] = await Promise.all([
 // // //         getProductsApi(),
-// // //         fetch("http://localhost:8000/api/blogcategory").then((r) => r.json()),
+// // //         fetch("https://ai-knots-website-xw9f.onrender.com/api/blogcategory").then((r) => r.json()),
 // // //       ]);
 
 // // //       setProducts(productsRes.data?.data || []);
@@ -585,7 +583,6 @@
 // // //   );
 // // // }
 
-
 // // import { useEffect, useMemo, useState } from "react";
 // // import {
 // //   useReactTable,
@@ -638,7 +635,7 @@
 // //       setLoading(true);
 // //       const [productsRes, categoriesRes] = await Promise.all([
 // //         getProductsApi(),
-// //         fetch("http://localhost:8000/api/blogcategory").then((r) => r.json()),
+// //         fetch("https://ai-knots-website-xw9f.onrender.com/api/blogcategory").then((r) => r.json()),
 // //       ]);
 
 // //       setProducts(productsRes.data?.data || []);
@@ -1182,7 +1179,7 @@
 //       setLoading(true);
 //       const [productsRes, categoriesRes] = await Promise.all([
 //         getProductsApi(),
-//         fetch("http://localhost:8000/api/blogcategory").then((r) => r.json()),
+//         fetch("https://ai-knots-website-xw9f.onrender.com/api/blogcategory").then((r) => r.json()),
 //       ]);
 
 //       setProducts(productsRes.data?.data || []);
@@ -1544,7 +1541,9 @@ export default function ProductTable() {
       setLoading(true);
       const [productsRes, categoriesRes] = await Promise.all([
         getProductsApi(),
-        fetch("http://localhost:8000/api/blogcategory").then((r) => r.json()),
+        fetch(
+          "https://ai-knots-website-xw9f.onrender.com/api/blogcategory",
+        ).then((r) => r.json()),
       ]);
 
       setProducts(productsRes.data?.data || []);
@@ -1566,7 +1565,9 @@ export default function ProductTable() {
   const openEditModal = (product) => {
     const categoryId = product.category?._id?.toString() || "";
     setEditData({ ...product, category: categoryId });
-    setPreviewImages(product.thumbnail ? [{ url: product.thumbnail, isNew: false }] : []);
+    setPreviewImages(
+      product.thumbnail ? [{ url: product.thumbnail, isNew: false }] : [],
+    );
     setSelectedFiles([]);
     setIsModalOpen(true);
   };
@@ -1588,14 +1589,20 @@ export default function ProductTable() {
     const img = previewImages[index];
     if (img?.isNew) {
       setSelectedFiles((prev) =>
-        prev.filter((_, i) => i !== index - (previewImages.length - selectedFiles.length))
+        prev.filter(
+          (_, i) => i !== index - (previewImages.length - selectedFiles.length),
+        ),
       );
     }
     setPreviewImages((prev) => prev.filter((_, i) => i !== index));
   };
 
   const handleUpdate = async () => {
-    if (!editData.name?.trim() || !editData.description?.trim() || !editData.author?.trim()) {
+    if (
+      !editData.name?.trim() ||
+      !editData.description?.trim() ||
+      !editData.author?.trim()
+    ) {
       toast.error("Name, Author and Description are required");
       return;
     }
@@ -1652,7 +1659,9 @@ export default function ProductTable() {
       setCommentLoading(true);
       await deleteAdminProductCommentApi(activeProductId, commentId);
       toast.success("Comment deleted successfully");
-      setActiveProductComments((prev) => prev.filter((c) => c._id !== commentId));
+      setActiveProductComments((prev) =>
+        prev.filter((c) => c._id !== commentId),
+      );
     } catch (err) {
       toast.error("Failed to delete comment");
     } finally {
@@ -1663,56 +1672,105 @@ export default function ProductTable() {
   // Columns
   const columns = useMemo(
     () => [
-      { header: "No.", id: "serial", cell: ({ row, table }) => table.getState().pagination.pageIndex * table.getState().pagination.pageSize + row.index + 1 },
+      {
+        header: "No.",
+        id: "serial",
+        cell: ({ row, table }) =>
+          table.getState().pagination.pageIndex *
+            table.getState().pagination.pageSize +
+          row.index +
+          1,
+      },
       {
         accessorKey: "thumbnail",
         header: "Image",
         cell: ({ row }) => {
           const thumb = row.original.thumbnail;
           return thumb ? (
-            <img src={thumb} alt="" className="w-14 h-14 object-cover rounded-lg border" />
+            <img
+              src={thumb}
+              alt=""
+              className="w-14 h-14 object-cover rounded-lg border"
+            />
           ) : (
-            <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center text-xs">No Img</div>
+            <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center text-xs">
+              No Img
+            </div>
           );
         },
       },
       { accessorKey: "name", header: "Product Name" },
-      { accessorKey: "author", header: "Author", cell: ({ getValue }) => getValue() || "—" },
+      {
+        accessorKey: "author",
+        header: "Author",
+        cell: ({ getValue }) => getValue() || "—",
+      },
       {
         accessorKey: "description",
         header: "Description",
         cell: ({ getValue }) => {
-          const text = (getValue() || "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
-          return <div className="max-w-xs line-clamp-3 text-sm" title={text}>{text || "—"}</div>;
+          const text = (getValue() || "")
+            .replace(/<[^>]+>/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+          return (
+            <div className="max-w-xs line-clamp-3 text-sm" title={text}>
+              {text || "—"}
+            </div>
+          );
         },
       },
-      { accessorKey: "category.name", header: "Category", cell: ({ row }) => row.original.category?.name || "—" },
+      {
+        accessorKey: "category.name",
+        header: "Category",
+        cell: ({ row }) => row.original.category?.name || "—",
+      },
       {
         id: "actions",
         header: "Actions",
         cell: ({ row }) => (
           <div className="flex gap-2 flex-wrap justify-center">
-            <button onClick={() => openLivePreview(row.original)} className="px-3 py-1 bg-green-600 text-white text-xs rounded hover:bg-green-700">👁️ Preview</button>
-            <button onClick={() => openEditModal(row.original)} className="px-3 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700">Edit</button>
-            <button onClick={() => openCommentsModal(row.original)} className="px-3 py-1 bg-amber-600 text-white text-xs rounded hover:bg-amber-700">Comments</button>
-            <button onClick={async () => {
-              if (!window.confirm("Delete this product?")) return;
-              try {
-                setLoading(true);
-                await deleteHomeApi(row.original._id);
-                toast.success("Deleted successfully");
-                await fetchData();
-              } catch (err) {
-                toast.error("Delete failed");
-              } finally {
-                setLoading(false);
-              }
-            }} className="px-3 py-1 bg-red-600 text-white text-xs rounded hover:bg-red-700">Delete</button>
+            <button
+              onClick={() => openLivePreview(row.original)}
+              className="px-3 py-1 bg-green-600 text-white text-xs rounded hover:bg-green-700"
+            >
+              👁️ Preview
+            </button>
+            <button
+              onClick={() => openEditModal(row.original)}
+              className="px-3 py-1 bg-blue-600 text-white text-xs rounded hover:bg-blue-700"
+            >
+              Edit
+            </button>
+            <button
+              onClick={() => openCommentsModal(row.original)}
+              className="px-3 py-1 bg-amber-600 text-white text-xs rounded hover:bg-amber-700"
+            >
+              Comments
+            </button>
+            <button
+              onClick={async () => {
+                if (!window.confirm("Delete this product?")) return;
+                try {
+                  setLoading(true);
+                  await deleteHomeApi(row.original._id);
+                  toast.success("Deleted successfully");
+                  await fetchData();
+                } catch (err) {
+                  toast.error("Delete failed");
+                } finally {
+                  setLoading(false);
+                }
+              }}
+              className="px-3 py-1 bg-red-600 text-white text-xs rounded hover:bg-red-700"
+            >
+              Delete
+            </button>
           </div>
         ),
       },
     ],
-    []
+    [],
   );
 
   const table = useReactTable({
@@ -1731,7 +1789,9 @@ export default function ProductTable() {
     <div className="min-h-screen bg-gray-100 p-6 relative">
       <div className="bg-white rounded-2xl shadow-xl border overflow-hidden max-w-7xl mx-auto">
         <div className="p-6 border-b bg-gray-50">
-          <h1 className="text-2xl font-bold text-gray-800">Product Management</h1>
+          <h1 className="text-2xl font-bold text-gray-800">
+            Product Management
+          </h1>
         </div>
 
         <div className="overflow-x-auto">
@@ -1740,8 +1800,14 @@ export default function ProductTable() {
               {table.getHeaderGroups().map((headerGroup) => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map((header) => (
-                    <th key={header.id} className="py-3 px-4 text-left font-medium">
-                      {flexRender(header.column.columnDef.header, header.getContext())}
+                    <th
+                      key={header.id}
+                      className="py-3 px-4 text-left font-medium"
+                    >
+                      {flexRender(
+                        header.column.columnDef.header,
+                        header.getContext(),
+                      )}
                     </th>
                   ))}
                 </tr>
@@ -1752,7 +1818,10 @@ export default function ProductTable() {
                 <tr key={row.id} className="border-b hover:bg-gray-50">
                   {row.getVisibleCells().map((cell) => (
                     <td key={cell.id} className="py-3 px-4">
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      {flexRender(
+                        cell.column.columnDef.cell,
+                        cell.getContext(),
+                      )}
                     </td>
                   ))}
                 </tr>
@@ -1772,43 +1841,93 @@ export default function ProductTable() {
               <div className="space-y-5">
                 <div>
                   <label className="block text-sm font-medium mb-1">Name</label>
-                  <input type="text" value={editData.name || ""} onChange={(e) => setEditData(p => ({ ...p, name: e.target.value }))} className="w-full border rounded-lg px-4 py-2.5" />
+                  <input
+                    type="text"
+                    value={editData.name || ""}
+                    onChange={(e) =>
+                      setEditData((p) => ({ ...p, name: e.target.value }))
+                    }
+                    className="w-full border rounded-lg px-4 py-2.5"
+                  />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Author</label>
-                  <input type="text" value={editData.author || ""} onChange={(e) => setEditData(p => ({ ...p, author: e.target.value }))} className="w-full border rounded-lg px-4 py-2.5" />
+                  <label className="block text-sm font-medium mb-1">
+                    Author
+                  </label>
+                  <input
+                    type="text"
+                    value={editData.author || ""}
+                    onChange={(e) =>
+                      setEditData((p) => ({ ...p, author: e.target.value }))
+                    }
+                    className="w-full border rounded-lg px-4 py-2.5"
+                  />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Description</label>
+                  <label className="block text-sm font-medium mb-1">
+                    Description
+                  </label>
                   <div className="border rounded-lg">
                     <CKEditor
                       editor={ClassicEditor}
                       data={editData.description || ""}
-                      onChange={(event, editor) => setEditData(p => ({ ...p, description: editor.getData() }))}
+                      onChange={(event, editor) =>
+                        setEditData((p) => ({
+                          ...p,
+                          description: editor.getData(),
+                        }))
+                      }
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-1">Category</label>
-                  <select value={editData.category || ""} onChange={(e) => setEditData(p => ({ ...p, category: e.target.value }))} className="w-full border rounded-lg px-4 py-2.5">
+                  <label className="block text-sm font-medium mb-1">
+                    Category
+                  </label>
+                  <select
+                    value={editData.category || ""}
+                    onChange={(e) =>
+                      setEditData((p) => ({ ...p, category: e.target.value }))
+                    }
+                    className="w-full border rounded-lg px-4 py-2.5"
+                  >
                     <option value="">-- Select Category --</option>
                     {categories.map((cat) => (
-                      <option key={cat._id} value={cat._id}>{cat.name}</option>
+                      <option key={cat._id} value={cat._id}>
+                        {cat.name}
+                      </option>
                     ))}
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2">Images</label>
-                  <input type="file" multiple accept="image/*" onChange={handleFilesChange} className="w-full" />
+                  <label className="block text-sm font-medium mb-2">
+                    Images
+                  </label>
+                  <input
+                    type="file"
+                    multiple
+                    accept="image/*"
+                    onChange={handleFilesChange}
+                    className="w-full"
+                  />
                   <div className="flex flex-wrap gap-3 mt-3">
                     {previewImages.map((img, i) => (
                       <div key={i} className="relative">
-                        <img src={img.url} className="w-24 h-24 object-cover rounded-lg border" alt="" />
-                        <button onClick={() => removePreview(i)} className="absolute -top-2 -right-2 bg-red-500 text-white w-6 h-6 rounded-full text-xs">✕</button>
+                        <img
+                          src={img.url}
+                          className="w-24 h-24 object-cover rounded-lg border"
+                          alt=""
+                        />
+                        <button
+                          onClick={() => removePreview(i)}
+                          className="absolute -top-2 -right-2 bg-red-500 text-white w-6 h-6 rounded-full text-xs"
+                        >
+                          ✕
+                        </button>
                       </div>
                     ))}
                   </div>
@@ -1816,8 +1935,17 @@ export default function ProductTable() {
               </div>
 
               <div className="flex justify-end gap-3 mt-8">
-                <button onClick={() => setIsModalOpen(false)} className="px-6 py-2 border rounded-lg hover:bg-gray-100">Cancel</button>
-                <button onClick={handleUpdate} className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" disabled={loading}>
+                <button
+                  onClick={() => setIsModalOpen(false)}
+                  className="px-6 py-2 border rounded-lg hover:bg-gray-100"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleUpdate}
+                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                  disabled={loading}
+                >
                   {loading ? "Updating..." : "Update Product"}
                 </button>
               </div>
@@ -1832,13 +1960,31 @@ export default function ProductTable() {
           <div className="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col">
             <div className="p-5 border-b flex justify-between items-center bg-white sticky top-0">
               <h2 className="text-2xl font-bold">Live Preview</h2>
-              <button onClick={() => setPreviewModalOpen(false)} className="text-4xl text-gray-400 hover:text-black">×</button>
+              <button
+                onClick={() => setPreviewModalOpen(false)}
+                className="text-4xl text-gray-400 hover:text-black"
+              >
+                ×
+              </button>
             </div>
             <div className="p-6 overflow-y-auto">
-              {previewProduct.thumbnail && <img src={previewProduct.thumbnail} className="w-full h-80 object-cover rounded-2xl mb-6" alt="" />}
+              {previewProduct.thumbnail && (
+                <img
+                  src={previewProduct.thumbnail}
+                  className="w-full h-80 object-cover rounded-2xl mb-6"
+                  alt=""
+                />
+              )}
               <h1 className="text-4xl font-bold mb-4">{previewProduct.name}</h1>
-              <p className="text-xl text-gray-600 mb-6">By {previewProduct.author}</p>
-              <div dangerouslySetInnerHTML={{ __html: previewProduct.description || "" }} className="prose prose-lg" />
+              <p className="text-xl text-gray-600 mb-6">
+                By {previewProduct.author}
+              </p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: previewProduct.description || "",
+                }}
+                className="prose prose-lg"
+              />
             </div>
           </div>
         </div>
@@ -1851,25 +1997,45 @@ export default function ProductTable() {
             <div className="p-6 border-b sticky top-0 bg-white">
               <div className="flex justify-between">
                 <div>
-                  <h2 className="text-xl font-bold">Comments for {activeProductName}</h2>
-                  <p className="text-sm text-gray-500">Total: {activeProductComments.length}</p>
+                  <h2 className="text-xl font-bold">
+                    Comments for {activeProductName}
+                  </h2>
+                  <p className="text-sm text-gray-500">
+                    Total: {activeProductComments.length}
+                  </p>
                 </div>
-                <button onClick={() => setCommentModalOpen(false)} className="text-3xl">×</button>
+                <button
+                  onClick={() => setCommentModalOpen(false)}
+                  className="text-3xl"
+                >
+                  ×
+                </button>
               </div>
             </div>
 
             <div className="p-6 space-y-4">
               {activeProductComments.length === 0 ? (
-                <p className="text-center py-10 text-gray-500">No comments found</p>
+                <p className="text-center py-10 text-gray-500">
+                  No comments found
+                </p>
               ) : (
                 activeProductComments.map((comment) => (
                   <div key={comment._id} className="border rounded-xl p-4">
                     <div className="flex justify-between">
                       <div>
-                        <p className="font-medium">{comment.user?.name || "Anonymous"}</p>
-                        <p className="text-xs text-gray-500">{new Date(comment.createdAt).toLocaleString()}</p>
+                        <p className="font-medium">
+                          {comment.user?.name || "Anonymous"}
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          {new Date(comment.createdAt).toLocaleString()}
+                        </p>
                       </div>
-                      <button onClick={() => handleDeleteComment(comment._id)} className="text-red-600 text-sm">Delete</button>
+                      <button
+                        onClick={() => handleDeleteComment(comment._id)}
+                        className="text-red-600 text-sm"
+                      >
+                        Delete
+                      </button>
                     </div>
                     <p className="mt-3 text-gray-700">{comment.comment}</p>
                   </div>
