@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_BASE_URL = "https://ai-knots-website-xw9f.onrender.com/query"; // change if needed
+const API_BASE_URL = "https://ai-knots-website-1.onrender.com/query"; // change if needed
 
 function QueriesTable() {
   const [queries, setQueries] = useState([]);

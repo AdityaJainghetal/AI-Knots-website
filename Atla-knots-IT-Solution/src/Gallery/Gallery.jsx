@@ -22,7 +22,7 @@ const Gallery = () => {
     const fetchImages = async () => {
       try {
         const response = await fetch(
-          "https://ai-knots-website-xw9f.onrender.com/api/gallery",
+          "https://ai-knots-website-1.onrender.com/api/gallery",
         );
 
         if (!response.ok) {
@@ -114,7 +114,7 @@ const Gallery = () => {
                   src={
                     src.startsWith("http")
                       ? `${src}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`
-                      : `https://ai-knots-website-xw9f.onrender.com${src}?auto=format&fit=crop&w=800&q=80`
+                      : `https://ai-knots-website-1.onrender.com${src}?auto=format&fit=crop&w=800&q=80`
                   }
                   alt={`Gallery image ${index + 1}`}
                   className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"

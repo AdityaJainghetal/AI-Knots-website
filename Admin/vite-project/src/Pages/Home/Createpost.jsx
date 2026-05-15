@@ -15,7 +15,7 @@
 //     const fetchCategories = async () => {
 //       try {
 //         setFetchingCategories(true);
-//         const response = await fetch("https://ai-knots-website-xw9f.onrender.com/api/blogcategory");
+//         const response = await fetch("https://ai-knots-website-1.onrender.com/api/blogcategory");
 
 //         if (!response.ok) {
 //           throw new Error("Failed to load categories");
@@ -220,7 +220,7 @@
 //     const fetchCategories = async () => {
 //       try {
 //         setFetchingCategories(true);
-//         const response = await fetch("https://ai-knots-website-xw9f.onrender.com/api/blogcategory");
+//         const response = await fetch("https://ai-knots-website-1.onrender.com/api/blogcategory");
 
 //         if (!response.ok) {
 //           throw new Error("Failed to load categories");
@@ -471,7 +471,7 @@ const CreateProduct = () => {
       try {
         setFetchingCategories(true);
         const response = await fetch(
-          "https://ai-knots-website-xw9f.onrender.com/api/blogcategory",
+          "https://ai-knots-website-1.onrender.com/api/blogcategory",
         );
 
         if (!response.ok) {

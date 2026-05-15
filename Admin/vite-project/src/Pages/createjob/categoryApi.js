@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://ai-knots-website-xw9f.onrender.com/category/jobapply",
+  baseURL: "https://ai-knots-website-1.onrender.com/category/jobapply",
 });
 
 // CREATE

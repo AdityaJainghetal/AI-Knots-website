@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Base URL from environment variables
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "https://ai-knots-website-xw9f.onrender.com";
+  import.meta.env.VITE_API_URL || "https://ai-knots-website-1.onrender.com";
 
 // Optional: Create an axios instance with baseURL (recommended)
 const api = axios.create({

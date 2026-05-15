@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://ai-knots-website-xw9f.onrender.com/api/product";
+const API_URL = "https://ai-knots-website-1.onrender.com/api/product";
 
 export const createProductApi = (formData) => {
   return axios.post(API_URL, formData);
@@ -8,7 +8,7 @@ export const createProductApi = (formData) => {
 
 export const updateHomeApi = (id, data) => {
   return axios.put(
-    `https://ai-knots-website-xw9f.onrender.com/api/product/${id}`,
+    `https://ai-knots-website-1.onrender.com/api/product/${id}`,
     data,
   );
 };

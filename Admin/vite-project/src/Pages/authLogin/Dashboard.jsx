@@ -58,19 +58,19 @@
 //           techCategoriesRes,
 //         ] = await Promise.all([
 //           axios
-//             .get("https://ai-knots-website-xw9f.onrender.com/api/users")
+//             .get("https://ai-knots-website-1.onrender.com/api/users")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("https://ai-knots-website-xw9f.onrender.com/query")
+//             .get("https://ai-knots-website-1.onrender.com/query")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("https://ai-knots-website-xw9f.onrender.com/api/contact")
+//             .get("https://ai-knots-website-1.onrender.com/api/contact")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("https://ai-knots-website-xw9f.onrender.com/api/technology/product")
+//             .get("https://ai-knots-website-1.onrender.com/api/technology/product")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("https://ai-knots-website-xw9f.onrender.com/api/technology/category")
+//             .get("https://ai-knots-website-1.onrender.com/api/technology/category")
 //             .catch(() => ({ data: null })),
 //         ]);
 
@@ -651,27 +651,27 @@ const Dashboard = () => {
           blogsRes,
         ] = await Promise.all([
           axios
-            .get("https://ai-knots-website-xw9f.onrender.com/api/users")
+            .get("https://ai-knots-website-1.onrender.com/api/users")
             .catch(() => ({ data: null })),
           axios
-            .get("https://ai-knots-website-xw9f.onrender.com/query")
+            .get("https://ai-knots-website-1.onrender.com/query")
             .catch(() => ({ data: null })),
           axios
-            .get("https://ai-knots-website-xw9f.onrender.com/api/contact")
+            .get("https://ai-knots-website-1.onrender.com/api/contact")
             .catch(() => ({ data: null })),
           axios
             .get(
-              "https://ai-knots-website-xw9f.onrender.com/api/technology/product",
+              "https://ai-knots-website-1.onrender.com/api/technology/product",
             )
             .catch(() => ({ data: null })),
           axios
             .get(
-              "https://ai-knots-website-xw9f.onrender.com/api/technology/category",
+              "https://ai-knots-website-1.onrender.com/api/technology/category",
             )
             .catch(() => ({ data: null })),
           axios
             .get(
-              "https://ai-knots-website-xw9f.onrender.com/api/product/alladminproducts",
+              "https://ai-knots-website-1.onrender.com/api/product/alladminproducts",
             )
             .catch(() => ({ data: null })), // Blog API
         ]);
