@@ -32,8 +32,6 @@
 //         pass: process.env.EMAIL_PASS,
 //       },
 //     });
-    
-    
 
 //     // Mail options
 //     const mailOptions = {
@@ -106,10 +104,6 @@
 //   getQueryModuleMessages,
 //   deleteQueryModuleMessage,
 // };
-
-
-// const Query = require("../Model/QueryModel.js");
-
 
 const transporter = require("../config/mail.js");
 const Query = require("../../module/querymodule/querymodule");
