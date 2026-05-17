@@ -124,16 +124,16 @@ const platforms = [
 
 const faqs = [
   {
-    q: "What services does AI Knotss provide?",
+    q: "What services does AI Knots IT Solution provide?",
     a: "We offer software development, website development, mobile apps, and full digital marketing (SEO, SEM, SMM, content).",
   },
   {
-    q: "Is there any other brand owned by AI Knotss?",
+    q: "Is there any other brand owned by AI Knots IT Solution?",
     a: "No, we operate as a single focused brand delivering quality IT services.",
   },
   {
     q: "Where is the company situated?",
-    a: "AI Knotss is based in India. Contact us for full details.",
+    a: "AI Knots IT Solution is based in India. Contact us for full details.",
   },
   {
     q: "Where do you provide services?",
@@ -144,7 +144,7 @@ const faqs = [
     a: "Via NEFT/IMPS or cheque. Details shared during project onboarding.",
   },
   {
-    q: "When was AI Knotss established?",
+    q: "When was AI Knots IT Solution established?",
     a: "[Add your actual year here]",
   },
   {
@@ -250,8 +250,11 @@ export default function EcommerceDevelopment() {
                 isDark ? "text-gray-200" : "text-gray-200"
               }`}
             >
-              At <span className="text-red-400 font-semibold">AI Knotss</span>,
-              we craft fast, secure, scalable, and fully customized eCommerce
+              At{" "}
+              <span className="text-red-400 font-semibold">
+                AI Knots IT Solution
+              </span>
+              , we craft fast, secure, scalable, and fully customized eCommerce
               websites & software that drive real sales growth.
             </motion.p>
 

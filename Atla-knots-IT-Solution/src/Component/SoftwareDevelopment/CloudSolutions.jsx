@@ -225,7 +225,7 @@ export default function CloudSolutions() {
             >
               At{" "}
               <span className="text-red-500 dark:text-red-400 font-semibold">
-                AI Knotss
+                AI Knots IT Solution
               </span>
               , we deliver fast, secure, and scalable cloud infrastructure
               tailored for Indian startups, enterprises, and regulated sectors.
