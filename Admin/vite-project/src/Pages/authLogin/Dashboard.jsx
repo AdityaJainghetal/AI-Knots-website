@@ -58,19 +58,19 @@
 //           techCategoriesRes,
 //         ] = await Promise.all([
 //           axios
-//             .get("http://localhost:8000/api/users")
+//             .get("https://ai-knots-website-2.onrender.com/api/users")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/query")
+//             .get("https://ai-knots-website-2.onrender.com/query")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/contact")
+//             .get("https://ai-knots-website-2.onrender.com/api/contact")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/technology/product")
+//             .get("https://ai-knots-website-2.onrender.com/api/technology/product")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/technology/category")
+//             .get("https://ai-knots-website-2.onrender.com/api/technology/category")
 //             .catch(() => ({ data: null })),
 //         ]);
 
@@ -651,22 +651,28 @@ const Dashboard = () => {
           blogsRes,
         ] = await Promise.all([
           axios
-            .get("http://localhost:8000/api/users")
+            .get("https://ai-knots-website-2.onrender.com/api/users")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/query")
+            .get("https://ai-knots-website-2.onrender.com/query")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/contact")
+            .get("https://ai-knots-website-2.onrender.com/api/contact")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/technology/product")
+            .get(
+              "https://ai-knots-website-2.onrender.com/api/technology/product",
+            )
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/technology/category")
+            .get(
+              "https://ai-knots-website-2.onrender.com/api/technology/category",
+            )
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/product/alladminproducts")
+            .get(
+              "https://ai-knots-website-2.onrender.com/api/product/alladminproducts",
+            )
             .catch(() => ({ data: null })), // Blog API
         ]);
 

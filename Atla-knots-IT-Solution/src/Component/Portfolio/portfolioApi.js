@@ -2,7 +2,8 @@
 import axios from "axios";
 
 // Base URL from environment variables
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "https://ai-knots-website-2.onrender.com";
 
 // Optional: Create an axios instance with baseURL (recommended)
 const api = axios.create({
