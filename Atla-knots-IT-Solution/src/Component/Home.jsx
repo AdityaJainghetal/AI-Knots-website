@@ -324,7 +324,7 @@ export default function Home() {
                 variants={fadeInUp}
                 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-white"
               >
-                AI Knots
+                AI KNOTS
                 <br />
                 <span
                   className={
@@ -1054,13 +1054,13 @@ export default function Home() {
                     on IT Services & Business Solutions
                   </h2>
                   <p className="text-base md:text-lg lg:text-xl text-red-600 font-medium mb-4 md:mb-5">
-                    Grow Your Business with AI Knots IT Solution
+                    Grow Your Business with AI KNOTS IT Solution
                   </p>
 
                   <div className="relative flex justify-center my-5">
                     <img
                       src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070"
-                      alt="AI Knots IT Services"
+                      alt="AI KNOTS IT Services"
                       className="w-40 md:w-56 lg:w-72 rounded-3xl shadow-2xl object-cover"
                     />
 
@@ -1069,7 +1069,7 @@ export default function Home() {
                         ★ Top Rated
                       </p>
                       <p className="font-bold text-gray-900 dark:text-white text-xs mt-1">
-                        AI Knots
+                        AI KNOTS IT Solution
                       </p>
                     </div>
 
