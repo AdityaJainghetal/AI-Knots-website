@@ -63,15 +63,14 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api", homeRoutes);
+
 app.use("/api/contact", contactRoutes);
-app.use("/contact", contactRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/blogcategory", blogRoutes);
 app.use("/api/technology/category", techcategoryRoute);
 app.use("/api/technology/product", technologyRoute);
 app.use("/tech", techRoutes);
 app.use("/api/gallery", galleryRoutes);
-app.use("/query", queryRoutes);
 app.use("/api/query", queryRoutes);
 
 app.use("/portfolio", portfolioRoutes);

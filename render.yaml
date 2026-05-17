@@ -1,0 +1,51 @@
+services:
+  - type: web
+    name: ai-knots-backend
+    runtime: node
+    rootDir: Server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        value: mongodb+srv://atlaknotssolutions_db_user:sNBxwsJSDUfA5a6A@cluster0.cxstie1.mongodb.net/?appName=Cluster0
+      - key: PORT
+        value: 8000
+      - key: EMAIL_HOST
+        value: smtpout.secureserver.net
+      - key: EMAIL_PORT
+        value: 465
+      - key: EMAIL_USER
+        value: admin@atlaknots.com
+      - key: ADMIN_EMAIL
+        value: admin@atlaknots.com
+      - key: EMAIL_PASS
+        value: Haider@1604*$@
+      - key: IMAGEKIT_PUBLIC_KEY
+        value: public_s7WKCsIviF1piacBUBEaZNKXP6s=
+      - key: IMAGEKIT_PRIVATE_KEY
+        value: private_nEkd2XhGwCC7qFo4cZ3qSxRx5s0=
+      - key: IMAGEKIT_URL_ENDPOINT
+        value: https://ik.imagekit.io/AdityaJain
+      - key: RECAPTCHA_SECRET_KEY
+        value: 6Ld4F-ssAAAAAGdPzJxWpcROuNB0hyagIK80XBAs
+      - key: CLOUDINARY_NAME
+        value: dqs9qra7x
+      - key: CLOUDINARY_API_KEY
+        value: 784923788199544
+      - key: CLOUDINARY_SECRET_KEY
+        value: VqY9ndrtno9lJEc811HW8Y7Lppc
+
+  - type: web
+    name: ai-knots-frontend
+    runtime: node
+    rootDir: Atla-knots-IT-Solution
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: ai-knots-backend
+          property: url
+      - key: VITE_RECAPTCHA_SITE_KEY
+        value: 6Ld4F-ssAAAAAKFd5nzMJ74Pca0K0z3XCv0yVN9M
