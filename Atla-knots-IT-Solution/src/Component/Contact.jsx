@@ -345,8 +345,8 @@ const Contact = () => {
                       <div className="grid sm:grid-cols-2 gap-5">
                         <input
                           type="text"
-                          name="usernamee"
-                          value={formData.usernamee}
+                          name="username"
+                          value={formData.username}
                           onChange={handleChange}
                           placeholder="Your Name"
                           required

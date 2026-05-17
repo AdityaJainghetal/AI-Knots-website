@@ -15,10 +15,10 @@
 
 // const createContactMessage = async (req, res) => {
 //   try {
-//     const { usernamee, email, phone, subject, message, captcha } = req.body;
+//     const { username, email, phone, subject, message, captcha } = req.body;
 
 //     // ✅ required fields
-//     // if (!usernamee || !email || !phone || !subject || !message) {
+//     // if (!username || !email || !phone || !subject || !message) {
 //     //   return res.status(400).json({
 //     //     success: false,
 //     //     message: "All fields are required",
@@ -55,7 +55,7 @@
 
 //     // ✅ save to DB
 //     const contact = await Contact.create({
-//       usernamee,
+//       username,
 //       email,
 //       phone,
 //       subject,
@@ -69,7 +69,7 @@
 //       subject: `New Contact Message: ${subject}`,
 //       html: `
 //       <h2>New Contact Enquiry</h2>
-//       <p><b>Name:</b> ${usernamee}</p>
+//       <p><b>Name:</b> ${username}</p>
 //       <p><b>Email:</b> ${email}</p>
 //       <p><b>Phone:</b> ${phone}</p>
 //       <p><b>Subject:</b> ${subject}</p>
@@ -83,7 +83,7 @@
 //       to: email,
 //       subject: `We received your message`,
 //       html: `
-//       <h2>Thank you ${usernamee}</h2>
+//       <h2>Thank you ${username}</h2>
 //       <p>Your message has been received.</p>
 //       <p>We will contact you soon.</p>
 //       <hr/>
@@ -144,7 +144,6 @@
 //   deleteContactMessage,
 // };
 
-
 const Contact = require("../../module/contactmodule/contactmodule");
 const nodemailer = require("nodemailer");
 const axios = require("axios");
@@ -162,13 +161,14 @@ const transporter = nodemailer.createTransport({
 
 exports.createContactMessage = async (req, res) => {
   try {
-    const { usernamee, email, phone, subject, message, captcha } = req.body;
+    const { username, email, phone, subject, message, captcha } = req.body;
 
     // ✅ Validation
-    if (!usernamee || !email || !phone || !subject || !message) {
+    if (!username || !email || !phone || !subject || !message) {
       return res.status(400).json({
         success: false,
-        message: "All fields are required (usernamee, email, phone, subject, message)",
+        message:
+          "All fields are required (username, email, phone, subject, message)",
       });
     }
 
@@ -189,7 +189,7 @@ exports.createContactMessage = async (req, res) => {
           response: captcha,
           remoteip: req.ip,
         },
-      }
+      },
     );
 
     if (!verificationResponse.data.success) {
@@ -201,7 +201,7 @@ exports.createContactMessage = async (req, res) => {
 
     // ✅ Save to Database
     const contact = await Contact.create({
-      usernamee,
+      username,
       email,
       phone,
       subject,
@@ -215,7 +215,7 @@ exports.createContactMessage = async (req, res) => {
       subject: `New Contact: ${subject}`,
       html: `
         <h2>New Contact Enquiry</h2>
-        <p><b>Name:</b> ${usernamee}</p>
+        <p><b>Name:</b> ${username}</p>
         <p><b>Email:</b> ${email}</p>
         <p><b>Phone:</b> ${phone}</p>
         <p><b>Subject:</b> ${subject}</p>
@@ -231,7 +231,7 @@ exports.createContactMessage = async (req, res) => {
       to: email,
       subject: "Thank you for contacting us - AI Knots",
       html: `
-        <h2>Thank you ${usernamee}!</h2>
+        <h2>Thank you ${username}!</h2>
         <p>We have received your message and will get back to you soon.</p>
         <hr/>
         <p><b>Your Message:</b></p>
@@ -246,7 +246,6 @@ exports.createContactMessage = async (req, res) => {
       message: "Message sent successfully",
       data: contact,
     });
-
   } catch (error) {
     console.error("Contact Error:", error);
     return res.status(500).json({

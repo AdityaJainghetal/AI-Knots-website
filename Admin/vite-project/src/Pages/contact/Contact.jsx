@@ -6,10 +6,10 @@ import DataTable from "react-data-table-component";
 const columns = [
   {
     name: "Name",
-    selector: (row) => row.usernamee,
+    selector: (row) => row.username,
     sortable: true,
     cell: (row) => (
-      <div className="font-medium text-gray-900">{row.usernamee}</div>
+      <div className="font-medium text-gray-900">{row.username}</div>
     ),
   },
   {
@@ -163,9 +163,7 @@ const Contact = () => {
 
   const filteredItems = rowsWithDelete.filter(
     (item) =>
-      (item.usernamee?.toLowerCase() || "").includes(
-        filterText.toLowerCase(),
-      ) ||
+      (item.username?.toLowerCase() || "").includes(filterText.toLowerCase()) ||
       (item.email?.toLowerCase() || "").includes(filterText.toLowerCase()) ||
       (item.phone?.toLowerCase() || "").includes(filterText.toLowerCase()) ||
       (item.message?.toLowerCase() || "").includes(filterText.toLowerCase()),
