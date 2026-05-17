@@ -7,7 +7,9 @@ export const submitContactForm = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       const apiBase = import.meta.env.VITE_API_URL || "";
-      const response = await axios.post(`${apiBase}/query/create`, payload);
+      const apiUrl = `${apiBase}/api/query/create`;
+      console.log("Query submit payload:", payload, "apiUrl:", apiUrl);
+      const response = await axios.post(apiUrl, payload);
       return response.data;
     } catch (error) {
       let errorMsg = "Something went wrong. Please try again.";
