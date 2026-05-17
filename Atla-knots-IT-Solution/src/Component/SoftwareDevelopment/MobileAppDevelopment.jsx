@@ -187,10 +187,10 @@ export default function MobileAppDevelopment() {
                 variants={fadeInUp}
                 className="text-lg md:text-xl leading-relaxed mb-12 max-w-4xl mx-auto text-gray-200 dark:text-gray-300"
               >
-                At Atlas Knots IT Solution, we transform innovative ideas into
-                powerful, user-friendly mobile applications. Our expert team in
-                Bhopal delivers high-performance Android, iOS, and
-                cross-platform apps that drive real business growth.
+                At AI Knots, we transform innovative ideas into powerful,
+                user-friendly mobile applications. Our expert team in Bhopal
+                delivers high-performance Android, iOS, and cross-platform apps
+                that drive real business growth.
               </motion.p>
 
               <motion.div
@@ -271,7 +271,7 @@ export default function MobileAppDevelopment() {
                               ? images.ios
                               : images.hybrid
                         }
-                        alt={`${service.title} - Atlas Knots IT Solution`}
+                        alt={`${service.title} - AI Knots`}
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
@@ -478,7 +478,7 @@ export default function MobileAppDevelopment() {
             <div className="max-w-5xl mx-auto text-center">
               <motion.img
                 src={images.team}
-                alt="Experienced mobile app development team at Atlas Knots IT Solution in Bhopal"
+                alt="Experienced mobile app development team at AI Knots in Bhopal"
                 className="rounded-3xl mx-auto mb-12 shadow-2xl border border-red-900/30 max-w-4xl w-full object-cover"
                 loading="lazy"
               />

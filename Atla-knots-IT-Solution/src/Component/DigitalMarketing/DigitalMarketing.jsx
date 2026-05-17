@@ -414,10 +414,9 @@ export default function DigitalMarketing() {
               viewport={{ once: true }}
               className={`text-lg md:text-xl max-w-5xl mx-auto leading-relaxed text-center mb-16 ${isDark ? "text-gray-300" : "text-gray-700"}`}
             >
-              At Atlas Knots IT Solution, we create customized digital marketing
-              strategies that help businesses strengthen their brand presence,
-              manage campaigns smoothly, and build long-term engagement with
-              customers.
+              At AI Knots, we create customized digital marketing strategies
+              that help businesses strengthen their brand presence, manage
+              campaigns smoothly, and build long-term engagement with customers.
               <br />
               <br />
               As a trusted digital marketing company in India, we understand

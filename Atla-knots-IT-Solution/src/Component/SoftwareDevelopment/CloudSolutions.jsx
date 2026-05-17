@@ -167,98 +167,102 @@ export default function CloudSolutions() {
         {/* Theme Toggle */}
 
         {/* Hero Section */}
-       <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <img
-      src={images.hero}
-      alt="Modern cloud dashboard"
-      className="w-full h-full object-cover 
+        <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img
+              src={images.hero}
+              alt="Modern cloud dashboard"
+              className="w-full h-full object-cover 
                  brightness-75 contrast-110 
                  dark:brightness-50 dark:contrast-125
                  transition-all duration-700"
-      loading="lazy"
-    />
+              loading="lazy"
+            />
 
-    {/* Gradient Overlay - Optimized for both themes */}
-    <div className="absolute inset-0 bg-gradient-to-b 
+            {/* Gradient Overlay - Optimized for both themes */}
+            <div
+              className="absolute inset-0 bg-gradient-to-b 
                     from-black/70 via-black/60 to-black/80 
-                    dark:from-black/85 dark:via-black/75 dark:to-black/90" />
-    
-    {/* Optional subtle light mode tint */}
-    <div className="absolute inset-0 bg-gradient-to-t 
+                    dark:from-black/85 dark:via-black/75 dark:to-black/90"
+            />
+
+            {/* Optional subtle light mode tint */}
+            <div
+              className="absolute inset-0 bg-gradient-to-t 
                     from-white/10 to-transparent 
-                    dark:hidden" />
-  </div>
+                    dark:hidden"
+            />
+          </div>
 
-  {/* Content */}
-  <motion.div
-    initial="hidden"
-    animate="visible"
-    variants={staggerContainer}
-    className="relative z-10 max-w-7xl mx-auto text-center"
-  >
-    <motion.h1
-      variants={fadeInUp}
-      className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight text-white"
-    >
-      Empowering Indian Businesses with{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
-        Smart Cloud Solutions
-      </span>
-    </motion.h1>
+          {/* Content */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="relative z-10 max-w-7xl mx-auto text-center"
+          >
+            <motion.h1
+              variants={fadeInUp}
+              className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight text-white"
+            >
+              Empowering Indian Businesses with{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
+                Smart Cloud Solutions
+              </span>
+            </motion.h1>
 
-    <motion.p
-      variants={fadeInUp}
-      className="text-2xl md:text-4xl font-bold text-red-500 dark:text-red-400 mb-8"
-    >
-      Scale Securely, Save Costs, Grow Limitlessly
-    </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-2xl md:text-4xl font-bold text-red-500 dark:text-red-400 mb-8"
+            >
+              Scale Securely, Save Costs, Grow Limitlessly
+            </motion.p>
 
-    <motion.p
-      variants={fadeInUp}
-      className="text-lg md:text-xl text-gray-200 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
-    >
-      At{" "}
-      <span className="text-red-500 dark:text-red-400 font-semibold">
-        Atlas Knots IT Solutions
-      </span>
-      , we deliver fast, secure, and scalable cloud infrastructure
-      tailored for Indian startups, enterprises, and regulated sectors.
-    </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-gray-200 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+            >
+              At{" "}
+              <span className="text-red-500 dark:text-red-400 font-semibold">
+                AI Knotss
+              </span>
+              , we deliver fast, secure, and scalable cloud infrastructure
+              tailored for Indian startups, enterprises, and regulated sectors.
+            </motion.p>
 
-    <motion.ul
-      variants={fadeInUp}
-      className="flex flex-wrap justify-center gap-6 mb-12 text-lg text-gray-200 dark:text-gray-300"
-    >
-      {[
-        "Advanced data protection",
-        "Pay-as-you-go savings",
-        "Seamless scaling",
-        "Full compliance support",
-      ].map((item) => (
-        <li key={item} className="flex items-center gap-2">
-          <CheckCircle2 className="w-6 h-6 text-red-500 dark:text-red-400" />{" "}
-          {item}
-        </li>
-      ))}
-    </motion.ul>
+            <motion.ul
+              variants={fadeInUp}
+              className="flex flex-wrap justify-center gap-6 mb-12 text-lg text-gray-200 dark:text-gray-300"
+            >
+              {[
+                "Advanced data protection",
+                "Pay-as-you-go savings",
+                "Seamless scaling",
+                "Full compliance support",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-red-500 dark:text-red-400" />{" "}
+                  {item}
+                </li>
+              ))}
+            </motion.ul>
 
-    <motion.div
-      variants={fadeInUp}
-      className="flex flex-col sm:flex-row gap-6 justify-center"
-    >
-      <button
-        onClick={() => navigate("/contact")}
-        className="px-12 py-6 border-2 border-red-500 text-white font-bold rounded-full text-xl md:text-2xl 
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+            >
+              <button
+                onClick={() => navigate("/contact")}
+                className="px-12 py-6 border-2 border-red-500 text-white font-bold rounded-full text-xl md:text-2xl 
                    hover:bg-red-600 hover:border-red-600 transition-all duration-300
                    dark:hover:bg-red-700"
-      >
-        Free Consultation
-      </button>
-    </motion.div>
-  </motion.div>
-</section>
+              >
+                Free Consultation
+              </button>
+            </motion.div>
+          </motion.div>
+        </section>
 
         {/* Why Cloud */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-black/50">

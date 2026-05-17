@@ -124,16 +124,16 @@ const platforms = [
 
 const faqs = [
   {
-    q: "What services does Atlas Knots IT Solutions provide?",
+    q: "What services does AI Knotss provide?",
     a: "We offer software development, website development, mobile apps, and full digital marketing (SEO, SEM, SMM, content).",
   },
   {
-    q: "Is there any other brand owned by Atlas Knots IT Solutions?",
+    q: "Is there any other brand owned by AI Knotss?",
     a: "No, we operate as a single focused brand delivering quality IT services.",
   },
   {
     q: "Where is the company situated?",
-    a: "Atlas Knots IT Solutions is based in India. Contact us for full details.",
+    a: "AI Knotss is based in India. Contact us for full details.",
   },
   {
     q: "Where do you provide services?",
@@ -144,7 +144,7 @@ const faqs = [
     a: "Via NEFT/IMPS or cheque. Details shared during project onboarding.",
   },
   {
-    q: "When was Atlas Knots IT Solutions established?",
+    q: "When was AI Knotss established?",
     a: "[Add your actual year here]",
   },
   {
@@ -198,83 +198,80 @@ export default function EcommerceDevelopment() {
       >
         {/* Hero */}
         {/* Hero Section - Balanced Overlay */}
-<section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
-  <div className="absolute inset-0">
-    <img
-      src={images.hero}
-      alt="Modern ecommerce dashboard"
-      className="w-full h-full object-cover"
-      loading="lazy"
-    />
-    
-    {/* Improved Overlay - Less Dark in Dark Mode */}
-    <div
-      className={`absolute inset-0 transition-all duration-700 ${
-        isDark 
-          ? "bg-gradient-to-b from-black/70 via-black/80 to-black/85"   // ← Reduced darkness
-          : "bg-gradient-to-b from-black/75 via-black/85 to-black/90"
-      }`}
-    />
-  </div>
+        <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={images.hero}
+              alt="Modern ecommerce dashboard"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
 
-  <motion.div
-    initial="hidden"
-    animate="visible"
-    variants={staggerContainer}
-    className="relative z-10 max-w-7xl mx-auto text-center"
-  >
-    <motion.h1
-      variants={fadeInUp}
-      className={`text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight ${
-        isDark ? "text-white" : "text-gray-200"
-      }`}
-    >
-      Build High-Converting{" "}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
-        E-Commerce Stores
-      </span>
-    </motion.h1>
+            {/* Improved Overlay - Less Dark in Dark Mode */}
+            <div
+              className={`absolute inset-0 transition-all duration-700 ${
+                isDark
+                  ? "bg-gradient-to-b from-black/70 via-black/80 to-black/85" // ← Reduced darkness
+                  : "bg-gradient-to-b from-black/75 via-black/85 to-black/90"
+              }`}
+            />
+          </div>
 
-    <motion.p
-      variants={fadeInUp}
-      className={`text-2xl md:text-4xl font-bold mb-8 ${
-        isDark ? "text-red-400" : "text-red-600"
-      }`}
-    >
-      Don't Settle for Average — Convert Visitors to Customers
-    </motion.p>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="relative z-10 max-w-7xl mx-auto text-center"
+          >
+            <motion.h1
+              variants={fadeInUp}
+              className={`text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight ${
+                isDark ? "text-white" : "text-gray-200"
+              }`}
+            >
+              Build High-Converting{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
+                E-Commerce Stores
+              </span>
+            </motion.h1>
 
-    <motion.p
-      variants={fadeInUp}
-      className={`text-lg md:text-xl mb-12 max-w-4xl mx-auto leading-relaxed ${
-        isDark ? "text-gray-200" : "text-gray-200"
-      }`}
-    >
-      At{" "}
-      <span className="text-red-400 font-semibold">
-        Atlas Knots IT Solutions
-      </span>
-      , we craft fast, secure, scalable, and fully customized eCommerce
-      websites & software that drive real sales growth.
-    </motion.p>
+            <motion.p
+              variants={fadeInUp}
+              className={`text-2xl md:text-4xl font-bold mb-8 ${
+                isDark ? "text-red-400" : "text-red-600"
+              }`}
+            >
+              Don't Settle for Average — Convert Visitors to Customers
+            </motion.p>
 
-    <motion.ul
-      variants={fadeInUp}
-      className="flex flex-wrap justify-center gap-6 mb-12 text-lg text-white font-bold"
-    >
-      {[
-        "Conversion-driven design",
-        "Advanced integrations",
-        "Omnichannel experience",
-        "100% customized",
-      ].map((item) => (
-        <li key={item} className="flex items-center gap-2">
-          <CheckCircle2 className="w-6 h-6 text-red-500" /> {item}
-        </li>
-      ))}
-    </motion.ul>
-  </motion.div>
-</section>
+            <motion.p
+              variants={fadeInUp}
+              className={`text-lg md:text-xl mb-12 max-w-4xl mx-auto leading-relaxed ${
+                isDark ? "text-gray-200" : "text-gray-200"
+              }`}
+            >
+              At <span className="text-red-400 font-semibold">AI Knotss</span>,
+              we craft fast, secure, scalable, and fully customized eCommerce
+              websites & software that drive real sales growth.
+            </motion.p>
+
+            <motion.ul
+              variants={fadeInUp}
+              className="flex flex-wrap justify-center gap-6 mb-12 text-lg text-white font-bold"
+            >
+              {[
+                "Conversion-driven design",
+                "Advanced integrations",
+                "Omnichannel experience",
+                "100% customized",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-6 h-6 text-red-500" /> {item}
+                </li>
+              ))}
+            </motion.ul>
+          </motion.div>
+        </section>
         {/* Platforms */}
         <section
           className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-black/50" : "bg-white/50"}`}
@@ -370,7 +367,7 @@ export default function EcommerceDevelopment() {
               Our Recent{" "}
               <span className="text-red-500">E-Commerce Projects</span>
             </motion.h2>
-          
+
             <motion.img
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -466,14 +463,15 @@ export default function EcommerceDevelopment() {
               whileTap={{ scale: 0.98 }}
               className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all"
             >
-              <button onClick={() => navigate("/contact")} className="flex items-center gap-3">
+              <button
+                onClick={() => navigate("/contact")}
+                className="flex items-center gap-3"
+              >
                 Get Started Today →
               </button>
             </motion.button>
           </div>
         </section>
-
-        
       </div>
     </>
   );

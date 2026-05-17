@@ -55,7 +55,7 @@
 //           </motion.h1>
 
 //           <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed">
-//             At <span className="text-red-400 font-semibold">Atlas Knots IT Solution</span>, we focus on real business growth — more qualified traffic, inquiries, calls, and sales — not just rankings.
+//             At <span className="text-red-400 font-semibold">AI Knots</span>, we focus on real business growth — more qualified traffic, inquiries, calls, and sales — not just rankings.
 //           </motion.p>
 
 //           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -285,7 +285,7 @@
 //           </motion.h1>
 
 //           <motion.p variants={fadeInUp} className="text-xl md:text-2xl text-gray-300 mb-12 max-w-5xl mx-auto leading-relaxed">
-//             At Atlas Knots IT Solution, we are not just another digital marketing agency using complicated marketing words. We are a team that truly understands how search engines work and how businesses grow online.
+//             At AI Knots, we are not just another digital marketing agency using complicated marketing words. We are a team that truly understands how search engines work and how businesses grow online.
 //           </motion.p>
 
 //           <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -396,7 +396,7 @@
 //           />
 
 //           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="order-1 md:order-2">
-//             <h2 className="text-4xl md:text-5xl font-black mb-8">Why Choose Atlas Knots IT Solution for SEO?</h2>
+//             <h2 className="text-4xl md:text-5xl font-black mb-8">Why Choose AI Knots for SEO?</h2>
 //             <div className="space-y-8">
 //               {[
 //                 { title: "White Hat SEO Practices", desc: "We follow ethical and search-engine-approved techniques that deliver long-term results." },
@@ -485,7 +485,7 @@
 //             </p>
 
 //             <p className="text-lg text-gray-300 mb-12">
-//               At Atlas Knots IT Solution, we focus on attracting the right visitors who convert into leads and sales. Connect with us today and start growing your business online.
+//               At AI Knots, we focus on attracting the right visitors who convert into leads and sales. Connect with us today and start growing your business online.
 //             </p>
 
 //             <motion.button
