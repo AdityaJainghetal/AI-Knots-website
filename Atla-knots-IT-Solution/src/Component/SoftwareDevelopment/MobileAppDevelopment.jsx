@@ -24,7 +24,7 @@ const services = [
     desc: "We harness the full power of the Android ecosystem using Kotlin and Java to create fast, secure, and feature-rich applications. Our expert team focuses on modern Material Design, offline capabilities, push notifications, and seamless integration with Google services.",
   },
   {
-    title: "iOS Application Development",
+    title: "IOS Application Development",
     desc: "We develop premium native iOS applications using Swift and SwiftUI for iPhone, iPad, and Apple Watch. Our apps are optimized for the latest iOS versions with beautiful interfaces and flawless performance.",
   },
   {
@@ -263,18 +263,7 @@ export default function MobileAppDevelopment() {
                     ${isDark ? "bg-gray-950 border-red-900/50 hover:border-red-600" : "bg-white border-gray-200 hover:border-red-400 shadow-lg"}`}
                   >
                     <div className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity duration-500">
-                      <img
-                        src={
-                          idx === 0
-                            ? images.android
-                            : idx === 1
-                              ? images.ios
-                              : images.hybrid
-                        }
-                        alt={`${service.title} - AI Knots`}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
+                    
                     </div>
                     <div className="relative z-10">
                       <h3

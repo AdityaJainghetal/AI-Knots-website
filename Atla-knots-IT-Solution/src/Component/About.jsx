@@ -502,8 +502,6 @@ export default function About() {
             />
           </div>
 
-         
-
           <div
             className={`absolute inset-0 z-20 ${isDark ? "bg-gradient-to-br from-red-950/40 via-black/60 to-black/80" : "bg-gradient-to-br from-red-50/70 via-white/60 to-white/80"}`}
           />
@@ -550,7 +548,51 @@ export default function About() {
             </motion.p>
 
             {/* Image Blocks */}
-          
+            {/* Mission & Vision - Side by Side */}
+<motion.div
+  variants={staggerContainer}
+  className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16 px-4"
+>
+  {/* Mission - Left Side */}
+  <motion.div
+    variants={fadeInUp}
+    className={`group p-8 rounded-3xl border backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] ${
+      isDark 
+        ? "bg-gray-900/80 border-red-900/30 hover:border-red-700" 
+        : "bg-white/90 border-red-200 hover:border-red-600"
+    }`}
+  >
+    <div className="flex items-center gap-4 mb-6">
+      
+      <h3 className={`text-3xl section-title font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+        Our Mission
+      </h3>
+    </div>
+    <p className={`text-lg leading-relaxed ${subText}`}>
+      Our mission is to deliver high-quality website development, software solutions, SEO, digital marketing, and IT services that help businesses build a strong online presence, improve efficiency, and achieve their goals through smart, reliable, and result-driven technology solutions.
+    </p>
+  </motion.div>
+
+  {/* Vision - Right Side */}
+  <motion.div
+    variants={fadeInUp}
+    className={`group p-8 rounded-3xl border backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] ${
+      isDark 
+        ? "bg-gray-900/80 border-red-900/30 hover:border-red-700" 
+        : "bg-white/90 border-red-200 hover:border-red-600"
+    }`}
+  >
+    <div className="flex items-center gap-4 mb-6">
+      
+      <h3 className={`text-3xl font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+        Our Vision
+      </h3>
+    </div>
+    <p className={`text-lg leading-relaxed ${subText}`}>
+      To become a leading digital solutions company that empowers businesses with innovative technology, creative strategies, and future-ready digital experiences that drive long-term growth and success.
+    </p>
+  </motion.div>
+</motion.div>
 
             {/* Contact Modal */}
             <AnimatePresence>
@@ -655,104 +697,83 @@ export default function About() {
           </motion.div>
         </section>
 
-<div
-              className={`relative h-96 rounded-2xl overflow-hidden border ${isDark ? "border-red-900/20" : "border-red-100"}`}
-            >
-              <Canvas>
-                <Suspense fallback={null}>
-                  <Scene3D />
-                </Suspense>
-              </Canvas>
-            </div>
+        <div
+          className={`relative h-96 rounded-2xl overflow-hidden border ${isDark ? "border-red-900/20" : "border-red-100"}`}
+        >
+          <Canvas>
+            <Suspense fallback={null}>
+              <Scene3D />
+            </Suspense>
+          </Canvas>
+        </div>
         {/* ====================== ABOUT / STATS SECTION ====================== */}
         <section
           className={`relative sm:px-6 lg:px-8 transition-colors ${isDark ? "bg-black" : "bg-gray-50"}`}
         >
-
-          
-
-  <div className="space-y-16 lg:space-y-24">
-              <div className="flex flex-col md:flex-row items-stretch min-h-[500px] lg:min-h-[680px]">
-                <div
-                  className={`w-full md:w-5/12 z-10 flex flex-col justify-center order-2 md:order-1 px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-r from-gray-900/90 to-transparent" : "bg-gradient-to-r from-white/95 to-transparent"}`}
-                >
-                    <h5 className="font-semibold text-xl text-red-500 mb-10">
+          <div className="space-y-16 lg:space-y-24">
+            <div className="flex flex-col md:flex-row items-stretch min-h-[500px] lg:min-h-[680px]">
+              <div
+                className={`w-full md:w-5/12 z-10 flex flex-col justify-center order-2 md:order-1 px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-r from-gray-900/90 to-transparent" : "bg-gradient-to-r from-white/95 to-transparent"}`}
+              >
+                <h5 className="font-semibold text-xl text-red-500 mb-10">
                   About Our Solution
                 </h5>
-                  <h3
-                    className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
-                  >
-                    Building the <span className="text-red-500">Business</span>
-                  </h3>
-                  <p
-                    className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
-                  >
-                    As we believe technology should empower—not complicate.
-                  </p>
-                  <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="px-8 py-4 rounded-full font-semibold transition w-fit text-white bg-red-600 hover:bg-red-700"
-                  >
-                    Get in touch
-                  </button>
-                </div>
-                <div className="w-full md:w-8/12 self-end order-1 md:order-2">
-                  <img
-                    src={img4}
-                    alt="Collaboration"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row-reverse items-stretch min-h-[500px] lg:min-h-[680px]">
-                <div
-                  className={`w-full md:w-5/12 z-10 flex flex-col justify-center px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-l from-gray-900/90 to-transparent" : "bg-gradient-to-l from-white/95 to-transparent"}`}
+                <h3
+                  className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
                 >
-                  <h3
-                    className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
-                  >
-                    Innovation Meets{" "}
-                    <span className="text-red-500">Excellence</span>
-                  </h3>
-                  <p
-                    className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
-                  >
-                    We transform businesses through seamless digital solutions.
-                  </p>
-                </div>
-                <div className="w-full md:w-7/12 relative group overflow-hidden order-1 md:order-2">
-                  <img
-                    src={img1}
-                    alt="Innovation"
-                    className="w-full h-full object-contain md:object-cover transition-opacity duration-500 group-hover:opacity-0"
-                  />
-                  <img
-                    src={img6}
-                    alt="Innovation Hover"
-                    className="w-full h-full object-contain md:object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  />
-                </div>
+                  Building the <span className="text-red-500">Business</span>
+                </h3>
+                <p
+                  className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
+                >
+                  As we believe technology should empower—not complicate.
+                </p>
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="px-8 py-4 rounded-full font-semibold transition w-fit text-white bg-red-600 hover:bg-red-700"
+                >
+                  Get in touch
+                </button>
+              </div>
+              <div className="w-full md:w-8/12 self-end order-1 md:order-2">
+                <img
+                  src={img4}
+                  alt="Collaboration"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
-            <motion.div
-              variants={fadeInUp}
-              className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center px-4"
-            >
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="px-12 py-6 rounded-full text-xl font-bold transition flex items-center gap-2 text-white bg-gradient-to-r from-red-600 to-red-800 shadow-lg shadow-red-900/50 hover:shadow-red-900/70"
+            <div className="flex flex-col md:flex-row-reverse items-stretch min-h-[500px] lg:min-h-[680px]">
+              <div
+                className={`w-full md:w-5/12 z-10 flex flex-col justify-center px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-l from-gray-900/90 to-transparent" : "bg-gradient-to-l from-white/95 to-transparent"}`}
               >
-                Start Building Your Business <ArrowRight className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => navigate("/recentwork")}
-                className="px-10 py-6 border-2 rounded-full transition flex items-center gap-3 font-medium border-red-600/60 hover:bg-red-950/20 text-red-400"
-              >
-                See Our Solutions <ArrowRight className="w-5 h-5" />
-              </button>
-            </motion.div>
+                <h3
+                  className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
+                >
+                  Innovation Meets{" "}
+                  <span className="text-red-500">Excellence</span>
+                </h3>
+                <p
+                  className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
+                >
+                  We transform businesses through seamless digital solutions.
+                </p>
+              </div>
+              <div className="w-full md:w-7/12 relative group overflow-hidden order-1 md:order-2">
+                <img
+                  src={img1}
+                  alt="Innovation"
+                  className="w-full h-full object-contain md:object-cover transition-opacity duration-500 group-hover:opacity-0"
+                />
+                <img
+                  src={img6}
+                  alt="Innovation Hover"
+                  className="w-full h-full object-contain md:object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
+              </div>
+            </div>
+          </div>
 
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -761,17 +782,12 @@ export default function About() {
               viewport={{ once: true }}
               variants={staggerContainer}
               className="text-center mb-12"
-            >
-            
-            </motion.div>
-
-            
+            ></motion.div>
 
             {/* About + Team Carousel */}
-            
 
             {/* Stats Cards */}
- <div className="mb-12">
+            <div className="mb-12">
               <MobileOnboarding />
             </div>
             {/* Stats Cards */}
@@ -838,7 +854,6 @@ export default function About() {
               })}
             </motion.div>
 
-
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -847,7 +862,6 @@ export default function About() {
               className="grid md:grid-cols-2 gap-8 items-center mb-12"
             >
               <motion.div variants={fadeInLeft} className="space-y-6">
-              
                 <h2 className={`text-4xl md:text-5xl font-bold ${text}`}>
                   Partner For Your Business Growth
                 </h2>
@@ -898,7 +912,6 @@ export default function About() {
                 </div>
               </motion.div>
             </motion.div>
-           
           </div>
         </section>
 
