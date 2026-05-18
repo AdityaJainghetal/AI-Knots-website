@@ -1347,8 +1347,8 @@ const getSingleContent = async (req, res) => {
 // ==================== DELETE ====================
 const deleteTech = async (req, res) => {
   try {
-    const { slug } = req.params;
-    const deleted = await techModel.findOneAndDelete({ slug });
+    const { id } = req.params;
+    const deleted = await techModel.findByIdAndDelete(id);
 
     if (!deleted)
       return res
@@ -1473,13 +1473,11 @@ const sendOtp = async (req, res) => {
       html: `<h2>Hello ${name},</h2><p>Your OTP is: <b>${otp}</b></p><p>Valid for 10 minutes.</p>`,
     });
 
-    res
-      .status(200)
-      .json({
-        success: true,
-        message: "OTP sent successfully",
-        userId: user._id,
-      });
+    res.status(200).json({
+      success: true,
+      message: "OTP sent successfully",
+      userId: user._id,
+    });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
@@ -1492,12 +1490,10 @@ const verifyOtpAndComment = async (req, res) => {
     const { email, otp, comment } = req.body;
 
     if (!email || !otp || !comment) {
-      return res
-        .status(400)
-        .json({
-          success: false,
-          message: "Email, OTP and comment are required",
-        });
+      return res.status(400).json({
+        success: false,
+        message: "Email, OTP and comment are required",
+      });
     }
 
     const user = await PopUser.findOne({ email: email.toLowerCase().trim() });
