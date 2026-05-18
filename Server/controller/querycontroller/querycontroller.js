@@ -1,4 +1,3 @@
-
 const transporter = require("../config/mail.js");
 const Query = require("../../module/querymodule/querymodule");
 // exports.createQuery = async (req, res) => {
@@ -49,7 +48,6 @@ const Query = require("../../module/querymodule/querymodule");
 //   }
 // };
 
-
 exports.createQuery = async (req, res) => {
   try {
     const { name, email, phone, message, category } = req.body;
@@ -74,7 +72,6 @@ exports.createQuery = async (req, res) => {
       message: "Query submitted successfully",
       data: query,
     });
-
   } catch (error) {
     console.error("Query Error:", error);
 

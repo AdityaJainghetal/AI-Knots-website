@@ -567,7 +567,7 @@ export default function About() {
                   <p
                     className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
                   >
-                    At we believe technology should empower—not complicate.
+                    As we believe technology should empower—not complicate.
                   </p>
                   <button
                     onClick={() => setIsModalOpen(true)}

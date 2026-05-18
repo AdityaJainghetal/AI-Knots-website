@@ -115,16 +115,134 @@ const createTech = async (req, res) => {
 //   }
 // };
 
+// const updateTech = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const { title, description, category, images, link } = req.body;
+
+//     const updateFields = {};
+
+//     if (title?.trim()) updateFields.title = title.trim();
+//     if (description?.trim()) updateFields.description = description.trim();
+//     if (link?.trim()) updateFields.link = link.trim(); // ✅ add
+
+//     if (category) {
+//       const categoryExists = await categoryModel.findById(category);
+//       if (!categoryExists) {
+//         return res.status(404).json({
+//           success: false,
+//           message: "Category not found",
+//         });
+//       }
+//       updateFields.category = category;
+//     }
+
+//     if (images && Array.isArray(images) && images.length > 0) {
+//       updateFields.images = images;
+//     }
+
+//     const updatedTech = await techModel.findByIdAndUpdate(
+//       id,
+//       { $set: updateFields },
+//       { new: true }
+//     );
+
+//     if (!updatedTech) {
+//       return res.status(404).json({
+//         success: false,
+//         message: "Tech content not found",
+//       });
+//     }
+
+//     res.status(200).json({
+//       success: true,
+//       message: "Tech content updated successfully",
+//       data: updatedTech,
+//     });
+//   } catch (error) {
+//     console.error("Error updating tech content:", error);
+//     res.status(500).json({
+//       success: false,
+//       message: "Internal server error",
+//     });
+//   }
+// };
+// const updateTech = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const { title, description, category, link, imagesToRemove } = req.body;
+
+//     const tech = await techModel.findById(id);
+//     if (!tech) {
+//       return res.status(404).json({ success: false, message: "Tech not found" });
+//     }
+
+//     const updateFields = {};
+
+//     if (title?.trim()) updateFields.title = title.trim();
+//     if (description?.trim()) updateFields.description = description.trim();
+//     if (link?.trim()) updateFields.link = link.trim();
+
+//     if (category) {
+//       const categoryExists = await categoryModel.findById(category);
+//       if (!categoryExists) return res.status(404).json({ success: false, message: "Category not found" });
+//       updateFields.category = category;
+//     }
+
+//     // Handle images to remove
+//     let currentImages = [...(tech.images || [])];
+//     if (imagesToRemove) {
+//       const toRemove = typeof imagesToRemove === 'string' 
+//         ? JSON.parse(imagesToRemove) 
+//         : imagesToRemove;
+      
+//       currentImages = currentImages.filter(img => !toRemove.includes(img));
+//     }
+
+//     // Add new uploaded images (from multer)
+//     if (req.files && req.files.length > 0) {
+//       const newImagePaths = req.files.map(file => file.path || `/uploads/${file.filename}`);
+//       currentImages = [...currentImages, ...newImagePaths];
+//     }
+
+//     updateFields.images = currentImages;
+
+//     const updatedTech = await techModel.findByIdAndUpdate(
+//       id,
+//       { $set: updateFields },
+//       { new: true }
+//     );
+
+//     res.status(200).json({
+//       success: true,
+//       message: "Tech content updated successfully",
+//       data: updatedTech,
+//     });
+//   } catch (error) {
+//     console.error("Update Error:", error);
+//     res.status(500).json({ success: false, message: "Internal server error" });
+//   }
+// };
+
+// controllers/techController.js
 const updateTech = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description, category, images, link } = req.body;
+    const { title, description, category, link, imagesToRemove } = req.body;
+
+    const tech = await techModel.findById(id);
+    if (!tech) {
+      return res.status(404).json({
+        success: false,
+        message: "Tech news not found",
+      });
+    }
 
     const updateFields = {};
 
     if (title?.trim()) updateFields.title = title.trim();
     if (description?.trim()) updateFields.description = description.trim();
-    if (link?.trim()) updateFields.link = link.trim(); // ✅ add
+    if (link?.trim()) updateFields.link = link.trim();
 
     if (category) {
       const categoryExists = await categoryModel.findById(category);
@@ -137,30 +255,55 @@ const updateTech = async (req, res) => {
       updateFields.category = category;
     }
 
-    if (images && Array.isArray(images) && images.length > 0) {
-      updateFields.images = images;
+    // ====================== IMAGE HANDLING ======================
+    let finalImages = [...(tech.images || [])];
+
+    // 1. Remove selected images
+    if (imagesToRemove) {
+      let toRemoveArray = [];
+      try {
+        toRemoveArray = typeof imagesToRemove === "string"
+          ? JSON.parse(imagesToRemove)
+          : imagesToRemove;
+      } catch (e) {
+        toRemoveArray = [];
+      }
+      finalImages = finalImages.filter(img => !toRemoveArray.includes(img));
     }
 
+    // 2. Upload New Images using ImageKit (Same as createTech)
+    if (req.files && req.files.images) {
+      const files = Array.isArray(req.files.images) ? req.files.images : [req.files.images];
+      const uploadedImages = [];
+
+      for (let file of files) {
+        const uploadResponse = await imagekit.upload({
+          file: file.data.toString("base64"),
+          fileName: file.name,
+        });
+        uploadedImages.push(uploadResponse.url);
+      }
+
+      finalImages = [...finalImages, ...uploadedImages];
+    }
+
+    updateFields.images = finalImages;
+
+    // ====================== FINAL UPDATE ======================
     const updatedTech = await techModel.findByIdAndUpdate(
       id,
       { $set: updateFields },
       { new: true }
     );
 
-    if (!updatedTech) {
-      return res.status(404).json({
-        success: false,
-        message: "Tech content not found",
-      });
-    }
-
     res.status(200).json({
       success: true,
-      message: "Tech content updated successfully",
+      message: "Tech news updated successfully",
       data: updatedTech,
     });
+
   } catch (error) {
-    console.error("Error updating tech content:", error);
+    console.error("Update Tech Error:", error);
     res.status(500).json({
       success: false,
       message: "Internal server error",
