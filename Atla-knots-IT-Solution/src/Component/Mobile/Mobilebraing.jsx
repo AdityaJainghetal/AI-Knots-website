@@ -11,6 +11,7 @@ const MobileOnboarding = () => {
   const images = [img1, img2, img3];
   const [active, setActive] = useState(0);
 
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % images.length);
