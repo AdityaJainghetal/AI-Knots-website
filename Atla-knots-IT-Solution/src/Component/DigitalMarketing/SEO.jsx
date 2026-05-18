@@ -909,6 +909,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   Search,
@@ -1020,6 +1021,7 @@ const staggerContainer = {
 
 export default function SEO() {
   const navigate = useNavigate();
+  const [openIndex, setOpenIndex] = useState(null);
   const [isDark, setIsDark] = useState(() =>
     document.documentElement.classList.contains("dark"),
   );
@@ -1445,6 +1447,93 @@ export default function SEO() {
           </div>
         </section>
 
+
+<section
+  className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-black/60" : "bg-white/60"}`}
+>
+  <div className="max-w-5xl mx-auto">
+    <motion.h2
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-4xl md:text-5xl font-black text-center mb-16"
+    >
+      Frequently Asked Questions
+    </motion.h2>
+
+    <div className="space-y-4 max-w-4xl mx-auto">
+      {[
+        {
+          q: "What is the cost of software development?",
+          a: "The cost depends on the complexity, features, and timeline of the project.",
+        },
+        {
+          q: "Do you offer custom software development?",
+          a: "Yes, we specialize in building custom software solutions based on business needs.",
+        },
+        {
+          q: "Can I hire a dedicated development team?",
+          a: "Yes, we offer dedicated developer hiring models for businesses.",
+        },
+        {
+          q: "Do you provide maintenance and support?",
+          a: "Yes, we provide post-development support and maintenance services.",
+        },
+        {
+          q: "Which industries do you work with?",
+          a: "We serve industries such as healthcare, education, fintech, retail, logistics, and many others.",
+        },
+        {
+          q: "Do you provide SEO services? How does it help?",
+          a: "Yes, we provide complete SEO services including On-Page, Off-Page, Technical SEO, and Local SEO. Our SEO strategies help your website rank higher on Google, increase organic traffic, and generate more leads.",
+        },
+      ].map((faq, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: idx * 0.08 }}
+          className={`border rounded-2xl overflow-hidden ${isDark ? "bg-gray-900/80 border-red-900/40" : "bg-white border-gray-200 shadow-md"}`}
+        >
+          <button
+            onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+            className={`w-full px-8 py-6 text-left flex justify-between items-center transition-all duration-300 hover:bg-red-500/10 ${isDark ? "hover:bg-red-900/30" : ""}`}
+          >
+            <h3 className={`text-xl md:text-2xl font-semibold pr-8 ${isDark ? "text-white" : "text-gray-900"}`}>
+              {faq.q}
+            </h3>
+
+            {/* Better Plus/Minus Icon */}
+            <motion.div
+              animate={{ rotate: openIndex === idx ? 45 : 0 }}
+              transition={{ duration: 0.3 }}
+              className={`text-3xl font-light flex items-center justify-center w-8 h-8 transition-colors ${isDark ? "text-red-400" : "text-red-600"}`}
+            >
+              {openIndex === idx ? "−" : "+"}
+            </motion.div>
+          </button>
+
+          <AnimatePresence>
+            {openIndex === idx && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className={`px-8 pb-8 pt-2 text-lg leading-relaxed ${isDark ? "text-gray-300" : "text-gray-700"}`}>
+                  {faq.a}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
         {/* Scroll to Top Button */}
         <button
           onClick={scrollToTop}
