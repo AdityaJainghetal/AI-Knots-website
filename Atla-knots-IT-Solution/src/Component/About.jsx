@@ -800,9 +800,12 @@ export default function About() {
               className="grid md:grid-cols-2 gap-8 items-center mb-12"
             >
               <motion.div variants={fadeInLeft} className="space-y-6">
-                <h2 className={`text-4xl md:text-5xl font-bold ${text}`}>
-                  Partner For Your Business Growth
-                </h2>
+                <h3
+                  className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
+                >
+                  Empowering 
+                  <span className="text-red-500">  Business Growth</span>
+                </h3>
                 <p className={`text-lg leading-relaxed ${subText}`}>
                   We deliver cutting-edge technology solutions that help businesses grow, innovate, and succeed in the digital world. From websites and mobile apps to SEO and digital marketing, our solutions are designed to boost performance, strengthen your online presence, and drive long-term success.
                 </p>
@@ -929,6 +932,7 @@ export default function About() {
               variants={staggerContainer}
               className="text-center mb-12"
             >
+              
               <h2 className={`text-5xl md:text-7xl font-black mb-4 ${text}`}>
                 Meet Our <span className="text-red-500">Leadership</span>
               </h2>

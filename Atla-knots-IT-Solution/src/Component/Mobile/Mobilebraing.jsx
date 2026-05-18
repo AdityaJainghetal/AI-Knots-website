@@ -18,6 +18,18 @@ const MobileOnboarding = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const bg = isDark ? "bg-black" : "bg-gray-50";
+  const text = isDark ? "text-white" : "text-gray-900";
+  const subText = isDark ? "text-gray-300" : "text-gray-600";
+  const inputClass = isDark
+    ? "bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-red-600"
+    : "bg-gray-100 border-gray-300 text-gray-900 placeholder-gray-400 focus:border-red-500";
+  const headingClass = isDark ? "text-white" : "text-gray-900";
+  const bodyClass = isDark ? "text-gray-300" : "text-gray-700";
+  const cardClass = isDark
+    ? "bg-gray-900/70 border-red-900/40 hover:border-red-700/60 hover:shadow-red-950/50"
+    : "bg-white border-gray-200 hover:border-red-200 hover:shadow-xl";
+
   return (
     <div
       className={`min-h-screen transition-colors duration-500 ${
@@ -28,13 +40,12 @@ const MobileOnboarding = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Left Content */}
         <div className="text-center md:text-left md:w-1/2">
-          <h1
-            className={`text-2xl md:text-4xl font-bold mb-4 leading-snug transition-colors ${
-              isDark ? "text-white" : "text-gray-900"
-            }`}
-          >
-            We Build Apps That Power Innovation
-          </h1>
+          <h3
+                  className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
+                >
+                  Innovation 
+                  <span className="text-red-500">  App Solutions</span>
+                </h3>
 
           <p
             className={`text-sm md:text-base leading-relaxed mb-6 transition-colors ${
