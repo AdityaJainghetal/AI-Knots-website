@@ -54,7 +54,7 @@ import {
   Sphere,
 } from "@react-three/drei";
 
-import img4 from "../Component/Mobile/img/Atlaimage.jpg";
+import img4 from "../Component/Mobile/img/Atlaimage.jpg.png";
 import MobileOnboarding from "./Mobile/Mobilebraing";
 import { useNavigate } from "react-router-dom";
 import img1 from "./Mobile/img/mobileviewpart1.png";
@@ -573,7 +573,7 @@ export default function About() {
                     onClick={() => setIsModalOpen(true)}
                     className="px-8 py-4 rounded-full font-semibold transition w-fit text-white bg-red-600 hover:bg-red-700"
                   >
-                    Get Started
+                    Get in touch
                   </button>
                 </div>
                 <div className="w-full md:w-7/12 self-end order-1 md:order-2">
@@ -800,12 +800,7 @@ export default function About() {
                     <p className={subText}>Happy Clients</p>
                   </div>
                 </div>
-                <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="px-10 py-4 rounded-full text-lg font-semibold transition text-white bg-red-600 hover:bg-red-700"
-                >
-                  Read More →
-                </button>
+              
               </motion.div>
 
               <motion.div
@@ -991,7 +986,7 @@ export default function About() {
                 Our <span className="text-red-500">Team</span>
               </h2>
               <p className={`text-xl md:text-2xl max-w-3xl mx-auto ${subText}`}>
-                The passionate people behind AI Knots' success
+                The passionate people behind <strong>AI KNOTS IT Solution</strong> success
               </p>
             </motion.div>
             <div
@@ -1274,6 +1269,30 @@ export default function About() {
           </div>
         </motion.div>
 
+         <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center py-16 mb-10"
+          >
+            <h3 className={`text-5xl md:text-6xl font-black mb-8 px-4 ${text}`}>
+              Ready to build something{" "}
+              <span className="text-red-500">great</span> together?
+            </h3>
+            <p className={`text-xl mb-10 max-w-2xl mx-auto px-4 ${subText}`}>
+              Let's turn your vision into reality. Our team is ready to start
+              today.
+            </p>
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-12 py-6 rounded-full text-2xl font-bold shadow-2xl transition text-white bg-gradient-to-r from-red-600 to-red-800 hover:shadow-red-900/70"
+            >
+              Let's Start Your Business →
+            </button>
+          </motion.div>
+          
+<hr className="border-t border-gray-300 my-12" />
         {/* ====================== FAQ + FINAL CTA ====================== */}
         <div className="relative z-10 max-w-6xl mx-auto pb-16 px-4">
           <motion.div
@@ -1297,28 +1316,7 @@ export default function About() {
             <FAQAccordion isDark={isDark} />
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center py-16"
-          >
-            <h3 className={`text-5xl md:text-6xl font-black mb-8 px-4 ${text}`}>
-              Ready to build something{" "}
-              <span className="text-red-500">great</span> together?
-            </h3>
-            <p className={`text-xl mb-10 max-w-2xl mx-auto px-4 ${subText}`}>
-              Let's turn your vision into reality. Our team is ready to start
-              today.
-            </p>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-12 py-6 rounded-full text-2xl font-bold shadow-2xl transition text-white bg-gradient-to-r from-red-600 to-red-800 hover:shadow-red-900/70"
-            >
-              Let's Start Your Business →
-            </button>
-          </motion.div>
+         
         </div>
       </div>
     </>
