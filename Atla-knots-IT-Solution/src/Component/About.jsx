@@ -502,13 +502,7 @@ export default function About() {
             />
           </div>
 
-          <div className="absolute inset-0 z-10">
-            <Canvas>
-              <Suspense fallback={null}>
-                <Scene3D />
-              </Suspense>
-            </Canvas>
-          </div>
+         
 
           <div
             className={`absolute inset-0 z-20 ${isDark ? "bg-gradient-to-br from-red-950/40 via-black/60 to-black/80" : "bg-gradient-to-br from-red-50/70 via-white/60 to-white/80"}`}
@@ -682,6 +676,9 @@ export default function About() {
                 <div
                   className={`w-full md:w-5/12 z-10 flex flex-col justify-center order-2 md:order-1 px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-r from-gray-900/90 to-transparent" : "bg-gradient-to-r from-white/95 to-transparent"}`}
                 >
+                    <h5 className="font-semibold text-xl text-red-500 mb-10">
+                  About Our Solution
+                </h5>
                   <h3
                     className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
                   >
@@ -771,70 +768,12 @@ export default function About() {
             
 
             {/* About + Team Carousel */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-8 items-center mb-12"
-            >
-              <motion.div variants={fadeInLeft} className="space-y-6">
-                <h5 className="font-semibold text-xl text-red-500">
-                  About Our Solution
-                </h5>
-                <h2 className={`text-4xl md:text-5xl font-bold ${text}`}>
-                  Partner For Your Business Growth
-                </h2>
-                <p className={`text-lg leading-relaxed ${subText}`}>
-                  We deliver cutting-edge technology solutions that transform
-                  businesses...
-                </p>
-                <div className="grid grid-cols-2 gap-8 my-8">
-                  <div>
-                    <div className={`text-4xl font-black text-red-500`}>
-                      50+
-                    </div>
-                    <p className={subText}>Projects Delivered</p>
-                  </div>
-                  <div>
-                    <div className={`text-4xl font-black text-red-500`}>
-                      100+
-                    </div>
-                    <p className={subText}>Happy Clients</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                variants={fadeInRight}
-                className={`relative rounded-2xl shadow-2xl overflow-hidden border aspect-[4/3] md:aspect-[5/4] lg:aspect-[3/2] ${isDark ? "border-red-900/30" : "border-gray-200"}`}
-              >
-                <AnimatePresence initial={false} mode="wait">
-                  <motion.img
-                    key={activeImageIndex}
-                    src={teamImages[activeImageIndex]}
-                    alt="Our team working"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    variants={imageVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  />
-                </AnimatePresence>
-                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2.5 z-10">
-                  {teamImages.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveImageIndex(idx)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeImageIndex ? "bg-red-500 shadow-md shadow-red-600/50 scale-125" : "bg-white/50 hover:bg-white/80"}`}
-                    />
-                  ))}
-                </div>
-              </motion.div>
-            </motion.div>
+            
 
             {/* Stats Cards */}
-
+ <div className="mb-12">
+              <MobileOnboarding />
+            </div>
             {/* Stats Cards */}
             <motion.div
               initial="hidden"
@@ -898,9 +837,68 @@ export default function About() {
                 );
               })}
             </motion.div>
-            <div className="mb-12">
-              <MobileOnboarding />
-            </div>
+
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 gap-8 items-center mb-12"
+            >
+              <motion.div variants={fadeInLeft} className="space-y-6">
+              
+                <h2 className={`text-4xl md:text-5xl font-bold ${text}`}>
+                  Partner For Your Business Growth
+                </h2>
+                <p className={`text-lg leading-relaxed ${subText}`}>
+                  We deliver cutting-edge technology solutions that transform
+                  businesses...
+                </p>
+                <div className="grid grid-cols-2 gap-8 my-8">
+                  <div>
+                    <div className={`text-4xl font-black text-red-500`}>
+                      50+
+                    </div>
+                    <p className={subText}>Projects Delivered</p>
+                  </div>
+                  <div>
+                    <div className={`text-4xl font-black text-red-500`}>
+                      100+
+                    </div>
+                    <p className={subText}>Happy Clients</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                variants={fadeInRight}
+                className={`relative rounded-2xl shadow-2xl overflow-hidden border aspect-[4/3] md:aspect-[5/4] lg:aspect-[3/2] ${isDark ? "border-red-900/30" : "border-gray-200"}`}
+              >
+                <AnimatePresence initial={false} mode="wait">
+                  <motion.img
+                    key={activeImageIndex}
+                    src={teamImages[activeImageIndex]}
+                    alt="Our team working"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    variants={imageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                  />
+                </AnimatePresence>
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2.5 z-10">
+                  {teamImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImageIndex(idx)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeImageIndex ? "bg-red-500 shadow-md shadow-red-600/50 scale-125" : "bg-white/50 hover:bg-white/80"}`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+           
           </div>
         </section>
 
