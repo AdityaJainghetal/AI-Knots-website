@@ -54,7 +54,7 @@ import {
   Sphere,
 } from "@react-three/drei";
 
-import img4 from "../Component/Mobile/img/Atlaimage.jpg.png";
+import img4 from "../Component/Mobile/img/Atlaimage2.jpg.png";
 import MobileOnboarding from "./Mobile/Mobilebraing";
 import { useNavigate } from "react-router-dom";
 import img1 from "./Mobile/img/mobileviewpart1.png";
@@ -524,7 +524,7 @@ export default function About() {
               <h1
                 className={`text-6xl md:text-7xl lg:text-8xl font-black mb-6 ${text}`}
               >
-                ABOUT AI Knots
+                ABOUT AI KNOTS
               </h1>
               <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
                 <span
@@ -576,7 +576,7 @@ export default function About() {
                     Get in touch
                   </button>
                 </div>
-                <div className="w-full md:w-7/12 self-end order-1 md:order-2">
+                <div className="w-full md:w-8/12 self-end order-1 md:order-2">
                   <img
                     src={img4}
                     alt="Collaboration"
@@ -780,7 +780,7 @@ export default function About() {
                   About Our Solution
                 </h5>
                 <h2 className={`text-4xl md:text-5xl font-bold ${text}`}>
-                  #1 Partner For Your Business Growth
+                  Partner For Your Business Growth
                 </h2>
                 <p className={`text-lg leading-relaxed ${subText}`}>
                   We deliver cutting-edge technology solutions that transform
@@ -918,7 +918,7 @@ export default function About() {
                 Meet Our <span className="text-red-500">Leadership</span>
               </h2>
               <p className={`text-xl md:text-2xl max-w-3xl mx-auto ${subText}`}>
-                The visionaries driving AI Knots toward innovation and
+                The visionaries driving AI KNOTS toward innovation and
                 excellence
               </p>
             </motion.div>
@@ -1208,13 +1208,7 @@ export default function About() {
                         })}
                       </ul>
 
-                      {/* Optional "Explore" Button */}
-                      <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
-                        <button className="text-red-600 hover:text-red-700 font-medium flex items-center gap-2 group-hover:gap-3 transition-all duration-300">
-                          Explore Solutions
-                          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </button>
-                      </div>
+                     
                     </div>
                   </div>
                 );
@@ -1291,7 +1285,7 @@ export default function About() {
               Let's Start Your Business →
             </button>
           </motion.div>
-          
+
 <hr className="border-t border-gray-300 my-12" />
         {/* ====================== FAQ + FINAL CTA ====================== */}
         <div className="relative z-10 max-w-6xl mx-auto pb-16 px-4">
