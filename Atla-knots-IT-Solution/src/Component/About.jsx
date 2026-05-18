@@ -520,7 +520,7 @@ export default function About() {
             variants={staggerContainer}
             className="relative z-30 w-full max-w-7xl mx-auto text-center"
           >
-            <motion.div variants={fadeInUp} className="mb-10 pt-20 md:pt-24">
+            <motion.div variants={fadeInUp} className="mb-10 pt-1">
               <h1
                 className={`text-6xl md:text-7xl lg:text-8xl font-black mb-6 ${text}`}
               >
@@ -543,96 +543,20 @@ export default function About() {
               variants={fadeInUp}
               className={`text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed px-4 ${subText}`}
             >
-              We provide complete digital services,{" "}
+              We create modern,{" "}
               <span
                 className={`font-semibold ${isDark ? "text-red-500" : "text-red-600"}`}
               >
-                including SEO, digital marketing,
+                high-performance websites and provide complete digital
+                solutions,
               </span>{" "}
-              website development, social media management, software
-              development, and ERP solutions.
+              to help businesses grow online. Our services include website
+              development, SEO, digital marketing, social media management,
+              software development, and ERP solutions
             </motion.p>
 
             {/* Image Blocks */}
-            <div className="space-y-16 lg:space-y-24 pb-16 pt-20">
-              <div className="flex flex-col md:flex-row items-stretch min-h-[500px] lg:min-h-[680px]">
-                <div
-                  className={`w-full md:w-5/12 z-10 flex flex-col justify-center order-2 md:order-1 px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-r from-gray-900/90 to-transparent" : "bg-gradient-to-r from-white/95 to-transparent"}`}
-                >
-                  <h3
-                    className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
-                  >
-                    Building the <span className="text-red-500">Business</span>
-                  </h3>
-                  <p
-                    className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
-                  >
-                    As we believe technology should empower—not complicate.
-                  </p>
-                  <button
-                    onClick={() => setIsModalOpen(true)}
-                    className="px-8 py-4 rounded-full font-semibold transition w-fit text-white bg-red-600 hover:bg-red-700"
-                  >
-                    Get in touch
-                  </button>
-                </div>
-                <div className="w-full md:w-8/12 self-end order-1 md:order-2">
-                  <img
-                    src={img4}
-                    alt="Collaboration"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="flex flex-col md:flex-row-reverse items-stretch min-h-[500px] lg:min-h-[680px]">
-                <div
-                  className={`w-full md:w-5/12 z-10 flex flex-col justify-center px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-l from-gray-900/90 to-transparent" : "bg-gradient-to-l from-white/95 to-transparent"}`}
-                >
-                  <h3
-                    className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
-                  >
-                    Innovation Meets{" "}
-                    <span className="text-red-500">Excellence</span>
-                  </h3>
-                  <p
-                    className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
-                  >
-                    We transform businesses through seamless digital solutions.
-                  </p>
-                </div>
-                <div className="w-full md:w-7/12 relative group overflow-hidden order-1 md:order-2">
-                  <img
-                    src={img1}
-                    alt="Innovation"
-                    className="w-full h-full object-contain md:object-cover transition-opacity duration-500 group-hover:opacity-0"
-                  />
-                  <img
-                    src={img6}
-                    alt="Innovation Hover"
-                    className="w-full h-full object-contain md:object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <motion.div
-              variants={fadeInUp}
-              className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center px-4"
-            >
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="px-12 py-6 rounded-full text-xl font-bold transition flex items-center gap-2 text-white bg-gradient-to-r from-red-600 to-red-800 shadow-lg shadow-red-900/50 hover:shadow-red-900/70"
-              >
-                Start Building Your Business <ArrowRight className="w-6 h-6" />
-              </button>
-              <button
-                onClick={() => navigate("/recentwork")}
-                className="px-10 py-6 border-2 rounded-full transition flex items-center gap-3 font-medium border-red-600/60 hover:bg-red-950/20 text-red-400"
-              >
-                See Our Solutions <ArrowRight className="w-5 h-5" />
-              </button>
-            </motion.div>
+          
 
             {/* Contact Modal */}
             <AnimatePresence>
@@ -737,10 +661,102 @@ export default function About() {
           </motion.div>
         </section>
 
+<div
+              className={`relative h-96 rounded-2xl overflow-hidden border ${isDark ? "border-red-900/20" : "border-red-100"}`}
+            >
+              <Canvas>
+                <Suspense fallback={null}>
+                  <Scene3D />
+                </Suspense>
+              </Canvas>
+            </div>
         {/* ====================== ABOUT / STATS SECTION ====================== */}
         <section
-          className={`relative py-16 px-4 sm:px-6 lg:px-8 transition-colors ${isDark ? "bg-black" : "bg-gray-50"}`}
+          className={`relative sm:px-6 lg:px-8 transition-colors ${isDark ? "bg-black" : "bg-gray-50"}`}
         >
+
+          
+
+  <div className="space-y-16 lg:space-y-24">
+              <div className="flex flex-col md:flex-row items-stretch min-h-[500px] lg:min-h-[680px]">
+                <div
+                  className={`w-full md:w-5/12 z-10 flex flex-col justify-center order-2 md:order-1 px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-r from-gray-900/90 to-transparent" : "bg-gradient-to-r from-white/95 to-transparent"}`}
+                >
+                  <h3
+                    className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
+                  >
+                    Building the <span className="text-red-500">Business</span>
+                  </h3>
+                  <p
+                    className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
+                  >
+                    As we believe technology should empower—not complicate.
+                  </p>
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="px-8 py-4 rounded-full font-semibold transition w-fit text-white bg-red-600 hover:bg-red-700"
+                  >
+                    Get in touch
+                  </button>
+                </div>
+                <div className="w-full md:w-8/12 self-end order-1 md:order-2">
+                  <img
+                    src={img4}
+                    alt="Collaboration"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row-reverse items-stretch min-h-[500px] lg:min-h-[680px]">
+                <div
+                  className={`w-full md:w-5/12 z-10 flex flex-col justify-center px-6 md:px-10 lg:px-16 py-12 md:py-16 ${isDark ? "bg-gradient-to-l from-gray-900/90 to-transparent" : "bg-gradient-to-l from-white/95 to-transparent"}`}
+                >
+                  <h3
+                    className={`text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${text}`}
+                  >
+                    Innovation Meets{" "}
+                    <span className="text-red-500">Excellence</span>
+                  </h3>
+                  <p
+                    className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
+                  >
+                    We transform businesses through seamless digital solutions.
+                  </p>
+                </div>
+                <div className="w-full md:w-7/12 relative group overflow-hidden order-1 md:order-2">
+                  <img
+                    src={img1}
+                    alt="Innovation"
+                    className="w-full h-full object-contain md:object-cover transition-opacity duration-500 group-hover:opacity-0"
+                  />
+                  <img
+                    src={img6}
+                    alt="Innovation Hover"
+                    className="w-full h-full object-contain md:object-cover absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <motion.div
+              variants={fadeInUp}
+              className="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center px-4"
+            >
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="px-12 py-6 rounded-full text-xl font-bold transition flex items-center gap-2 text-white bg-gradient-to-r from-red-600 to-red-800 shadow-lg shadow-red-900/50 hover:shadow-red-900/70"
+              >
+                Start Building Your Business <ArrowRight className="w-6 h-6" />
+              </button>
+              <button
+                onClick={() => navigate("/recentwork")}
+                className="px-10 py-6 border-2 rounded-full transition flex items-center gap-3 font-medium border-red-600/60 hover:bg-red-950/20 text-red-400"
+              >
+                See Our Solutions <ArrowRight className="w-5 h-5" />
+              </button>
+            </motion.div>
+
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial="hidden"
@@ -749,23 +765,10 @@ export default function About() {
               variants={staggerContainer}
               className="text-center mb-12"
             >
-              <p
-                className={`text-xl md:text-2xl max-w-4xl mx-auto px-4 ${subText}`}
-              >
-                Technology that connects. Solutions that deliver. Partnerships
-                that last.
-              </p>
+            
             </motion.div>
 
-            <div
-              className={`relative h-96 mb-12 rounded-2xl overflow-hidden border ${isDark ? "border-red-900/20" : "border-red-100"}`}
-            >
-              <Canvas>
-                <Suspense fallback={null}>
-                  <Scene3D />
-                </Suspense>
-              </Canvas>
-            </div>
+            
 
             {/* About + Team Carousel */}
             <motion.div
@@ -800,7 +803,6 @@ export default function About() {
                     <p className={subText}>Happy Clients</p>
                   </div>
                 </div>
-              
               </motion.div>
 
               <motion.div
@@ -986,7 +988,8 @@ export default function About() {
                 Our <span className="text-red-500">Team</span>
               </h2>
               <p className={`text-xl md:text-2xl max-w-3xl mx-auto ${subText}`}>
-                The passionate people behind <strong>AI KNOTS IT Solution</strong> success
+                The passionate people behind{" "}
+                <strong>AI KNOTS IT Solution</strong> success
               </p>
             </motion.div>
             <div
@@ -1207,8 +1210,6 @@ export default function About() {
                           );
                         })}
                       </ul>
-
-                     
                     </div>
                   </div>
                 );
@@ -1263,30 +1264,30 @@ export default function About() {
           </div>
         </motion.div>
 
-         <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="text-center py-16 mb-10"
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="text-center py-16 mb-10"
+        >
+          <h3 className={`text-5xl md:text-6xl font-black mb-8 px-4 ${text}`}>
+            Ready to build something <span className="text-red-500">great</span>{" "}
+            together?
+          </h3>
+          <p className={`text-xl mb-10 max-w-2xl mx-auto px-4 ${subText}`}>
+            Let's turn your vision into reality. Our team is ready to start
+            today.
+          </p>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-12 py-6 rounded-full text-2xl font-bold shadow-2xl transition text-white bg-gradient-to-r from-red-600 to-red-800 hover:shadow-red-900/70"
           >
-            <h3 className={`text-5xl md:text-6xl font-black mb-8 px-4 ${text}`}>
-              Ready to build something{" "}
-              <span className="text-red-500">great</span> together?
-            </h3>
-            <p className={`text-xl mb-10 max-w-2xl mx-auto px-4 ${subText}`}>
-              Let's turn your vision into reality. Our team is ready to start
-              today.
-            </p>
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="px-12 py-6 rounded-full text-2xl font-bold shadow-2xl transition text-white bg-gradient-to-r from-red-600 to-red-800 hover:shadow-red-900/70"
-            >
-              Let's Start Your Business →
-            </button>
-          </motion.div>
+            Let's Start Your Business →
+          </button>
+        </motion.div>
 
-<hr className="border-t border-gray-300 my-12" />
+        <hr className="border-t border-gray-300 my-12" />
         {/* ====================== FAQ + FINAL CTA ====================== */}
         <div className="relative z-10 max-w-6xl mx-auto pb-16 px-4">
           <motion.div
@@ -1309,8 +1310,6 @@ export default function About() {
             </motion.p>
             <FAQAccordion isDark={isDark} />
           </motion.div>
-
-         
         </div>
       </div>
     </>

@@ -21,7 +21,9 @@ const Gallery = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/gallery");
+        const response = await fetch(
+          "https://ai-knots-website-xw9f.onrender.com/api/gallery",
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -112,7 +114,7 @@ const Gallery = () => {
                   src={
                     src.startsWith("http")
                       ? `${src}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`
-                      : `http://localhost:8000${src}?auto=format&fit=crop&w=800&q=80`
+                      : `https://ai-knots-website-xw9f.onrender.com${src}?auto=format&fit=crop&w=800&q=80`
                   }
                   alt={`Gallery image ${index + 1}`}
                   className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"

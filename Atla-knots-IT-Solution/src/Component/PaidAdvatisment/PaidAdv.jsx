@@ -440,69 +440,8 @@ function PaidAdvertising() {
           </div>
         </motion.section>
 
-        {/* Success Stories */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="text-center"
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className={`text-5xl sm:text-7xl font-black mb-10 ${headingClass}`}
-          >
-            Success Stories
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className={`text-2xl max-w-4xl mx-auto leading-relaxed mb-8 ${bodyClass}`}
-          >
-            From Clicks to Customers — Real Growth, Real Results
-          </motion.p>
-          <motion.p
-            variants={fadeInUp}
-            className={`text-xl max-w-4xl mx-auto ${bodyClass}`}
-          >
-            We don’t just run ads—we build success stories. Our campaigns have
-            helped businesses increase leads, boost sales, and grow their online
-            presence.
-          </motion.p>
-        </motion.section>
+        
 
-        {/* Final CTA */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className={`text-center py-32 rounded-3xl border ${isDark ? "bg-gradient-to-b from-black/50 to-transparent border-red-900/30" : "bg-red-50 border-red-200"}`}
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className={`text-6xl sm:text-8xl font-black mb-10 ${isDark ? "bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent" : "text-red-600"}`}
-          >
-            Let’s Talk
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className={`text-3xl mb-12 max-w-4xl mx-auto ${bodyClass}`}
-          >
-            Ready to scale your business with powerful ads? Let’s create
-            campaigns that actually convert.
-          </motion.p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className={`group px-16 py-8 rounded-full text-3xl font-bold shadow-2xl transition-all flex items-center gap-5 mx-auto ${premiumButton}`}
-          >
-            <button onClick={() => navigate("/contact")} className="flex items-center gap-3">
-             Get Your Free Audit
-            </button>
-           
-            <Sparkles className="w-9 h-9 group-hover:rotate-12 transition-transform" />
-          </motion.button>
-        </motion.section>
 
         {/* FAQ Section */}
         <motion.section
