@@ -46,7 +46,7 @@
 
 // // //       const [productsRes, categoriesRes] = await Promise.all([
 // // //         getProductsApi(),
-// // //         fetch("http://localhost:8000/api/blogcategory").then((r) => r.json()),
+// // //         fetch("https://ai-knots-website-3.onrender.com/api/blogcategory").then((r) => r.json()),
 // // //       ]);
 
 // // //       setProducts(productsRes.data?.data || []);
@@ -635,7 +635,7 @@
 // //       setLoading(true);
 // //       const [productsRes, categoriesRes] = await Promise.all([
 // //         getProductsApi(),
-// //         fetch("http://localhost:8000/api/blogcategory").then((r) => r.json()),
+// //         fetch("https://ai-knots-website-3.onrender.com/api/blogcategory").then((r) => r.json()),
 // //       ]);
 
 // //       setProducts(productsRes.data?.data || []);
@@ -1179,7 +1179,7 @@
 //       setLoading(true);
 //       const [productsRes, categoriesRes] = await Promise.all([
 //         getProductsApi(),
-//         fetch("http://localhost:8000/api/blogcategory").then((r) => r.json()),
+//         fetch("https://ai-knots-website-3.onrender.com/api/blogcategory").then((r) => r.json()),
 //       ]);
 
 //       setProducts(productsRes.data?.data || []);
@@ -1541,7 +1541,9 @@ export default function ProductTable() {
       setLoading(true);
       const [productsRes, categoriesRes] = await Promise.all([
         getProductsApi(),
-        fetch("http://localhost:8000/api/blogcategory").then((r) => r.json()),
+        fetch("https://ai-knots-website-3.onrender.com/api/blogcategory").then(
+          (r) => r.json(),
+        ),
       ]);
 
       setProducts(productsRes.data?.data || []);
@@ -1564,7 +1566,7 @@ export default function ProductTable() {
     const categoryId = product.category?._id?.toString() || "";
     setEditData({ ...product, category: categoryId });
     setPreviewImages(
-      product.images?.[0] ? [{ url: product.images[0], isNew: false }] : [],
+      product.thumbnail ? [{ url: product.thumbnail, isNew: false }] : [],
     );
     setSelectedFiles([]);
     setIsModalOpen(true);
@@ -1680,13 +1682,13 @@ export default function ProductTable() {
           1,
       },
       {
-        accessorKey: "images",
-        header: "Images",
+        accessorKey: "thumbnail",
+        header: "Image",
         cell: ({ row }) => {
-          const imageUrl = row.original.images?.[0];
-          return imageUrl ? (
+          const thumb = row.original.thumbnail;
+          return thumb ? (
             <img
-              src={imageUrl}
+              src={thumb}
               alt=""
               className="w-14 h-14 object-cover rounded-lg border"
             />
@@ -1966,9 +1968,9 @@ export default function ProductTable() {
               </button>
             </div>
             <div className="p-6 overflow-y-auto">
-              {previewProduct.images?.[0] && (
+              {previewProduct.thumbnail && (
                 <img
-                  src={previewProduct.images[0]}
+                  src={previewProduct.thumbnail}
                   className="w-full h-80 object-cover rounded-2xl mb-6"
                   alt=""
                 />

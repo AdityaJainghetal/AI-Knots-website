@@ -181,59 +181,140 @@ const createTech = async (req, res) => {
 //   }
 // };
 
+// const updateTech = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const { title, description, category, link, replaceImages } = req.body;
+
+//     const tech = await techModel.findById(id);
+//     if (!tech) {
+//       return res.status(404).json({ success: false, message: "Tech not found" });
+//     }
+
+//     const updateFields = {};
+
+//     if (title?.trim()) updateFields.title = title.trim();
+//     if (description?.trim()) updateFields.description = description.trim();
+//     if (link?.trim()) updateFields.link = link.trim();
+
+//     if (category) {
+//       const catExists = await categoryModel.findById(category);
+//       if (!catExists) return res.status(404).json({ success: false, message: "Category not found" });
+//       updateFields.category = category;
+//     }
+
+//     // ==================== IMAGE REPLACE LOGIC ====================
+//     if (replaceImages === "true" || replaceImages === true) {
+//       // Purani sab images hata do aur nayi upload karo
+//       updateFields.images = [];
+//     } else {
+//       // Normal mode - purani images rakho
+//       updateFields.images = [...(tech.images || [])];
+//     }
+
+//     // New Images Upload (ImageKit)
+//     if (req.files?.images) {
+//       const files = Array.isArray(req.files.images) ? req.files.images : [req.files.images];
+//       const uploadedImages = [];
+
+//       for (let file of files) {
+//         const uploadResponse = await imagekit.upload({
+//           file: file.data.toString("base64"),
+//           fileName: Date.now() + "-" + file.name,
+//         });
+//         uploadedImages.push(uploadResponse.url);
+//       }
+
+//       // Agar replace mode hai to purani images already clear ho chuki hain
+//       updateFields.images = [...updateFields.images, ...uploadedImages];
+//     }
+
+//     const updatedTech = await techModel.findByIdAndUpdate(
+//       id,
+//       { $set: updateFields },
+//       { new: true }
+//     );
+
+//     res.status(200).json({
+//       success: true,
+//       message: "Updated successfully",
+//       data: updatedTech,
+//     });
+
+//   } catch (error) {
+//     console.error("Update Error:", error);
+//     res.status(500).json({ success: false, message: "Internal server error" });
+//   }
+// };
 const updateTech = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, description, category, images, link } = req.body;
+    const { title, description, category, link, imagesToRemove } = req.body;
+
+    const tech = await techModel.findById(id);
+    if (!tech) {
+      return res.status(404).json({ success: false, message: "Tech not found" });
+    }
 
     const updateFields = {};
 
     if (title?.trim()) updateFields.title = title.trim();
     if (description?.trim()) updateFields.description = description.trim();
-    if (link?.trim()) updateFields.link = link.trim(); // ✅ add
+    if (link?.trim()) updateFields.link = link.trim();
 
     if (category) {
-      const categoryExists = await categoryModel.findById(category);
-      if (!categoryExists) {
-        return res.status(404).json({
-          success: false,
-          message: "Category not found",
-        });
-      }
+      const catExists = await categoryModel.findById(category);
+      if (!catExists) return res.status(404).json({ success: false, message: "Category not found" });
       updateFields.category = category;
     }
 
-    if (images && Array.isArray(images) && images.length > 0) {
-      updateFields.images = images;
+    // ==================== IMAGE HANDLING ====================
+    let currentImages = [...(tech.images || [])];
+
+    // Remove specific images
+    if (imagesToRemove && imagesToRemove.length > 0) {
+      const toRemove = typeof imagesToRemove === 'string' 
+        ? JSON.parse(imagesToRemove) 
+        : imagesToRemove;
+
+      currentImages = currentImages.filter(img => !toRemove.includes(img));
+    }
+
+    updateFields.images = currentImages;
+
+    // Upload New Images
+    if (req.files?.images) {
+      const files = Array.isArray(req.files.images) ? req.files.images : [req.files.images];
+      const uploadedImages = [];
+
+      for (let file of files) {
+        const uploadResponse = await imagekit.upload({
+          file: file.data.toString("base64"),
+          fileName: Date.now() + "-" + file.name,
+        });
+        uploadedImages.push(uploadResponse.url);
+      }
+
+      updateFields.images = [...updateFields.images, ...uploadedImages];
     }
 
     const updatedTech = await techModel.findByIdAndUpdate(
       id,
       { $set: updateFields },
       { new: true }
-    );
-
-    if (!updatedTech) {
-      return res.status(404).json({
-        success: false,
-        message: "Tech content not found",
-      });
-    }
+    ).populate("category", "name");
 
     res.status(200).json({
       success: true,
-      message: "Tech content updated successfully",
+      message: "Updated successfully",
       data: updatedTech,
     });
+
   } catch (error) {
-    console.error("Error updating tech content:", error);
-    res.status(500).json({
-      success: false,
-      message: "Internal server error",
-    });
+    console.error("Update Error:", error);
+    res.status(500).json({ success: false, message: "Internal server error" });
   }
 };
-
 const getTechData = async (req, res) => {
   try {
     const techData = await techModel
