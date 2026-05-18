@@ -33,7 +33,7 @@ const MobileOnboarding = () => {
               isDark ? "text-white" : "text-gray-900"
             }`}
           >
-            The Revolutionary App That Helps To Control Your Digital Business
+            We Build Apps That Power Innovation
           </h1>
 
           <p
