@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://ai-knots-website-2.onrender.com/category/portfolio",
+  baseURL: "https://ai-knots-website-3.onrender.com/category/portfolio",
 });
 
 // CREATE

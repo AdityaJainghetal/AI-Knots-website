@@ -121,7 +121,7 @@ const Contact = () => {
       setError(null);
 
       const response = await axios.get(
-        "https://ai-knots-website-2.onrender.com/api/contact",
+        "https://ai-knots-website-3.onrender.com/api/contact",
       );
 
       const result = response.data;
@@ -147,7 +147,7 @@ const Contact = () => {
 
     try {
       await axios.delete(
-        `https://ai-knots-website-2.onrender.com/api/contact/${id}`,
+        `https://ai-knots-website-3.onrender.com/api/contact/${id}`,
       );
 
       // Remove from UI

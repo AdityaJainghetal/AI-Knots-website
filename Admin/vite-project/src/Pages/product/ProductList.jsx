@@ -46,7 +46,7 @@
 
 // // //       const [productsRes, categoriesRes] = await Promise.all([
 // // //         getProductsApi(),
-// // //         fetch("https://ai-knots-website-2.onrender.com/api/blogcategory").then((r) => r.json()),
+// // //         fetch("https://ai-knots-website-3.onrender.com/api/blogcategory").then((r) => r.json()),
 // // //       ]);
 
 // // //       setProducts(productsRes.data?.data || []);
@@ -635,7 +635,7 @@
 // //       setLoading(true);
 // //       const [productsRes, categoriesRes] = await Promise.all([
 // //         getProductsApi(),
-// //         fetch("https://ai-knots-website-2.onrender.com/api/blogcategory").then((r) => r.json()),
+// //         fetch("https://ai-knots-website-3.onrender.com/api/blogcategory").then((r) => r.json()),
 // //       ]);
 
 // //       setProducts(productsRes.data?.data || []);
@@ -1179,7 +1179,7 @@
 //       setLoading(true);
 //       const [productsRes, categoriesRes] = await Promise.all([
 //         getProductsApi(),
-//         fetch("https://ai-knots-website-2.onrender.com/api/blogcategory").then((r) => r.json()),
+//         fetch("https://ai-knots-website-3.onrender.com/api/blogcategory").then((r) => r.json()),
 //       ]);
 
 //       setProducts(productsRes.data?.data || []);
@@ -1541,7 +1541,7 @@ export default function ProductTable() {
       setLoading(true);
       const [productsRes, categoriesRes] = await Promise.all([
         getProductsApi(),
-        fetch("https://ai-knots-website-2.onrender.com/api/blogcategory").then(
+        fetch("https://ai-knots-website-3.onrender.com/api/blogcategory").then(
           (r) => r.json(),
         ),
       ]);
@@ -1683,7 +1683,7 @@ export default function ProductTable() {
       },
       {
         accessorKey: "thumbnail",
-        header: "Image",
+        header: "Images",
         cell: ({ row }) => {
           const thumb = row.original.thumbnail;
           return thumb ? (
