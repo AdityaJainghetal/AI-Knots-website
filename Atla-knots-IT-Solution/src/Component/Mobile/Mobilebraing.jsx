@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext"; // ← Import this
 
-import img1 from "../Mobile/img/22.png";
+import img1 from "../Mobile/img/newmobileimage.png";
 import img2 from "../Mobile/img/32.png";
 import img3 from "../Mobile/img/24.png";
 

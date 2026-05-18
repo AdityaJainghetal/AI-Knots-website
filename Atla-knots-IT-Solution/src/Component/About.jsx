@@ -57,8 +57,8 @@ import {
 import img4 from "../Component/Mobile/img/Atlaimage2.jpg.png";
 import MobileOnboarding from "./Mobile/Mobilebraing";
 import { useNavigate } from "react-router-dom";
-import img1 from "./Mobile/img/mobileviewpart1.png";
-import img6 from "./Mobile/img/mobileview.png";
+import img1 from "./Mobile/img/mobileviewpartnew1.png";
+import img6 from "./Mobile/img/mobileview2.png";
 import FounderImg from "./Mobile/img/nagar.jpg";
 import MdImg from "../assets/Images/managerdirector.jpeg";
 import CeoImg from "./Mobile/img/CEO.jpg";
