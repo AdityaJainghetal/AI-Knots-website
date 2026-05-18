@@ -459,7 +459,7 @@ export default function About() {
         <title>About Atla Inteligent Knots Solution</title>
         <meta
           name="description"
-          content="Learn about Atla Inteligent Knots Solution, a trusted IT company offering web, software & digital solutions."
+          content="Learn about Atla Inteligent Knots Solution, a trusted IT company offering web, software & digital solution."
         />
         <meta
           name="keywords"
@@ -540,11 +540,11 @@ export default function About() {
                 className={`font-semibold ${isDark ? "text-red-500" : "text-red-600"}`}
               >
                 high-performance websites and provide complete digital
-                solutions,
+                solution,
               </span>{" "}
               to help businesses grow online. Our services include website
               development, SEO, digital marketing, social media management,
-              software development, and ERP solutions
+              software development, and ERP solution
             </motion.p>
 
             {/* Image Blocks */}
@@ -726,7 +726,7 @@ export default function About() {
                 <p
                   className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
                 >
-                  As we believe technology should empower—not complicate.
+                  We believe technology should empower businesses, simplify operations, and create new opportunities for growth — not complicate the journey. Through innovative digital solutions, smart strategies, and reliable IT services, we help businesses adapt, scale, and succeed in an ever-evolving digital world.
                 </p>
                 <button
                   onClick={() => setIsModalOpen(true)}
@@ -757,7 +757,7 @@ export default function About() {
                 <p
                   className={`text-lg md:text-xl leading-relaxed mb-8 max-w-xl ${subText}`}
                 >
-                  We transform businesses through seamless digital solutions.
+                  We transform businesses through smart, seamless, and future-ready digital solutions designed to drive growth and success. From website development and digital marketing to software and IT services, we help brands build a strong digital presence with innovation, creativity, and technology that delivers real results.
                 </p>
               </div>
               <div className="w-full md:w-7/12 relative group overflow-hidden order-1 md:order-2">
@@ -790,6 +790,65 @@ export default function About() {
             <div className="mb-12">
               <MobileOnboarding />
             </div>
+
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+              className="grid md:grid-cols-2 gap-8 items-center mb-12"
+            >
+              <motion.div variants={fadeInLeft} className="space-y-6">
+                <h2 className={`text-4xl md:text-5xl font-bold ${text}`}>
+                  Partner For Your Business Growth
+                </h2>
+                <p className={`text-lg leading-relaxed ${subText}`}>
+                  We deliver cutting-edge technology solutions that help businesses grow, innovate, and succeed in the digital world. From websites and mobile apps to SEO and digital marketing, our solutions are designed to boost performance, strengthen your online presence, and drive long-term success.
+                </p>
+                <div className="grid grid-cols-2 gap-8 my-8">
+                  <div>
+                    <div className={`text-4xl font-black text-red-500`}>
+                      50+
+                    </div>
+                    <p className={subText}>Projects Delivered</p>
+                  </div>
+                  <div>
+                    <div className={`text-4xl font-black text-red-500`}>
+                      100+
+                    </div>
+                    <p className={subText}>Happy Clients</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                variants={fadeInRight}
+                className={`relative rounded-2xl shadow-2xl overflow-hidden border aspect-[4/3] md:aspect-[5/4] lg:aspect-[3/2] ${isDark ? "border-red-900/30" : "border-gray-200"}`}
+              >
+                <AnimatePresence initial={false} mode="wait">
+                  <motion.img
+                    key={activeImageIndex}
+                    src={teamImages[activeImageIndex]}
+                    alt="Our team working"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    variants={imageVariants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                  />
+                </AnimatePresence>
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2.5 z-10">
+                  {teamImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveImageIndex(idx)}
+                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeImageIndex ? "bg-red-500 shadow-md shadow-red-600/50 scale-125" : "bg-white/50 hover:bg-white/80"}`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
             {/* Stats Cards */}
             <motion.div
               initial="hidden"
@@ -854,64 +913,7 @@ export default function About() {
               })}
             </motion.div>
 
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid md:grid-cols-2 gap-8 items-center mb-12"
-            >
-              <motion.div variants={fadeInLeft} className="space-y-6">
-                <h2 className={`text-4xl md:text-5xl font-bold ${text}`}>
-                  Partner For Your Business Growth
-                </h2>
-                <p className={`text-lg leading-relaxed ${subText}`}>
-                  We deliver cutting-edge technology solutions that transform
-                  businesses...
-                </p>
-                <div className="grid grid-cols-2 gap-8 my-8">
-                  <div>
-                    <div className={`text-4xl font-black text-red-500`}>
-                      50+
-                    </div>
-                    <p className={subText}>Projects Delivered</p>
-                  </div>
-                  <div>
-                    <div className={`text-4xl font-black text-red-500`}>
-                      100+
-                    </div>
-                    <p className={subText}>Happy Clients</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                variants={fadeInRight}
-                className={`relative rounded-2xl shadow-2xl overflow-hidden border aspect-[4/3] md:aspect-[5/4] lg:aspect-[3/2] ${isDark ? "border-red-900/30" : "border-gray-200"}`}
-              >
-                <AnimatePresence initial={false} mode="wait">
-                  <motion.img
-                    key={activeImageIndex}
-                    src={teamImages[activeImageIndex]}
-                    alt="Our team working"
-                    className="absolute inset-0 w-full h-full object-cover"
-                    variants={imageVariants}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
-                  />
-                </AnimatePresence>
-                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2.5 z-10">
-                  {teamImages.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setActiveImageIndex(idx)}
-                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeImageIndex ? "bg-red-500 shadow-md shadow-red-600/50 scale-125" : "bg-white/50 hover:bg-white/80"}`}
-                    />
-                  ))}
-                </div>
-              </motion.div>
-            </motion.div>
+            
           </div>
         </section>
 
@@ -931,7 +933,7 @@ export default function About() {
                 Meet Our <span className="text-red-500">Leadership</span>
               </h2>
               <p className={`text-xl md:text-2xl max-w-3xl mx-auto ${subText}`}>
-                The visionaries driving AI KNOTS toward innovation and
+                The visionaries driving <strong>AI KNOTS</strong> toward innovation and
                 excellence
               </p>
             </motion.div>

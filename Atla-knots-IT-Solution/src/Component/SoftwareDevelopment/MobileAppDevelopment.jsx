@@ -491,28 +491,15 @@ export default function MobileAppDevelopment() {
                 whileTap={{ scale: 0.98 }}
                 className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-bold shadow-2xl hover:shadow-red-700/80 transition-all"
               >
+                <button onClick={()=>navigate("/recentwork")}>
                 Start Your Project Today →
+                </button>
               </motion.button>
             </div>
           </section>
         </div>
 
-        {/* Scroll to Top Button */}
-        <AnimatePresence>
-          {showScrollTop && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              onClick={scrollToTop}
-              className={`fixed bottom-8 right-8 z-50 p-4 rounded-full shadow-2xl transition-all hover:scale-110
-              ${isDark ? "bg-red-600 hover:bg-red-700 text-white" : "bg-red-600 hover:bg-red-700 text-white"}`}
-              aria-label="Scroll to top"
-            >
-              <ArrowUp size={26} />
-            </motion.button>
-          )}
-        </AnimatePresence>
+      
       </div>
     </>
   );
