@@ -325,7 +325,6 @@ import PortfolioAtlaknotsitsolutions from "../../assets/PortfolioAtlaknotsitsolu
 // Carousel Images
 const carouselImages = [
   "https://images.unsplash.com/photo-1551434678-e076c223a692?w=1600&q=90",
-  "https://www.searchberg.com/img/GMB-optimization/bannerImg.webp",
   "https://blog.hootsuite.com/wp-content/uploads/2024/04/whatsapp-marketing-6.png",
   "https://www.crossml.com/wp-content/uploads/2024/11/heat-map-smarter-retail-store.png-1024x760.jpg",
 ];
@@ -552,56 +551,66 @@ export default function LocalMarketing() {
 
       <main className="max-w-7xl mx-auto px-6 py-20 space-y-32">
         {/* About Section */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="text-center"
-        >
-          <motion.h2
-            variants={fadeInUp}
-            className={`text-5xl md:text-6xl font-black mb-10 ${headingClass}`}
-          >
-            About AI Knots : Best Local Marketing Agency in Bhopal
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className={`text-2xl max-w-5xl mx-auto leading-relaxed mb-6 ${bodyClass}`}
-          >
-            Local Reach, Real Results
-          </motion.p>
-          <motion.p
-            variants={fadeInUp}
-            className={`text-xl max-w-5xl mx-auto leading-relaxed ${bodyClass}`}
-          >
-            AI Knots is a leading local marketing agency in Bhopal, helping
-            businesses connect with nearby customers and grow faster. We
-            specialize in Google My Business optimization, local SEO, WhatsApp
-            campaigns, SMS marketing, and hyperlocal advertising to bring more
-            calls, visits, and leads to your business. Recognized as one of the
-            best local marketing companies in Bhopal, we create strategies that
-            make your business visible in your area and turn local searches into
-            real customers.
-          </motion.p>
+      <motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={staggerContainer}
+  className="text-center"
+>
+  <motion.h2
+    variants={fadeInUp}
+    className={`text-5xl md:text-6xl font-black mb-10 ${headingClass}`}
+  >
+    Best Local Marketing Agency in Bhopal
+  </motion.h2>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-8">
-            {[
-              "Got more local calls after GMB optimization.",
-              "Best local marketing service in Bhopal for small business.",
-              "Good results with WhatsApp and SMS campaigns.",
-            ].map((review, i) => (
-              <motion.div
-                key={i}
-                variants={fadeInUp}
-                className={`rounded-2xl p-8 transition-all ${cardClass}`}
-              >
-                <p className={`text-lg italic ${bodyClass}`}>“{review}”</p>
-                <p className={`mt-4 font-bold ${accentClass}`}>Excellent</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
+  <motion.p
+    variants={fadeInUp}
+    className={`text-2xl max-w-5xl mx-auto leading-relaxed mb-6 ${bodyClass}`}
+  >
+    Local Reach, Real Results
+  </motion.p>
+
+  <motion.p
+    variants={fadeInUp}
+    className={`text-xl max-w-5xl mx-auto leading-relaxed ${bodyClass}`}
+  >
+    AI Knots is a leading local marketing agency in Bhopal, helping
+    businesses connect with nearby customers and grow faster. We
+    specialize in Google My Business optimization, local SEO, WhatsApp
+    campaigns, SMS marketing, and hyperlocal advertising to bring more
+    calls, visits, and leads to your business. Recognized as one of the
+    best local marketing companies in Bhopal, we create strategies that
+    make your business visible in your area and turn local searches into
+    real customers.
+  </motion.p>
+
+  <div className="mt-12 grid md:grid-cols-3 gap-8">
+    {[
+      "Got more local calls after GMB optimization.",
+      "Best local marketing service in Bhopal for small business.",
+      "Good results with WhatsApp and SMS campaigns.",
+    ].map((review, i) => (
+      <motion.div
+        key={i}
+        variants={fadeInUp}
+        className={`rounded-2xl p-8 transition-all ${cardClass}`}
+      >
+        <p className={`text-lg italic ${bodyClass}`}>“{review}”</p>
+        
+        {/* Colored Star Rating */}
+        <div className="mt-4 flex justify-center gap-1 text-3xl">
+          {Array(5).fill(0).map((_, idx) => (
+            <span key={idx} className="text-yellow-400 drop-shadow-sm">
+              ★
+            </span>
+          ))}
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</motion.section>
 
         {/* Why Choose Us */}
         <motion.section

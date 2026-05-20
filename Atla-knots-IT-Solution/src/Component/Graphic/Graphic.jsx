@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import graphicdesign from "../../assets/Images/graphicdesign.jpg";
 import {
   ArrowRight,
   Palette,
@@ -16,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 const images = {
   hero: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=2340&q=80",
   designer:
-    "https://images.unsplash.com/photo-1558655146-9f40138f37f5?auto=format&fit=crop&w=2340&q=80",
+    graphicdesign,
   logoProcess:
     "https://images.unsplash.com/photo-1581287053822-fd7bf4f1afec?auto=format&fit=crop&w=2340&q=80",
   socialGraphics:
@@ -277,6 +278,7 @@ const navigate = useNavigate();
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             src={images.designer}
+            
             alt="Professional graphic designer working on brand visuals"
             className="rounded-3xl shadow-2xl w-full object-cover"
           />
