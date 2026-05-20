@@ -202,7 +202,7 @@ const navigate = useNavigate();
             }}
             className="flex flex-col sm:flex-row gap-6 justify-center"
           >
-            <button className="px-12 py-6 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white text-xl font-bold rounded-full shadow-xl flex items-center gap-3 group transition-all" onClick={()=>navigate("/contact")}>
+            <button className="px-12 py-6 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white text-xl font-bold rounded-full shadow-xl flex items-center gap-3 group transition-all" onClick={()=>navigate("/recentwork")}>
                View our work
               <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
             </button>
