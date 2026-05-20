@@ -205,12 +205,7 @@ const navigate = useNavigate();
                View our work
               <ArrowRight className="w-7 h-7 group-hover:translate-x-2 transition-transform" />
             </button>
-            <button
-              className={`px-12 py-6 border-2 border-red-500 rounded-full text-xl font-bold transition-all ${isDark ? "text-red-400 hover:bg-red-950/60" : "text-red-600 hover:bg-red-50"}`}
-              onClick={()=>navigate("/portfolio")}
-            >
-              View Our Work →
-            </button>
+            
           </motion.div>
         </motion.div>
       </section>
@@ -326,7 +321,30 @@ const navigate = useNavigate();
       </section>
 
       {/* FINAL CTA + HOW WE HELP GROW */}
-      
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`text-4xl md:text-6xl font-black mb-8 ${headingClass}`}
+          >
+            Let’s Create Designs That Make Your Brand{" "}
+            <span className={accentClass}>Stand Out</span>
+          </motion.h2>
+
+          <motion.p className={`text-xl max-w-3xl mx-auto mb-12 ${bodyClass}`}>
+            From logos to social media creatives and video editing — we deliver
+            designs that help your business grow in Bhopal and beyond.
+          </motion.p>
+
+          <button className="px-16 py-7 bg-red-600 hover:bg-red-700 text-white text-2xl font-bold rounded-full shadow-xl transition-all" onClick={()=>navigate("/contact")}>
+            Get Your Custom Design Quote →
+          </button>
+
+         
+        </div>
+      </section>
 
       {/* FAQ SECTION - Interactive Dropdown */}
       <section
@@ -374,30 +392,7 @@ const navigate = useNavigate();
         </div>
       </section>
 
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={`text-4xl md:text-6xl font-black mb-8 ${headingClass}`}
-          >
-            Let’s Create Designs That Make Your Brand{" "}
-            <span className={accentClass}>Stand Out</span>
-          </motion.h2>
-
-          <motion.p className={`text-xl max-w-3xl mx-auto mb-12 ${bodyClass}`}>
-            From logos to social media creatives and video editing — we deliver
-            designs that help your business grow in Bhopal and beyond.
-          </motion.p>
-
-          <button className="px-16 py-7 bg-red-600 hover:bg-red-700 text-white text-2xl font-bold rounded-full shadow-xl transition-all" onClick={()=>navigate("/contact")}>
-            Get Your Custom Design Quote →
-          </button>
-
-         
-        </div>
-      </section>
+      
     </div>
     </>
   );
