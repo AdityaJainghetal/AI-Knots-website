@@ -306,15 +306,7 @@ export default function AIServices() {
       </button>
 
       {/* Secondary Button */}
-      <button
-        onClick={() => navigate("/contact")}
-        className="px-12 py-6 border-2 border-red-500 text-white 
-                   hover:bg-red-600 hover:border-red-600 
-                   dark:hover:bg-red-700 rounded-full 
-                   text-xl md:text-2xl font-bold transition-all duration-300"
-      >
-        Discuss Your Project
-      </button>
+  
     </motion.div>
   </motion.div>
 </section>

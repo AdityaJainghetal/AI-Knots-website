@@ -481,7 +481,9 @@ export default function SocialMediaMarketing() {
                 : "bg-red-600 hover:bg-red-700 text-white"
             }`}
           >
+            <button onClick={()=>navigate("/contact")}>
             Get Started Today →
+            </button>
           </motion.button>
 
           <p
