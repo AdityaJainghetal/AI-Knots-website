@@ -440,14 +440,7 @@ export default function ERPDevelopment() {
               <span className="text-red-600 dark:text-red-500">Serve</span>
             </motion.h2>
 
-            <motion.img
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              src={images.industry}
-              alt="Modern enterprise workspace for ERP solutions"
-              className="rounded-2xl shadow-2xl border border-red-900/30 dark:border-red-900/30 border-gray-200 mx-auto max-w-4xl w-full object-cover mb-12"
-            />
+           
 
             <div className="flex flex-wrap justify-center gap-4">
               {industries.map((ind, i) => (
