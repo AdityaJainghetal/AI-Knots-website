@@ -602,6 +602,43 @@ export default function UiUxDesign() {
         </div>
       </section>
 
+      <section
+        className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-br from-red-950/30 to-black" : "bg-red-50"}`}
+      >
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`text-4xl md:text-6xl font-black mb-8 ${headingClass}`}
+          >
+            Let’s Build Something <span className={accentClass}>Amazing</span>{" "}
+            Together
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto ${bodyClass}`}
+          >
+            Looking for a UI/UX design company that delivers creativity,
+            performance, and real business results? AI KNOTS IT SOLUTION is
+            your partner.
+          </motion.p>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all flex items-center gap-4 mx-auto"
+          >
+            <button onClick={() => navigate("/contact")} className="flex items-center gap-4">
+            Contact Us Today <ArrowRight className="w-8 h-8" />
+            </button>
+          </motion.button>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section
         className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-b from-black to-gray-950" : "bg-white"}`}
@@ -659,68 +696,10 @@ export default function UiUxDesign() {
       </section>
 
       {/* Final CTA */}
-      <section
-        className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-br from-red-950/30 to-black" : "bg-red-50"}`}
-      >
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={`text-4xl md:text-6xl font-black mb-8 ${headingClass}`}
-          >
-            Let’s Build Something <span className={accentClass}>Amazing</span>{" "}
-            Together
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto ${bodyClass}`}
-          >
-            Looking for a UI/UX design company that delivers creativity,
-            performance, and real business results? AI KNOTS IT SOLUTION is
-            your partner.
-          </motion.p>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all flex items-center gap-4 mx-auto"
-          >
-            <button onClick={() => navigate("/contact")} className="flex items-center gap-4">
-            Contact Us Today <ArrowRight className="w-8 h-8" />
-            </button>
-          </motion.button>
-        </div>
-      </section>
+      
 
       {/* Scroll to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 z-50 p-4 rounded-full bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-900/50 transition-all duration-300 hover:scale-110 active:scale-95 ${
-          showScrollTop
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-16 pointer-events-none"
-        }`}
-        aria-label="Scroll back to top"
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 10l7-7m0 0l7 7m-7-7v18"
-          />
-        </svg>
-      </button>
+    
     </div>
     </>
   );
