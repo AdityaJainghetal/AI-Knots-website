@@ -984,7 +984,7 @@ export default function About() {
                 role="Chief Technical Officer"
                 exp="7+ Years of Experience"
                 desc="Leading technical innovation, architecture, and engineering teams to deliver cutting-edge solutions."
-                linkedIn="https://www.linkedin.com/company/atla-knots-solutions/"
+                linkedIn="https://www.linkedin.com/in/azhar-uddin-qa/?isSelfProfile=false"
                 github="https://github.com/atlaknotssolutions?tab=repositories"
               />
             </div>

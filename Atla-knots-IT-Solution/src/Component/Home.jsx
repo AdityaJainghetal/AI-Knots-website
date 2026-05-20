@@ -486,6 +486,76 @@ export default function Home() {
                 </div>
               </div>
 
+
+               <div className="text-center max-w-5xl mx-auto">
+                <h3
+                  className={`text-4xl md:text-5xl font-bold mb-8 tracking-tight ${sectionHeadingAccent}`}
+                >
+                  Digital Marketing Services
+                </h3>
+                <p
+                  className={`text-lg md:text-xl leading-relaxed ${bodyClass} mb-12`}
+                >
+                  In today’s digital-first world, building a strong online
+                  presence is essential for businesses to grow and stay ahead.
+                </p>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                  {[Headphones, BarChart3, CheckCircle].map((Icon, index) => (
+                    <motion.div
+                      key={index}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={fadeInUp}
+                      className={cardClass}
+                    >
+                      <Icon
+                        className={`w-12 h-12 md:w-14 md:h-14 mb-6 ${accentClass}`}
+                      />
+                      <h4
+                        className={`text-xl md:text-2xl font-bold mb-5 ${headingClass}`}
+                      >
+                        {
+                          [
+                            "Search Engine Optimization",
+                            "Social Media Marketing",
+                            "Google &amp; Meta Ads",
+                          ][index]
+                        }
+                      </h4>
+                      <ul
+                        className={`text-sm md:text-base w-full max-w-xs space-y-3 ${bodyClass}`}
+                      >
+                        {index === 0 && (
+                          <>
+                            <li>• Boost your website ranking</li>
+                            <li>• Increase organic traffic</li>
+                            <li>• Attract the right audience</li>
+                            <li>• Gain competitive edge</li>
+                          </>
+                        )}
+                        {index === 1 && (
+                          <>
+                            <li>• Reach the right audience</li>
+                            <li>• Build trust and brand awareness</li>
+                            <li>• Increase engagement</li>
+                            <li>• Convert followers into customers</li>
+                          </>
+                        )}
+                        {index === 2 && (
+                          <>
+                            <li>• Targeted ad campaigns</li>
+                            <li>• Improve brand visibility</li>
+                            <li>• Generate quality leads</li>
+                            <li>• Effective PPC strategies</li>
+                          </>
+                        )}
+                      </ul>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
               {/* BPO Services */}
               <div>
                 <h3
@@ -555,74 +625,7 @@ export default function Home() {
               </div>
 
               {/* Digital Marketing Services */}
-              <div className="text-center max-w-5xl mx-auto">
-                <h3
-                  className={`text-4xl md:text-5xl font-bold mb-8 tracking-tight ${sectionHeadingAccent}`}
-                >
-                  Digital &amp; Marketing Services
-                </h3>
-                <p
-                  className={`text-lg md:text-xl leading-relaxed ${bodyClass} mb-12`}
-                >
-                  In today’s digital-first world, building a strong online
-                  presence is essential for businesses to grow and stay ahead.
-                </p>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                  {[Headphones, BarChart3, CheckCircle].map((Icon, index) => (
-                    <motion.div
-                      key={index}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                      variants={fadeInUp}
-                      className={cardClass}
-                    >
-                      <Icon
-                        className={`w-12 h-12 md:w-14 md:h-14 mb-6 ${accentClass}`}
-                      />
-                      <h4
-                        className={`text-xl md:text-2xl font-bold mb-5 ${headingClass}`}
-                      >
-                        {
-                          [
-                            "Search Engine Optimization",
-                            "Social Media Marketing",
-                            "Google &amp; Meta Ads",
-                          ][index]
-                        }
-                      </h4>
-                      <ul
-                        className={`text-sm md:text-base w-full max-w-xs space-y-3 ${bodyClass}`}
-                      >
-                        {index === 0 && (
-                          <>
-                            <li>• Boost your website ranking</li>
-                            <li>• Increase organic traffic</li>
-                            <li>• Attract the right audience</li>
-                            <li>• Gain competitive edge</li>
-                          </>
-                        )}
-                        {index === 1 && (
-                          <>
-                            <li>• Reach the right audience</li>
-                            <li>• Build trust and brand awareness</li>
-                            <li>• Increase engagement</li>
-                            <li>• Convert followers into customers</li>
-                          </>
-                        )}
-                        {index === 2 && (
-                          <>
-                            <li>• Targeted ad campaigns</li>
-                            <li>• Improve brand visibility</li>
-                            <li>• Generate quality leads</li>
-                            <li>• Effective PPC strategies</li>
-                          </>
-                        )}
-                      </ul>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
+             
             </div>
           </div>
         </section>
@@ -708,18 +711,18 @@ export default function Home() {
               {[
                 {
                   icon: Users,
-                  title: "True Partnership",
-                  desc: "We become an extension of your team — understanding your business deeply.",
+                  title: "Innovative Digital Solutions",
+                  desc: "Empowering businesses with cutting-edge, scalable, and result-driven technology solutions built for the future.",
                 },
                 {
                   icon: Briefcase,
                   title: "Enterprise Expertise",
-                  desc: "Proven experience in BFSI, retail, government & PSU projects.",
+                  desc: "Extensive experience delivering secure, high-performance solutions across BFSI, retail, government, and PSU sectors.",
                 },
                 {
                   icon: HardDrive,
-                  title: "Long-term Support",
-                  desc: "24×7 production support, SLA-based maintenance & AMS.",
+                  title: "Reliable Support & Growth",
+                  desc: "From development to maintenance, we ensure seamless performance and long-term success.",
                 },
               ].map((item, idx) => (
                 <motion.div
@@ -869,16 +872,16 @@ export default function Home() {
                 className="space-y-8"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-[420px]">
-                  <iframe
-                    title="AI Knots - MP Nagar, Bhopal"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.8!2d77.432!3d23.198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631f8a00000001%3A0x0!2sM.P.+Nagar+Zone+2%2C+Bhopal%2C+Madhya+Pradesh+462011!5e0!3m2!1sen!2sin!4v1738000000000!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  />
+                      <iframe
+  title="AI Knots Solution - Full Location"
+  src="https://www.google.com/maps?q=103,+Goyal+Vihar,+Plot+No.31-C,+Zone-II,+M.P.+Nagar,+Bhopal,+Madhya+Pradesh+462011,+India&output=embed"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
                 </div>
                 <div
                   className={`p-8 rounded-3xl ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
@@ -912,6 +915,39 @@ export default function Home() {
                 </div>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+
+         <section
+          className={`py-20 px-6 md:px-12 lg:px-24 ${isDark ? "bg-gray-950" : "bg-white"}`}
+        >
+          <div className="max-w-5xl mx-auto text-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h2
+                className={`text-5xl md:text-6xl font-bold mb-6 ${headingClass}`}
+              >
+                Explore Our <span className="text-red-500">Portfolio</span>
+              </h2>
+              <p className={`text-xl max-w-2xl mx-auto mb-10 ${bodyClass}`}>
+                Discover our latest projects in web development, digital
+                marketing, and IT solutions that have delivered real results for
+                our clients.
+              </p>
+
+              <button
+                onClick={goToPortfolio}
+                className="group inline-flex items-center gap-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-12 py-5 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+              >
+                View Complete Portfolio
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </motion.div>
           </div>
         </section>
 
@@ -984,37 +1020,7 @@ export default function Home() {
         </section>
 
         {/* ====================== PORTFOLIO CTA SECTION (NEW) ====================== */}
-        <section
-          className={`py-20 px-6 md:px-12 lg:px-24 ${isDark ? "bg-gray-950" : "bg-white"}`}
-        >
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h2
-                className={`text-5xl md:text-6xl font-bold mb-6 ${headingClass}`}
-              >
-                Explore Our <span className="text-red-500">Portfolio</span>
-              </h2>
-              <p className={`text-xl max-w-2xl mx-auto mb-10 ${bodyClass}`}>
-                Discover our latest projects in web development, digital
-                marketing, and IT solutions that have delivered real results for
-                our clients.
-              </p>
-
-              <button
-                onClick={goToPortfolio}
-                className="group inline-flex items-center gap-4 bg-red-600 hover:bg-red-700 text-white font-semibold text-lg px-12 py-5 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
-              >
-                View Complete Portfolio
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </motion.div>
-          </div>
-        </section>
+       
 
         {/* ====================== EXCLUSIVE OFFER POPUP ====================== */}
         <AnimatePresence>
