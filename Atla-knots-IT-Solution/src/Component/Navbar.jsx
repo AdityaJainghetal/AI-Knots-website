@@ -693,16 +693,26 @@ const navItems = [
     path: "/software",
     hasDropdown: true,
     dropdownItems: [
+      // {
+      //   name: "Digital Marketing",
+      //   path: "/digital-marketing",
+      //   hasDropdown: true,
+      //   dropdownItems: [
+      //     { name: "SEO Services", path: "/seo" },
+      //     { name: "Social Media Marketing", path: "/socialmediamarketing" },
+      //     { name: "Paid Advertisement", path: "/paidadv" },
+      //     { name: "Graphic design", path: "/graphicdesign" },
+      //     { name: "Local Marketing", path: "/localmarketing" },
+      //   ],
+      // },
       {
-        name: "Digital Marketing",
-        path: "/digital-marketing",
+        name: "Design",
+        path: "/graphics",
         hasDropdown: true,
         dropdownItems: [
-          { name: "SEO Services", path: "/seo" },
-          { name: "Social Media Marketing", path: "/socialmediamarketing" },
-          { name: "Paid Advertisement", path: "/paidadv" },
-          { name: "Graphic design", path: "/graphicdesign" },
-          { name: "Local Marketing", path: "/localmarketing" },
+          { name: "UI/UX Design", path: "/uidesign" },
+          { name: "Web Design & Development", path: "/websitedesigndevelopment" },
+          { name: "Branding", path: "/contentwritingbranding" },
         ],
       },
       {
@@ -718,14 +728,17 @@ const navItems = [
           { name: "AI & Machine Learning", path: "/ai-mlservice" },
         ],
       },
-      {
-        name: "Design",
-        path: "/graphics",
+      
+       {
+        name: "Digital Marketing",
+        path: "/digital-marketing",
         hasDropdown: true,
         dropdownItems: [
-          { name: "UI/UX Design", path: "/uidesign" },
-          { name: "Web Design & Development", path: "/websitedesigndevelopment" },
-          { name: "Branding", path: "/contentwritingbranding" },
+          { name: "SEO Services", path: "/seo" },
+          { name: "Social Media Marketing", path: "/socialmediamarketing" },
+          { name: "Paid Advertisement", path: "/paidadv" },
+          { name: "Graphic design", path: "/graphicdesign" },
+          { name: "Local Marketing", path: "/localmarketing" },
         ],
       },
     ],

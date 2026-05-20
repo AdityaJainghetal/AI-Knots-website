@@ -402,7 +402,7 @@ export default function About() {
     setError("");
     setSuccess(false);
     try {
-      const apiUrl = `${import.meta.env.VITE_API_URL}/query/create`;
+      const apiUrl = `${import.meta.env.VITE_API_URL}/api/query/create`;
       await axios.post(apiUrl, formData);
       setSuccess(true);
       setFormData({

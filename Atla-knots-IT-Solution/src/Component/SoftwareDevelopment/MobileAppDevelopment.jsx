@@ -491,7 +491,7 @@ export default function MobileAppDevelopment() {
                 whileTap={{ scale: 0.98 }}
                 className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-bold shadow-2xl hover:shadow-red-700/80 transition-all"
               >
-                <button onClick={()=>navigate("/recentwork")}>
+                <button onClick={()=>navigate("/contact")} className="flex items-center gap-4">
                 Start Your Project Today →
                 </button>
               </motion.button>
