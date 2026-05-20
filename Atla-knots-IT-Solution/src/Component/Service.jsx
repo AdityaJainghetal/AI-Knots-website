@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ChevronDown, ArrowUp } from "lucide-react";
 import serviceimg1 from "../assets/Images/service.jpeg";
 import serviceimg2 from "../assets/Images/service2.jpeg";
+import BPO from "../assets/Images/BPO.jpg";
 import { Helmet } from "react-helmet-async";
 // Animation variants
 const fadeInUp = {
@@ -409,7 +410,7 @@ const Service = () => {
             <div className="w-full lg:w-1/2 rounded-3xl overflow-hidden border shadow-2xl relative group">
               <div className="w-full aspect-[4/5] lg:aspect-auto lg:h-[620px] overflow-hidden">
                 <img
-                  src={serviceimg1}
+                  src={BPO}
                   alt="BPO Support"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
