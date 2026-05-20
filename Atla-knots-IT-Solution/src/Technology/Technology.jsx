@@ -429,7 +429,7 @@ const Technology = () => {
             <h2
               className={`text-4xl md:text-5xl font-bold mb-4 ${headingClass}`}
             >
-              Tech News & Insights
+            AI Technology & Insights
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-800 mx-auto mb-6"></div>
             <p className={`text-lg max-w-2xl mx-auto ${bodyClass}`}>
