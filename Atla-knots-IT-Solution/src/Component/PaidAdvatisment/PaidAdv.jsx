@@ -232,7 +232,7 @@ function PaidAdvertising() {
                 ${isDark 
                   ? "text-red-400 hover:bg-red-950/60 hover:border-red-500" 
                   : "text-red-600 hover:bg-red-50"}`}
-              onClick={() => navigate("/service")}
+              onClick={() => navigate("/contact")}
             >
               Get Started →
             </button>
