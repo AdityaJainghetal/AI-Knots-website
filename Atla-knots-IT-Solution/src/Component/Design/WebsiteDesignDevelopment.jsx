@@ -574,7 +574,7 @@ export default function WebsiteDesignDevelopment() {
     >
       Website Design & Development Services{" "}
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-600 to-red-700">
-        AI Knots IT Solution
+        AI KNOTS IT Solution
       </span>
     </motion.h1>
 
@@ -627,25 +627,7 @@ export default function WebsiteDesignDevelopment() {
 </section>
 
       {/* Responsive Mockup Visual */}
-      <section
-        className={`py-16 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-black/40" : "bg-gray-100"}`}
-      >
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.img
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            src={images.responsive}
-            alt="Responsive Website on Multiple Devices"
-            className="rounded-2xl shadow-2xl mx-auto w-full max-w-5xl"
-          />
-          <p className={`mt-6 text-xl ${bodyClass}`}>
-            Fully responsive across desktop, tablet, and mobile – essential for
-            2026 traffic.
-          </p>
-        </div>
-      </section>
-
+   
       {/* Why Your Business Needs a Modern Website */}
       <section
         className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "" : "bg-white"}`}
@@ -668,7 +650,7 @@ export default function WebsiteDesignDevelopment() {
             className={`text-xl mb-12 max-w-4xl mx-auto text-center ${bodyClass}`}
           >
             In 2026, your website is your 24/7 salesperson. Outdated or slow
-            sites lose customers to competitors instantly.
+            sites loose customers to competitors instantly.
           </motion.p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
