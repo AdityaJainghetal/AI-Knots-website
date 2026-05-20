@@ -333,7 +333,7 @@ const LeaderCard = ({
       <div className="flex justify-center gap-6 mt-4">
         <a
           href={linkedIn}
-          target="_blank"
+          target="https://www.linkedin.com/company/atla-knots-solutions/"
           rel="noopener noreferrer"
           className={`transition-colors ${isDark ? "text-gray-400 hover:text-red-500" : "text-gray-500 hover:text-red-500"}`}
         >
@@ -341,7 +341,7 @@ const LeaderCard = ({
         </a>
         <a
           href={github}
-          target="_blank"
+          target="https://github.com/atlaknotssolutions?tab=repositories"
           rel="noopener noreferrer"
           className={`transition-colors ${isDark ? "text-gray-400 hover:text-red-500" : "text-gray-500 hover:text-red-500"}`}
         >
