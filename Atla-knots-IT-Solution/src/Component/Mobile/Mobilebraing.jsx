@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "../../context/ThemeContext"; // ← Import this
 
 import img1 from "../Mobile/img/newmobileimage.png";
-import img2 from "../Mobile/img/32.png";
-import img3 from "../Mobile/img/24.png";
+import img2 from "../Mobile/img/mobileview3.png";
+import img3 from "../Mobile/img/mobileview4.png";
 
 const MobileOnboarding = () => {
   const { isDark } = useTheme(); // ← Get theme from context
