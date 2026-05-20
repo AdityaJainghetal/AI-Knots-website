@@ -1448,8 +1448,7 @@ export default function MobileAppDevelopment() {
                 viewport={{ once: true }}
                 className={`text-xl text-center mb-16 max-w-4xl mx-auto ${isDark ? "text-gray-300" : "text-gray-700"}`}
               >
-                With years of experience and a passion for innovation, Atlas
-                Knots IT Solution offers comprehensive mobile app development
+                With years of experience and a passion for innovation, <strong>AI KNOTS IT Solution</strong>  offers comprehensive mobile app development
                 solutions tailored to your unique business requirements.
               </motion.p>
 

@@ -118,7 +118,7 @@ export default function SoftwareDevelopment() {
   return (
     <>
       <Helmet>
-        <title>Software Development Company India | Atla IKS</title>
+        <title>Best Software Development Company in India | Atla IKS</title>
         <meta
           name="description"
           content="Custom software development company for CRM, ERP and scalable business software solutions."
@@ -265,7 +265,7 @@ export default function SoftwareDevelopment() {
             </motion.p>
 
             <div className="grid md:grid-cols-4 gap-8 mb-16">
-              {["5+", "3+", "10+", "2+"].map((num, i) => (
+              {["50+", "3+", "10+", "10+"].map((num, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 30 }}
@@ -675,6 +675,26 @@ export default function SoftwareDevelopment() {
             </motion.div>
           </div>
         </section>
+
+        <section
+                className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-br from-red-950/30 to-black" : "bg-red-50"}`}
+              >
+                <div className="max-w-5xl mx-auto text-center">
+                
+        
+                 
+        
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all flex items-center gap-4 mx-auto"
+                  >
+                    <button onClick={() => navigate("/contact")}>
+                    Contact Us 
+                    </button><ArrowRight className="w-auto h-8" />
+                  </motion.button>
+                </div>
+              </section>
 
         {/* FAQ */}
         <section

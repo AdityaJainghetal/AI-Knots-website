@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { useTheme } from "../../context/ThemeContext";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
+import contentimage from "../../assets/Images/contentimage2.jpg";
+import contentimage2 from "../../assets/Images/contentimage3.jpg";
+
 import {
   Pen,
   FileText,
@@ -20,7 +23,7 @@ import {
 
 // Selected images
 const images = {
-  hero: "https://framerusercontent.com/images/1VvwbJM00c9GavOhO9e1DTdMg.jpg?width=1920&height=1080",
+  hero: contentimage,
   contentExamples:
     "https://designmodo.com/wp-content/uploads/2024/11/email-design-trends-2025.jpg",
   bhopalLocal:
@@ -189,7 +192,7 @@ export default function ContentWritingBranding() {
           >
             <motion.h1
               variants={fadeInUp}
-              className={`text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight ${headingClass}`}
+              className={`text-5xl md:text-7xl font-black mb-6 tracking-tight leading-tight text-white ${headingClass}`}
             >
               Content Writing & Branding Services in{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
@@ -367,22 +370,7 @@ export default function ContentWritingBranding() {
         </section>
 
         {/* Local Bhopal Visual */}
-        <section
-          className={`py-16 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-black/40" : "bg-gray-100"}`}
-        >
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.img
-              src={images.bhopalLocal}
-              alt="Futuristic Bhopal - Growing Hub for Businesses"
-              className="rounded-2xl shadow-2xl mx-auto w-full max-w-5xl"
-            />
-            <p className={`mt-6 text-xl ${bodyClass}`}>
-              Empowering Bhopal businesses with powerful, local-first content
-              strategies.
-            </p>
-          </div>
-        </section>
-
+    
         {/* Industries */}
         <section
           className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-black" : "bg-white"}`}

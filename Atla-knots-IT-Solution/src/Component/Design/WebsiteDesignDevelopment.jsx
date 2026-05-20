@@ -380,6 +380,7 @@ import { useTheme } from "../../context/ThemeContext"; // ← Added Theme Hook
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
+import webdesign from "../../assets/Images/webdesign.png"
 import {
   Palette,
   Code,
@@ -401,7 +402,7 @@ const images = {
   process:
     "https://thumbs.dreamstime.com/b/flat-line-illustration-website-design-process-idea-startup-development-quality-assurance-60716700.jpg",
   ctaExample:
-    "https://www.sliderrevolution.com/wp-content/uploads/2025/03/call-to-action-buttons.jpg",
+    "https://www.axelerant.com/hubfs/Blog%20Image.png",
 };
 
 const fadeInUp = {
@@ -871,6 +872,43 @@ export default function WebsiteDesignDevelopment() {
         </div>
       </section>
 
+
+      <section
+        className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-br from-red-950/30 to-black" : "bg-red-50"}`}
+      >
+        <div className="max-w-5xl mx-auto text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`text-4xl md:text-6xl font-black mb-8 ${headingClass}`}
+          >
+            Ready to Build Your{" "}
+            <span className={accentClass}>High-Performing</span> Website?
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto ${bodyClass}`}
+          >
+            Let’s create a website that attracts visitors, engages them, and
+            converts them into loyal customers.
+          </motion.p>
+
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all flex items-center gap-4 mx-auto"
+          >
+            <button onClick={() => navigate("/contact")}>
+            Contact Us 
+            </button><ArrowRight className="w-auto h-8" />
+          </motion.button>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section
         className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "" : "bg-white"}`}
@@ -928,41 +966,7 @@ export default function WebsiteDesignDevelopment() {
       </section>
 
       {/* Final CTA */}
-      <section
-        className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-br from-red-950/30 to-black" : "bg-red-50"}`}
-      >
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={`text-4xl md:text-6xl font-black mb-8 ${headingClass}`}
-          >
-            Ready to Build Your{" "}
-            <span className={accentClass}>High-Performing</span> Website?
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto ${bodyClass}`}
-          >
-            Let’s create a website that attracts visitors, engages them, and
-            converts them into loyal customers.
-          </motion.p>
-
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.98 }}
-            className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all flex items-center gap-4 mx-auto"
-          >
-            <button onClick={() => navigate("/contact")}>
-            Contact Us 
-            </button><ArrowRight className="w-auto h-8" />
-          </motion.button>
-        </div>
-      </section>
+      
     </div>
      </>
   );
