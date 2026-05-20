@@ -1006,7 +1006,7 @@ export default function About() {
               </h2>
               <p className={`text-xl md:text-2xl max-w-3xl mx-auto ${subText}`}>
                 The passionate people behind{" "}
-                <strong>AI KNOTS IT Solution</strong> success
+                <strong>AI KNOTS IT SOLUTION</strong> success
               </p>
             </motion.div>
             <div

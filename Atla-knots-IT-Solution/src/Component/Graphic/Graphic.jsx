@@ -68,7 +68,7 @@ const howHelpGrow = [
 
 const faqs = [
   {
-    q: "What graphic design services does AI Knots IT Solutions provide?",
+    q: "What graphic design services does AI Knots IT Solution provide?",
     a: "We provide logo design, social media graphics, marketing banners, brand identity kits, promotional materials, and professional video editing.",
   },
   {
@@ -189,7 +189,7 @@ const navigate = useNavigate();
           >
             At{" "}
             <span className="font-semibold text-red-400">
-              AI KNOTS IT Solutions
+              AI KNOTS IT SOLUTION
             </span>
             , we create stunning logos, social media graphics, and videos that
             help your business look professional and grow faster.

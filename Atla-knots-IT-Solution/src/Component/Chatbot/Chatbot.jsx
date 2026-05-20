@@ -10,7 +10,7 @@ const Chatbot = () => {
   const [messages, setMessages] = useState([
     {
       type: "bot",
-      text: "Hi! I'm Atlas, your AI assistant at AI Knots IT Solutions. How can I help you today?",
+      text: "Hi! I'm Atlas, your AI assistant at AI Knots IT Solution. How can I help you today?",
     },
   ]);
   const [input, setInput] = useState("");

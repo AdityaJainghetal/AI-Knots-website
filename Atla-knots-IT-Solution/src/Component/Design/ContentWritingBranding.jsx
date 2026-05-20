@@ -215,7 +215,7 @@ export default function ContentWritingBranding() {
               variants={fadeInUp}
               className={`text-lg md:text-xl mb-12 max-w-4xl mx-auto leading-relaxed text-white ${bodyClass}`}
             >
-              At AI Knots IT Solutions, we create simple, clear, and impactful
+              At AI Knots IT Solution, we create simple, clear, and impactful
               SEO-optimized content for websites, blogs, ads, emails, and more —
               tailored for Bhopal businesses and beyond.
             </motion.p>

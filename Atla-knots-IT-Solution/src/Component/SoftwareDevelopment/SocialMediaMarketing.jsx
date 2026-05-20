@@ -248,7 +248,7 @@ export default function SocialMediaMarketing() {
           >
             At{" "}
             <span className="font-semibold text-red-400">
-              AI Knots IT Solutions
+              AI KNOTS IT SOLUTION
             </span>
             , we are one of the most trusted Social Media Marketing agencies in
             Bhopal. We create powerful strategies that deliver actual results —

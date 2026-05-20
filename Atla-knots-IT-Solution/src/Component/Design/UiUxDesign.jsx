@@ -302,7 +302,7 @@ export default function UiUxDesign() {
     >
       Best UI/UX Design Company{" "}
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-600">
-        AI Knots IT Solutions
+        AI Knots IT Solution
       </span>
     </motion.h1>
 
@@ -317,7 +317,7 @@ export default function UiUxDesign() {
       variants={fadeInUp}
       className="text-xl md:text-2xl mb-10 max-w-5xl mx-auto leading-relaxed text-gray-200 dark:text-gray-300"
     >
-      AI Knots IT Solutions delivers high-performing UI/UX designs,
+      AI Knots IT Solution delivers high-performing UI/UX designs,
       websites, and digital solutions tailored to grow your business in
       2026 and beyond.
     </motion.p>
@@ -375,7 +375,7 @@ export default function UiUxDesign() {
             className={`text-4xl md:text-6xl font-black text-center mb-16 ${headingClass}`}
           >
             Why Choose{" "}
-            <span className={accentClass}>AI Knots IT Solutions</span>?
+            <span className={accentClass}>AI KNOTS IT SOLUTION</span>?
           </motion.h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -680,7 +680,7 @@ export default function UiUxDesign() {
             className={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto ${bodyClass}`}
           >
             Looking for a UI/UX design company that delivers creativity,
-            performance, and real business results? AI Knots IT Solutions is
+            performance, and real business results? AI KNOTS IT SOLUTION is
             your partner.
           </motion.p>
 

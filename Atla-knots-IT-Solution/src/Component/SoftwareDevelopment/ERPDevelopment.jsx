@@ -226,7 +226,7 @@ export default function ERPDevelopment() {
               that unifies your departments and delivers real-time visibility.
               <br />
               <br />
-              At AI Knots IT Solutions, a top ERP software development company,
+              At AI KNOTS IT SOLUTION, a top ERP software development company,
               we deliver secure, custom ERP software solutions tailored to your
               business goals and growth.
             </motion.p>
@@ -350,7 +350,7 @@ export default function ERPDevelopment() {
               viewport={{ once: true }}
               className={`text-xl text-center mb-12 max-w-5xl mx-auto leading-relaxed ${isDark ? "text-gray-300" : "text-gray-700"}`}
             >
-              At AI Knots IT Solutions, a leading ERP software development
+              At AI KNOTS IT SOLUTION, a leading ERP software development
               company, we merge proven methodologies with custom frameworks to
               deliver high-impact ERP solutions. As a custom ERP software
               development company, our structured approach—from discovery to

@@ -261,7 +261,7 @@ export default function AIServices() {
     >
       At{" "}
       <span className="text-red-500 dark:text-red-400 font-semibold">
-        AI Knots IT Solutions
+        AI KNOTS IT SOLUTION
       </span>
       , we provide advanced AI & Machine Learning Services that help
       businesses automate processes, analyze data, and make smarter
@@ -442,7 +442,7 @@ export default function AIServices() {
                 variants={fadeInUp}
                 className={`text-xl ${t.text} mb-8`}
               >
-                AI Knots IT Solutions is a trusted provider of AI & Machine
+                AI KNOTS IT SOLUTION is a trusted provider of AI & Machine
                 Learning Services in Bhopal, focused on delivering practical and
                 result-oriented solutions. We don't just build technology, we
                 build solutions that solve real business problems.

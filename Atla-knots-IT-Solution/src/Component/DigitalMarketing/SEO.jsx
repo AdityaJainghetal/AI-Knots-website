@@ -1742,7 +1742,7 @@ export default function SEO() {
   return (
     <>
       <Helmet>
-        <title>SEO Services Company in India | AI Knots IT Solutions</title>
+        <title>SEO Services Company in India | AI KNOTS IT SOLUTION</title>
         <meta
           name="description"
           content="Improve Google rankings with professional SEO services including local SEO, on-page SEO, technical SEO & e-commerce SEO."
@@ -1788,7 +1788,7 @@ export default function SEO() {
               variants={fadeInUp}
               className="text-xl md:text-2xl mb-12 max-w-5xl mx-auto leading-relaxed text-white/90"
             >
-              At AI Knots IT Solutions, we are not just another digital
+              At AI KNOTS IT SOLUTION, we are not just another digital
               marketing agency. We are a team that truly understands how search
               engines work and how businesses grow online.
             </motion.p>
@@ -1981,7 +1981,7 @@ export default function SEO() {
               <h2
                 className={`text-4xl md:text-5xl font-black mb-8 ${headingClass}`}
               >
-                Why Choose AI Knots IT Solutions for SEO?
+                Why Choose AI KNOTS IT SOLUTION for SEO?
               </h2>
               <div className="space-y-8">
                 {[
@@ -2113,7 +2113,7 @@ export default function SEO() {
                 in your services.
               </p>
               <p className={`text-lg mb-12 ${bodyClass}`}>
-                At AI Knots IT Solutions, we focus on attracting the right
+                At AI KNOTS IT SOLUTION, we focus on attracting the right
                 visitors who convert into leads and sales. Connect with us today
                 and start growing your business online.
               </p>

@@ -218,7 +218,7 @@ export default function DigitalMarketing() {
             >
               Partner with{" "}
               <span className="font-semibold text-red-400">
-                AI Knots IT Solutions
+                AI KNOTS IT SOLUTION
               </span>
               , one of India’s trusted digital marketing companies. We help
               businesses increase their online presence, reach the right
@@ -610,7 +610,7 @@ export default function DigitalMarketing() {
                 variants={fadeInUp}
                 className={`text-xl md:text-2xl max-w-4xl mx-auto mb-12 leading-relaxed ${bodyClass}`}
               >
-                At AI Knots IT Solutions, we believe every business has the
+                At AI KNOTS IT SOLUTION, we believe every business has the
                 potential to grow online with the right strategy. Contact us
                 today and start your digital growth journey.
               </motion.p>

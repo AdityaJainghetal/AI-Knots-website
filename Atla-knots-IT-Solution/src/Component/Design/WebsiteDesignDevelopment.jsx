@@ -574,7 +574,7 @@ export default function WebsiteDesignDevelopment() {
     >
       Website Design & Development Services{" "}
       <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-600 to-red-700">
-        AI Knots IT Solutions
+        AI Knots IT Solution
       </span>
     </motion.h1>
 

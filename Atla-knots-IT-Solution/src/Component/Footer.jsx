@@ -244,7 +244,7 @@ const Footer = () => {
       >
         <div className="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className={isDark ? "text-gray-500" : "text-gray-600"}>
-            © {currentYear} AI Knots IT Solutions. All rights reserved.
+            © {currentYear} AI Knots IT Solution. All rights reserved.
           </p>
 
           <div className="flex flex-wrap gap-6 justify-center">
