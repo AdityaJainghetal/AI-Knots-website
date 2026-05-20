@@ -211,7 +211,7 @@ export default function ERPDevelopment() {
               viewport={{ once: true }}
               className={`text-xl max-w-5xl mx-auto leading-relaxed text-center mb-12 ${isDark ? "text-gray-300" : "text-gray-700"}`}
             >
-              With years of experience, AI Knots IT Solutions is a full-service
+              With years of experience, AI Knots IT Solution is a full-service
               ERP software development company in India, delivering intelligent,
               scalable, and logical enterprise solutions. As a trusted custom
               ERP software development company, we focus on creating efficient
@@ -222,12 +222,12 @@ export default function ERPDevelopment() {
               Whether you are a growing startup or an established enterprise,
               our expertise in custom ERP software development ensures your
               system is built around your unique operations. From financials and
-              inventory to HR, CRM, and beyond, we build custom ERP software
+              inventory to HRMS, CRM, and beyond, we build custom ERP software
               that unifies your departments and delivers real-time visibility.
               <br />
               <br />
               At AI KNOTS IT SOLUTION, a top ERP software development company,
-              we deliver secure, custom ERP software solutions tailored to your
+              we deliver secure, custom ERP software solution tailored to your
               business goals and growth.
             </motion.p>
 
