@@ -443,7 +443,7 @@ export default function About() {
 
   const bg = isDark ? "bg-black" : "bg-gray-50";
   const text = isDark ? "text-white" : "text-gray-900";
-  const subText = isDark ? "text-gray-300" : "text-gray-600";
+  const subText = isDark ? "text-black" : "text-black";
   const inputClass = isDark
     ? "bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-red-600"
     : "bg-gray-100 border-gray-300 text-gray-900 placeholder-gray-400 focus:border-red-500";
@@ -562,13 +562,13 @@ export default function About() {
         : "bg-white/90 border-red-200 hover:border-red-600"
     }`}
   >
-    <div className="flex items-center gap-4 mb-6">
-      
-      <h3 className={`text-3xl section-title font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+    <div className="flex flex-col items-center text-center mb-8">
+      <h3 className={`text-3xl md:text-4xl font-bold px-8 py-3 rounded-2xl bg-red-600 text-white`}>
         Our Mission
       </h3>
     </div>
-    <p className={`text-lg leading-relaxed ${subText}`}>
+
+    <p className={`text-lg leading-relaxed text-center ${subText}`}>
       Our mission is to deliver high-quality website development, software solutions, SEO, digital marketing, and IT services that help businesses build a strong online presence, improve efficiency, and achieve their goals through smart, reliable, and result-driven technology solutions.
     </p>
   </motion.div>
@@ -582,13 +582,13 @@ export default function About() {
         : "bg-white/90 border-red-200 hover:border-red-600"
     }`}
   >
-    <div className="flex items-center gap-4 mb-6">
-      
-      <h3 className={`text-3xl font-bold ${isDark ? "text-white" : "text-gray-900"}`}>
+    <div className="flex flex-col items-center text-center mb-8">
+      <h3 className={`text-3xl md:text-4xl font-bold px-8 py-3 rounded-2xl bg-red-600 text-white`}>
         Our Vision
       </h3>
     </div>
-    <p className={`text-lg leading-relaxed ${subText}`}>
+
+    <p className={`text-lg leading-relaxed text-center ${subText}`}>
       To become a leading digital solutions company that empowers businesses with innovative technology, creative strategies, and future-ready digital experiences that drive long-term growth and success.
     </p>
   </motion.div>
