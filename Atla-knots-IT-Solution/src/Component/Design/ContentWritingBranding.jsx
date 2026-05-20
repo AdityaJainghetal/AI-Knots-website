@@ -225,7 +225,7 @@ export default function ContentWritingBranding() {
               className="flex flex-col sm:flex-row gap-6 justify-center"
             >
               <button
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/seo")}
                 aria-label="Book SEO content consultation"
                 className="px-12 py-6 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-xl md:text-2xl font-bold shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 hover:scale-105 transition-all flex items-center gap-3 group"
               >
@@ -248,38 +248,7 @@ export default function ContentWritingBranding() {
           </motion.div>
         </section>
 
-        {/* Visual: Modern Email/Newsletter Examples */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-black/40 transition-colors duration-700">
-          <div className="max-w-6xl mx-auto text-center">
-            <motion.h3
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold mb-10 text-black dark:text-gray-300"
-            >
-              Engaging Email & Newsletter Designs That Convert
-            </motion.h3>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="relative"
-            >
-              <img
-                src={images.newsletter}
-                alt="Modern Newsletter Layout Examples"
-                className="rounded-3xl shadow-2xl mx-auto w-full max-w-5xl 
-                   border border-gray-200 dark:border-gray-800
-                   transition-all duration-700"
-              />
-
-              {/* Optional subtle glow effect in dark mode */}
-              <div className="absolute inset-0 rounded-3xl -z-10 bg-gradient-to-b from-red-500/10 to-transparent dark:opacity-50 blur-xl" />
-            </motion.div>
-          </div>
-        </section>
+       
 
         {/* Services */}
         <section
@@ -451,6 +420,42 @@ export default function ContentWritingBranding() {
           </div>
         </section>
 
+          <section
+          className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-br from-red-950/30 to-black" : "bg-red-50"}`}
+        >
+          <div className="max-w-5xl mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`text-4xl md:text-6xl font-black mb-8 ${headingClass}`}
+            >
+              Ready to Get Content That{" "}
+              <span className={accentClass}>Sells</span>?
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto ${bodyClass}`}
+            >
+              Let AI Knots help your Bhopal business stand out with words that
+              connect and convert.
+            </motion.p>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all flex items-center gap-4 mx-auto"
+            >
+              <button onClick={()=>navigate("/contact")}>
+              Contact Us Today
+              </button>
+            </motion.button>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section
           className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-b from-black to-gray-950" : "bg-gray-50"}`}
@@ -508,39 +513,7 @@ export default function ContentWritingBranding() {
         </section>
 
         {/* Final CTA */}
-        <section
-          className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-gradient-to-br from-red-950/30 to-black" : "bg-red-50"}`}
-        >
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`text-4xl md:text-6xl font-black mb-8 ${headingClass}`}
-            >
-              Ready to Get Content That{" "}
-              <span className={accentClass}>Sells</span>?
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`text-xl md:text-2xl mb-10 max-w-3xl mx-auto ${bodyClass}`}
-            >
-              Let AI Knots help your Bhopal business stand out with words that
-              connect and convert.
-            </motion.p>
-
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all flex items-center gap-4 mx-auto"
-            >
-              Contact Us Today <ArrowRight className="w-8 h-8" />
-            </motion.button>
-          </div>
-        </section>
+      
 
         {/* Scroll to Top Button */}
       </div>
