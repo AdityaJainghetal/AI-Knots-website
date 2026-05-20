@@ -10,7 +10,7 @@ const images = {
   hero: backgroundimage,
   team: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
   dashboard:
-    "https://images.unsplash.com/photo-1551288049-b01e1b7d0d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+    "https://www.redefinesolutions.com/resources/assets/library/erp-development-1.png",
   process:
     "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
   industry: "industury",

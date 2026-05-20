@@ -386,6 +386,46 @@ export default function EcommerceDevelopment() {
           </div>
         </section>
 
+          <section
+          className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-black/70" : "bg-white/70"}`}
+        >
+          <div className="max-w-5xl mx-auto text-center">
+            <motion.h2
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-black mb-8"
+            >
+              Ready to Launch Your{" "}
+              <span className="text-red-500">High-Performing</span> E-Commerce
+              Store?
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className={`text-xl md:text-2xl mb-12 ${isDark ? "text-gray-300" : "text-gray-700"}`}
+            >
+              Get free expert consultancy — let's build a store that turns
+              visitors into loyal customers.
+            </motion.p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all"
+            >
+              <button
+                onClick={() => navigate("/contact")}
+                className="flex items-center gap-3"
+              >
+                Get Started Today →
+              </button>
+            </motion.button>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
@@ -436,45 +476,7 @@ export default function EcommerceDevelopment() {
         </section>
 
         {/* Final CTA */}
-        <section
-          className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? "bg-black/70" : "bg-white/70"}`}
-        >
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.h2
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-black mb-8"
-            >
-              Ready to Launch Your{" "}
-              <span className="text-red-500">High-Performing</span> E-Commerce
-              Store?
-            </motion.h2>
-            <motion.p
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className={`text-xl md:text-2xl mb-12 ${isDark ? "text-gray-300" : "text-gray-700"}`}
-            >
-              Get free expert consultancy — let's build a store that turns
-              visitors into loyal customers.
-            </motion.p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all"
-            >
-              <button
-                onClick={() => navigate("/contact")}
-                className="flex items-center gap-3"
-              >
-                Get Started Today →
-              </button>
-            </motion.button>
-          </div>
-        </section>
+      
       </div>
     </>
   );
