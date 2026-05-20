@@ -456,16 +456,16 @@ const Contact = () => {
                     className={`rounded-2xl overflow-hidden shadow-xl h-80 md:h-96 border
                     ${isDark ? "border-gray-800" : "border-gray-200"}`}
                   >
-                    <iframe
-                      title="AI Knots Solution - MP Nagar, Bhopal"
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.8!2d77.432!3d23.198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631f8a00000001%3A0x0!2sM.P.+Nagar+Zone+2%2C+Bhopal%2C+Madhya+Pradesh+462011!5e0!3m2!1sen!2sin!4v1738000000000!5m2!1sen!2sin"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen=""
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                    />
+        <iframe
+  title="AI Knots Solution - Full Location"
+  src="https://www.google.com/maps?q=103,+Goyal+Vihar,+Plot+No.31-C,+Zone-II,+M.P.+Nagar,+Bhopal,+Madhya+Pradesh+462011,+India&output=embed"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen=""
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
                   </motion.div>
                 </div>
               </div>

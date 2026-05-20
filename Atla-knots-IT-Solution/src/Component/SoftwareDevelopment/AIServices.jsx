@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import AIML from "../../assets/Images/AIML.png";
 import {
   Brain,
   Users,
@@ -27,7 +28,7 @@ import { useNavigate } from "react-router-dom";
 const images = {
   hero: aws,
   neural:
-    "https://content.presentermedia.com/files/clipart/00031000/31269/neural_network_visualization_800_wht.jpg",
+    AIML,
   analytics:
     "https://thumbs.dreamstime.com/b/futuristic-digital-interface-displaying-central-wave-graph-surrounding-data-visualizations-charts-feature-red-blue-391300624.jpg",
 };
@@ -382,15 +383,7 @@ export default function AIServices() {
                 </motion.div>
               ))}
             </motion.div>
-            <motion.img
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              src={images.analytics}
-              alt="Predictive Analytics Dashboard"
-              className={`rounded-2xl shadow-2xl border ${isDark ? "border-red-900/30" : "border-red-200"} mx-auto mt-16 max-w-4xl w-full object-cover`}
-              loading="lazy"
-            />
+      
           </div>
         </section>
 
@@ -544,6 +537,40 @@ export default function AIServices() {
           </div>
         </section>
 
+          <section
+          className={`py-24 px-4 sm:px-6 lg:px-8 ${t.sectionBg5} transition-colors duration-300`}
+        >
+          <div className="max-w-5xl mx-auto text-center">
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-black mb-8"
+            >
+              Get Started with AI Machine learning Today
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className={`text-xl md:text-2xl ${t.text} mb-12 max-w-3xl mx-auto`}
+            >
+              Transform your business with smart technology. Partner with AI
+              Knots IT Solutions for reliable and result-driven AI & Machine
+              Learning Services in Bhopal.
+            </motion.p>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-12 py-6 md:px-14 md:py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all text-white"
+            >
+              <button onClick={()=>navigate("/contact")}>
+              Contact Us Now →
+              </button>
+            </motion.button>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section
           className={`py-24 px-4 sm:px-6 lg:px-8 ${t.sectionBg4} transition-colors duration-300`}
@@ -595,62 +622,9 @@ export default function AIServices() {
         </section>
 
         {/* Final CTA */}
-        <section
-          className={`py-24 px-4 sm:px-6 lg:px-8 ${t.sectionBg5} transition-colors duration-300`}
-        >
-          <div className="max-w-5xl mx-auto text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-black mb-8"
-            >
-              Get Started with AI Today
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className={`text-xl md:text-2xl ${t.text} mb-12 max-w-3xl mx-auto`}
-            >
-              Transform your business with smart technology. Partner with AI
-              Knots IT Solutions for reliable and result-driven AI & Machine
-              Learning Services in Bhopal.
-            </motion.p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="px-12 py-6 md:px-14 md:py-7 bg-gradient-to-r from-red-600 to-red-800 rounded-full text-xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-700/80 transition-all text-white"
-            >
-              Contact Us Now →
-            </motion.button>
-          </div>
-        </section>
+      
 
-        {/* Scroll to Top */}
-        <button
-          onClick={scrollToTop}
-          className={`fixed bottom-6 right-6 z-50 p-4 rounded-full bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-900/50 transition-all duration-300 hover:scale-110 active:scale-95 ${
-            showScrollTop
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-16 pointer-events-none"
-          }`}
-          aria-label="Scroll back to top"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 10l7-7m0 0l7 7m-7-7v18"
-            />
-          </svg>
-        </button>
+       
       </div>
     </>
   );

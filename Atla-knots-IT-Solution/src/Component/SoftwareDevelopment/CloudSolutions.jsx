@@ -278,11 +278,11 @@ export default function CloudSolutions() {
                 variants={fadeInUp}
                 className="text-4xl md:text-6xl font-black mb-6"
               >
-                Why Your Business Needs{" "}
+                Why Your Business Needs Reliable
                 <span className="text-red-600 dark:text-red-500">
-                  Reliable Cloud
+                   Cloud Solutions
                 </span>{" "}
-                Today
+                
               </motion.h2>
               <motion.p
                 variants={fadeInUp}
@@ -303,7 +303,7 @@ export default function CloudSolutions() {
                 {
                   icon: Server,
                   title: "No More Expensive Hardware",
-                  desc: "Eliminate on-prem maintenance costs.",
+                  desc: "Eliminate on-premises maintenance costs.",
                 },
                 {
                   icon: Scale,
@@ -337,15 +337,7 @@ export default function CloudSolutions() {
               ))}
             </div>
 
-            <motion.img
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              src={images.migration}
-              alt="Cloud migration visualization"
-              className="rounded-2xl shadow-2xl border border-gray-200 dark:border-red-900/30 mx-auto mt-16 max-w-4xl w-full object-cover"
-              loading="lazy"
-            />
+           
           </div>
         </section>
 
@@ -473,7 +465,9 @@ export default function CloudSolutions() {
               whileTap={{ scale: 0.98 }}
               className="px-14 py-7 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full text-2xl md:text-3xl font-black shadow-2xl shadow-red-900/60 hover:shadow-red-800 transition-all"
             >
+              <button onClick={()=>navigate("/contact")}>
               Start Your Cloud Journey →
+              </button>
             </motion.button>
           </div>
         </section>
@@ -574,22 +568,6 @@ export default function CloudSolutions() {
               ))}
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="mt-16 text-center"
-            >
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Still have questions? Let's talk!
-              </p>
-              <button
-                onClick={() => navigate("/contact")}
-                className="px-12 py-6 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full text-xl font-bold shadow-2xl shadow-red-900/60 hover:shadow-red-800 hover:scale-105 transition-all"
-              >
-                Get Expert Consultation →
-              </button>
-            </motion.div>
           </div>
         </section>
       </div>
