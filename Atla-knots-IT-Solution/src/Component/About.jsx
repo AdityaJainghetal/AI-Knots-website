@@ -951,8 +951,8 @@ export default function About() {
                 role="Founder"
                 exp="15+ Years of Experience"
                 desc="Visionary leader with over 15 years of experience in IT and digital transformation."
-                linkedIn="https://www.linkedin.com/in/aley-nabi-9396b31b/"
-                github="https://github.com/aleynabi-atlaknots"
+                linkedIn="https://www.linkedin.com/company/atla-knots-solutions/"
+                github="https://github.com/atlaknotssolutions?tab=repositories"
               />
               <LeaderCard
                 isDark={isDark}
@@ -962,8 +962,8 @@ export default function About() {
                 role="Chief Executive Officer"
                 exp="15+ Years of Experience"
                 desc="Strategic leader with over 15 years of experience in driving business growth and innovation."
-                linkedIn="https://www.linkedin.com/in/aley-nabi-9396b31b/"
-                github="https://github.com/aleynabi-atlaknots"
+                linkedIn="https://www.linkedin.com/company/atla-knots-solutions/"
+                github="https://github.com/atlaknotssolutions?tab=repositories"
               />
               <LeaderCard
                 isDark={isDark}
@@ -973,8 +973,8 @@ export default function About() {
                 role="Managing Director"
                 exp="7+ Years of Experience"
                 desc="With over 7 years of expertise in the Banking sector and 3+ years of experience in Business Process Outsourcing (BPO)"
-                linkedIn="https://www.linkedin.com/in/aley-nabi-profile"
-                github="https://github.com/aleynabi-atlaknots"
+                linkedIn="https://www.linkedin.com/company/atla-knots-solutions/"
+                github="https://github.com/atlaknotssolutions?tab=repositories"
               />
               <LeaderCard
                 isDark={isDark}
@@ -984,8 +984,8 @@ export default function About() {
                 role="Chief Technical Officer"
                 exp="7+ Years of Experience"
                 desc="Leading technical innovation, architecture, and engineering teams to deliver cutting-edge solutions."
-                linkedIn="https://www.linkedin.com/in/aley-nabi-profile"
-                github="https://github.com/aleynabi-atlaknots"
+                linkedIn="https://www.linkedin.com/company/atla-knots-solutions/"
+                github="https://github.com/atlaknotssolutions?tab=repositories"
               />
             </div>
           </div>
