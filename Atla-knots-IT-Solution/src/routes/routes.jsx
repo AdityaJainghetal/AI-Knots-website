@@ -59,6 +59,7 @@ export const router = createBrowserRouter([
       { path: "service", element: <Service /> },
       { path: "contact", element: <Contact /> },
 
+
       // Mobile & Fitness
       { path: "mobile", element: <FitnessApp /> },
       { path: "mobile-onboarding", element: <MobileOnboarding /> },
@@ -79,6 +80,7 @@ export const router = createBrowserRouter([
       { path: "blog", element: <Blog /> },
       { path: "blog/:slug", element: <BlogDetail /> },
 
+      
       // Services
       { path: "digital-marketing", element: <DigitalMarketing /> },
       { path: "seo", element: <SEO /> },
