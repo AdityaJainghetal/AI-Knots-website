@@ -3,8 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 
-import ATLAknotsDark from "./Mobile/img/ITLogo.png";
-import ATLAknotsLight from "../../src/assets/Images/logoimage2.PNG";
+import ATLAknotsDark from "./Mobile/img/ITLogo3.png";
+import ATLAknotsLight from "../../src/assets/Images/logoimage3.PNG";
 import { useTheme } from "../context/ThemeContext";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

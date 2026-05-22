@@ -69,7 +69,7 @@ const HERO_SLIDES = [
     title: "Creative Product Design",
     subtitle:
       "UX-driven web and mobile experiences that engage users and accelerate adoption",
-    cta: "See Solutions",
+    cta: "See Solution",
   },
 ];
 
@@ -213,87 +213,8 @@ export default function Home() {
           theme={isDark ? "dark" : "light"}
         />
 
-        {/* ====================== HERO SLIDER SECTION ====================== */}
-        <section className="relative">
-          <div className="relative w-full h-[70vh] min-h-[520px] overflow-hidden">
-            {HERO_SLIDES.map((slide, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  index === currentHeroSlide ? "opacity-100" : "opacity-0"
-                }`}
-              >
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="w-full h-full object-cover brightness-[0.85]"
-                />
-                <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/35 to-transparent/30"
-                  w-
-                />
-                <div className="absolute inset-0 flex items-center justify-center px-5 sm:px-10 ">
-                  <div className="text-center max-w-4/5xl ">
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 md:mb-6 drop-shadow-2xl">
-                      Power Your Brand Growth with
-                      <br />
-                      <span className="text-red-500">
-                        AI KNOTS {slide.title}
-                      </span>
-                    </h2>
-                    <p className="text-lg sm:text-xl md:text-2xl text-white/95 font-medium mb-8 md:mb-12 max-w-4xl mx-auto drop-shadow-lg">
-                      {slide.subtitle}
-                    </p>
-                    <Link to="/service">
-                      <button className="bg-gradient-to-r from-red-600 via-red-500 to-rose-600 text-white font-bold uppercase tracking-wider px-10 py-5 mb-3 rounded-xl shadow-2xl hover:shadow-3xl hover:-translate-y-1.5 transition-all duration-300 text-lg md:text-xl">
-                        {slide.cta} →
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
 
-            {/* Slider Dots - Red Theme */}
-            <div className="absolute bottom-6 sm:bottom-10 left-0 right-0 flex justify-center gap-4 z-20">
-              {HERO_SLIDES.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentHeroSlide(i)}
-                  className={`w-3.5 h-3.5 rounded-full transition-all duration-400 shadow-md ${
-                    i === currentHeroSlide
-                      ? "bg-red-500 scale-125 ring-2 ring-red-500/60"
-                      : "bg-white/60 hover:bg-white/90"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Stats Bar - Red Theme */}
-          <div className="max-w-6xl mx-auto px-6 -mt-20 sm:-mt-24 relative z-10">
-            <div className="bg-white/95 backdrop-blur-lg border border-red-500/30 rounded-2xl shadow-2xl grid grid-cols-2 md:grid-cols-4 gap-6 p-8 md:p-10">
-              {[
-                { n: "10+", l: "Years of Experience" },
-                { n: "5x", l: "Average return on Investment" },
-                { n: "100+", l: "Businesses Transformation" },
-                { n: "50+", l: "Industry we serve" },
-              ].map((s, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-red-500 text-4xl md:text-5xl font-extrabold">
-                    {s.n}
-                  </div>
-                  <div className="text-[#0a2342] text-sm md:text-base uppercase tracking-wider mt-2 font-semibold">
-                    {s.l}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ====================== HERO SECTION WITH VIDEO ====================== */}
-        <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24 overflow-hidden">
+ <section className="relative min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24 overflow-hidden">
           <div className="absolute inset-0 z-0">
             <video
               autoPlay
@@ -333,9 +254,20 @@ export default function Home() {
                       : "text-red-600"
                   }
                 >
-                  IT SOLUTIONS
+                  IT SOLUTION (AIKIS)
                 </span>
               </motion.h1>
+
+              <motion.p
+  variants={fadeInUp}
+  initial="hidden"
+  animate="visible"
+  className={`text-[22px] md:text-[28px] lg:text-[32px] 
+              max-w-5xl mx-auto mb-12 leading-[1.35] font-light tracking-wide
+              ${isDark ? "text-gray-200" : "text-white"} text-center`}
+>
+  India&apos;s No. 1 Website Development Company
+</motion.p>
               <motion.p
                 variants={fadeInUp}
                 className={`text-xl md:text-2xl max-w-4xl mx-auto mb-10 leading-relaxed
@@ -381,6 +313,12 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+        <hr className="border-t border-red-500/30" />
+        {/* ====================== HERO SLIDER SECTION ====================== */}
+        
+
+        {/* ====================== HERO SECTION WITH VIDEO ====================== */}
+       
 
         {/* ====================== SERVICES SECTION ====================== */}
         <section
@@ -402,10 +340,13 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className={`text-xl text-center mb-16 max-w-3xl mx-auto ${bodyClass}`}
+              className={`text-xl text-center font-semibold mb-16 max-w-3xl mx-auto ${bodyClass}`}
             >
-              Comprehensive IT &amp; BPO solutions — from development to support
-              and infrastructure
+              Empowering businesses with smart digital solutions, scalable
+              technology, and seamless operational support. From software
+              development and cloud services to customer support, digital
+              marketing, and automation — we deliver complete business solutions
+              under one roof.
             </motion.p>
 
             <div className="space-y-20">
@@ -486,8 +427,7 @@ export default function Home() {
                 </div>
               </div>
 
-
-               <div className="text-center max-w-5xl mx-auto">
+              <div className="text-center max-w-5xl mx-auto">
                 <h3
                   className={`text-4xl md:text-5xl font-bold mb-8 tracking-tight ${sectionHeadingAccent}`}
                 >
@@ -625,7 +565,6 @@ export default function Home() {
               </div>
 
               {/* Digital Marketing Services */}
-             
             </div>
           </div>
         </section>
@@ -872,16 +811,16 @@ export default function Home() {
                 className="space-y-8"
               >
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-200 h-[420px]">
-                      <iframe
-  title="AI Knots Solution - Full Location"
-  src="https://www.google.com/maps?q=103,+Goyal+Vihar,+Plot+No.31-C,+Zone-II,+M.P.+Nagar,+Bhopal,+Madhya+Pradesh+462011,+India&output=embed"
-  width="100%"
-  height="100%"
-  style={{ border: 0 }}
-  allowFullScreen=""
-  loading="lazy"
-  referrerPolicy="no-referrer-when-downgrade"
-/>
+                  <iframe
+                    title="AI Knots Solution - Full Location"
+                    src="https://www.google.com/maps?q=103,+Goyal+Vihar,+Plot+No.31-C,+Zone-II,+M.P.+Nagar,+Bhopal,+Madhya+Pradesh+462011,+India&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
                 <div
                   className={`p-8 rounded-3xl ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
@@ -918,8 +857,7 @@ export default function Home() {
           </div>
         </section>
 
-
-         <section
+        <section
           className={`py-20 px-6 md:px-12 lg:px-24 ${isDark ? "bg-gray-950" : "bg-white"}`}
         >
           <div className="max-w-5xl mx-auto text-center">
@@ -1020,7 +958,6 @@ export default function Home() {
         </section>
 
         {/* ====================== PORTFOLIO CTA SECTION (NEW) ====================== */}
-       
 
         {/* ====================== EXCLUSIVE OFFER POPUP ====================== */}
         <AnimatePresence>

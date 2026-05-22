@@ -679,8 +679,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
-import ATLAknots from "./Mobile/img/ITLogo.png";
-import ATLAknots2 from "../../src/assets/Images/logoimage2.PNG";
+import ATLAknots from "./Mobile/img/ITLogo2.png";
+import ATLAknots2 from "../../src/assets/Images/logoimage3.png";
 
 import { useTheme } from "../context/ThemeContext.jsx";
 
@@ -781,14 +781,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-5">
         <div className="flex justify-between items-center h-20">
           {/* LOGO */}
-          <NavLink to="/" onClick={closeAll}>
-            <img
-              src={isDark ? ATLAknots : ATLAknots2}
-              alt="ATLAKnots Logo"
-              className="h-12 w-auto md:h-12 lg:h-18 object-contain"
-            />
-          </NavLink>
-
+        <NavLink to="/" onClick={closeAll}>
+  <img
+    src={isDark ? ATLAknots : ATLAknots2}
+    alt="ATLAKnots Logo"
+    className="h-10 md:h-14 lg:h-18 w-auto object-contain"
+  />
+</NavLink>
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
