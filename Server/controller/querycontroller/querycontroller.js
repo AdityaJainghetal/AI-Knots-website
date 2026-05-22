@@ -54,6 +54,7 @@ exports.createQuery = async (req, res) => {
         </div>
       `,
     });
+    
 
     res.status(201).json({
       success: true,
