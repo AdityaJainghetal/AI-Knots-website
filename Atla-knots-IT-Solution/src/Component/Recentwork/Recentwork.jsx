@@ -6,7 +6,7 @@
 // import background2 from "../../assets/Images/backgroundimage2.jpeg";
 // import { Link } from "react-router-dom";
 // import background3 from "../../assets/Images/backgroundimage3.jpeg";
-// const API_BASE_URL = "http://localhost:8000"; // Change to production URL later
+// const API_BASE_URL = "https://api.aiknotsit.com"; // Change to production URL later
 
 // export default function RecentWork() {
 //   // const navigate = useNavigate();
@@ -382,7 +382,7 @@ import background2 from "../../assets/Images/backgroundimage2.jpeg";
 import background3 from "../../assets/Images/backgroundimage3.jpeg";
 import { Link } from "react-router-dom";
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "https://api.aiknotsit.com";
 
 function Counter({ value, duration = 2.5 }) {
   const count = useMotionValue(0);

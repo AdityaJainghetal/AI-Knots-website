@@ -58,19 +58,19 @@
 //           techCategoriesRes,
 //         ] = await Promise.all([
 //           axios
-//             .get("http://localhost:8000/api/users")
+//             .get("https://api.aiknotsit.com/api/users")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/query")
+//             .get("https://api.aiknotsit.com/query")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/contact")
+//             .get("https://api.aiknotsit.com/api/contact")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/technology/product")
+//             .get("https://api.aiknotsit.com/api/technology/product")
 //             .catch(() => ({ data: null })),
 //           axios
-//             .get("http://localhost:8000/api/technology/category")
+//             .get("https://api.aiknotsit.com/api/technology/category")
 //             .catch(() => ({ data: null })),
 //         ]);
 
@@ -651,22 +651,22 @@ const Dashboard = () => {
           blogsRes,
         ] = await Promise.all([
           axios
-            .get("http://localhost:8000/api/users")
+            .get("https://api.aiknotsit.com/api/users")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/query")
+            .get("https://api.aiknotsit.com/query")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/contact")
+            .get("https://api.aiknotsit.com/api/contact")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/technology/product")
+            .get("https://api.aiknotsit.com/api/technology/product")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/technology/category")
+            .get("https://api.aiknotsit.com/api/technology/category")
             .catch(() => ({ data: null })),
           axios
-            .get("http://localhost:8000/api/product/alladminproducts")
+            .get("https://api.aiknotsit.com/api/product/alladminproducts")
             .catch(() => ({ data: null })), // Blog API
         ]);
 

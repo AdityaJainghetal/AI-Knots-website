@@ -19,7 +19,7 @@ const JobApplications = () => {
     try {
       setLoading(true);
       const res = await fetch(
-        `http://localhost:8000/jobapplication/job/${jobId}`,
+        `https://api.aiknotsit.com/jobapplication/job/${jobId}`,
       );
       if (!res.ok) throw new Error("Failed to fetch applications");
       const data = await res.json();
@@ -35,7 +35,7 @@ const JobApplications = () => {
   const fetchAllApplications = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:8000/jobapplication/");
+      const res = await fetch("https://api.aiknotsit.com/jobapplication/");
       if (!res.ok) throw new Error("Failed to fetch applications");
       const data = await res.json();
       setApplications(data.data || []);
@@ -110,7 +110,7 @@ const JobApplications = () => {
   const updateStatus = async (id, newStatus) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/jobapplication/${id}/status`,
+        `https://api.aiknotsit.com/jobapplication/${id}/status`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

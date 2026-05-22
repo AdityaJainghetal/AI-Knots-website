@@ -120,7 +120,7 @@ const Contact = () => {
       setLoading(true);
       setError(null);
 
-      const response = await axios.get("http://localhost:8000/api/contact");
+      const response = await axios.get("https://api.aiknotsit.com/api/contact");
 
       const result = response.data;
       // Assuming the response is { data: [...] } or just [...]
@@ -144,7 +144,7 @@ const Contact = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:8000/api/contact/${id}`);
+      await axios.delete(`https://api.aiknotsit.com/api/contact/${id}`);
 
       // Remove from UI
       setData((prev) => prev.filter((item) => item._id !== id));
