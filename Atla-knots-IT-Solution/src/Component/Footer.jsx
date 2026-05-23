@@ -106,28 +106,28 @@ const Footer = () => {
             {/* Social Icons - Better Position & Smaller */}
             <div className="flex gap-3 mt-10">
               <SocialLink
-                href="https://www.facebook.com/profile.php?id=61588297089600"
+                href="https://www.facebook.com/aiknotsitsolution/"
                 icon={<FontAwesomeIcon icon={faFacebookF} size={16} />}
                 label="Facebook"
                 isDark={isDark}
               />
 
               <SocialLink
-                href="https://www.instagram.com/atlaknotsitsolutions/"
+                href="https://www.instagram.com/aiknotsitsolution"
                 icon={<FontAwesomeIcon icon={faInstagram} size={16} />}
                 label="Instagram"
                 isDark={isDark}
               />
 
               <SocialLink
-                href="https://www.linkedin.com/company/atla-knots-solutions/"
+                href="https://www.linkedin.com/company/ai-knots-it/?viewAsMember=true"
                 icon={<FontAwesomeIcon icon={faLinkedinIn} size={16} />}
                 label="LinkedIn"
                 isDark={isDark}
               />
 
               <SocialLink
-                href="https://in.pinterest.com/atlaknotssolutions/"
+                href="https://in.pinterest.com/aiknotsitsolution/"
                 icon={<FontAwesomeIcon icon={faPinterestP} size={16} />}
                 label="Pinterest"
                 isDark={isDark}
