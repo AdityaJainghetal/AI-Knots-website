@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchJobs, deleteJob } from "./jobSlice";
 
+
 const AdminJobs = () => {
   const dispatch = useDispatch();
   const { jobs, loading } = useSelector((state) => state.job);
