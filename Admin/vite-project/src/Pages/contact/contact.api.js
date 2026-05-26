@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "https://api.aiknotsit.com/api/contact";
+const API = "http://localhost:8000/api/contact";
 
 // GET All Contacts
 export const getContactsApi = () => {

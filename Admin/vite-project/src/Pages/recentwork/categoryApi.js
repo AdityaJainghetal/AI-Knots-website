@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://api.aiknotsit.com/recentworkcategory",
+  baseURL: "http://localhost:8000/recentworkcategory",
 });
 
 // CREATE
