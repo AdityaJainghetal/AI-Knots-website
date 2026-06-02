@@ -1046,6 +1046,7 @@ export default function Home() {
                   </div>
                 </div>
 
+
                 {/* Right Side - Form */}
                 <div className="w-full md:w-1/2 bg-white dark:bg-gray-900 p-6 md:p-8 lg:p-10 pb-12 md:pb-16 flex flex-col">
   
