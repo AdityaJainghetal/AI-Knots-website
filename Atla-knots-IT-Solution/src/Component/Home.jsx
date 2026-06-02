@@ -1048,80 +1048,113 @@ export default function Home() {
 
                 {/* Right Side - Form */}
                 <div className="w-full md:w-1/2 bg-white dark:bg-gray-900 p-6 md:p-8 lg:p-10 pb-12 md:pb-16 flex flex-col">
-                  <div className="flex justify-between items-center mb-6 md:hidden">
-                    <div></div>
-                    <button
-                      onClick={() => setShowPopup(false)}
-                      className="text-gray-600 dark:text-gray-400 hover:text-red-600 transition-colors"
-                    >
-                      <X size={28} />
-                    </button>
-                  </div>
-                  <div className="text-center mb-8">
-                    <h3 className="text-red-600 text-lg md:text-xl lg:text-2xl font-bold">
-                      Book Your FREE IT Consultation Today
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mt-1 text-sm">
-                      Get expert advice • No obligation • Quick Response
-                    </p>
-                  </div>
+  
+  {/* Close Button */}
+  <div className="flex justify-between items-center mb-6 md:hidden">
+    <div></div>
+    <button
+      onClick={() => setShowPopup(false)}
+      className="text-gray-600 dark:text-gray-400 hover:text-red-600 transition-colors"
+    >
+      <X size={28} />
+    </button>
+  </div>
 
-                  <form onSubmit={handleSubmit} className="space-y-5 flex-1">
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Full Name *"
-                      required
-                      disabled={loading}
-                      className="w-full px-5 py-3.5 rounded-2xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-red-500 outline-none"
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Email ID *"
-                      required
-                      disabled={loading}
-                      className="w-full px-5 py-3.5 rounded-2xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-red-500 outline-none"
-                    />
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Mobile Number *"
-                      required
-                      disabled={loading}
-                      className="w-full px-5 py-3.5 rounded-2xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-red-500 outline-none"
-                    />
+  {/* Heading */}
+  <div className="text-center mb-8">
+    <h3 className="text-red-600 dark:text-red-500 text-lg md:text-xl lg:text-2xl font-bold">
+      Book Your FREE IT Consultation Today
+    </h3>
+    <p className="text-gray-600 dark:text-gray-300 mt-1 text-sm">
+      Get expert advice • No obligation • Quick Response
+    </p>
+  </div>
 
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={3}
-                      placeholder="Tell us about your project..."
-                      required
-                      disabled={loading}
-                      className="w-full px-5 py-3.5 rounded-2xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 focus:border-red-500 outline-none resize-none"
-                    />
+  <form onSubmit={handleSubmit} className="space-y-5 flex-1">
+    
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      placeholder="Full Name *"
+      required
+      disabled={loading}
+      className="w-full px-5 py-3.5 rounded-2xl 
+                 border border-gray-300 dark:border-gray-700 
+                 bg-gray-50 dark:bg-gray-800 
+                 text-gray-900 dark:text-gray-100
+                 placeholder-gray-500 dark:placeholder-gray-400
+                 focus:border-red-500 focus:ring-1 focus:ring-red-500 
+                 outline-none transition-all"
+    />
 
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-2xl text-lg transition-all shadow-md mt-4"
-                    >
-                      {loading ? "Submitting..." : "Get Free Consultation"}
-                    </button>
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="Email ID *"
+      required
+      disabled={loading}
+      className="w-full px-5 py-3.5 rounded-2xl 
+                 border border-gray-300 dark:border-gray-700 
+                 bg-gray-50 dark:bg-gray-800 
+                 text-gray-900 dark:text-gray-100
+                 placeholder-gray-500 dark:placeholder-gray-400
+                 focus:border-red-500 focus:ring-1 focus:ring-red-500 
+                 outline-none transition-all"
+    />
 
-                    <p className="text-center text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-4">
-                      ✅ No spam • 100% Free Consultation • Confidential
-                    </p>
-                  </form>
-                </div>
+    <input
+      type="tel"
+      name="phone"
+      value={formData.phone}
+      onChange={handleChange}
+      placeholder="Mobile Number *"
+      required
+      disabled={loading}
+      className="w-full px-5 py-3.5 rounded-2xl 
+                 border border-gray-300 dark:border-gray-700 
+                 bg-gray-50 dark:bg-gray-800 
+                 text-gray-900 dark:text-gray-100
+                 placeholder-gray-500 dark:placeholder-gray-400
+                 focus:border-red-500 focus:ring-1 focus:ring-red-500 
+                 outline-none transition-all"
+    />
+
+    <textarea
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      rows={3}
+      placeholder="Tell us about your project..."
+      required
+      disabled={loading}
+      className="w-full px-5 py-3.5 rounded-2xl 
+                 border border-gray-300 dark:border-gray-700 
+                 bg-gray-50 dark:bg-gray-800 
+                 text-gray-900 dark:text-gray-100
+                 placeholder-gray-500 dark:placeholder-gray-400
+                 focus:border-red-500 focus:ring-1 focus:ring-red-500 
+                 outline-none transition-all resize-none"
+    />
+
+    <button
+      type="submit"
+      disabled={loading}
+      className="w-full py-4 bg-red-600 hover:bg-red-700 active:bg-red-800 
+                 text-white font-semibold rounded-2xl text-lg 
+                 transition-all shadow-md mt-4 disabled:opacity-70"
+    >
+      {loading ? "Submitting..." : "Get Free Consultation"}
+    </button>
+
+    <p className="text-center text-xs md:text-sm text-gray-500 dark:text-gray-400 mt-4">
+      ✅ No spam • 100% Free Consultation • Confidential
+    </p>
+  </form>
+</div>
               </motion.div>
             </motion.div>
           )}

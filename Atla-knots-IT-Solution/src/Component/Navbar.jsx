@@ -679,8 +679,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X, ChevronDown, Sun, Moon } from "lucide-react";
-import ATLAknots from "./Mobile/img/ITLogo5.png";
-import ATLAknots2 from "../../src/assets/Images/logoimage3.png";
+import ATLAknots from "./Mobile/img/logoimage3.png";
+import ATLAknots2 from "../../src/assets/Images/ITLogo1.png";
 
 import { useTheme } from "../context/ThemeContext.jsx";
 
